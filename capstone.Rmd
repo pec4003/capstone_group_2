@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(survival)
 library(survminer)
+library(Hmisc)
 ```
 
 ```{r}
@@ -37,6 +38,94 @@ wave %>%
 ## cirrhosis 肝硬化
 ## rheum. Rheumatoid arthritis is a chronic inflammatory disorder
 ```
+
+```{r}
+# chronic liver disease or gastrointestinal conditions
+# - cirrhosis
+# - hepatitis
+# - ibd(inflammatory bowel disease)
+
+wave <- wave %>%
+  # cirrhosis
+  mutate(cirrhosis_factor = ifelse(cirrhosis %in% 'Yes', 
+                                   'Yes', 
+                                   ifelse(cirrhosis == '', NA, 'No'))) %>%
+  # inflammatory bowel disease
+  mutate(ibd_factor = ifelse(ibd %in% 'Yes', 
+                                   'Yes', 
+                                   ifelse(ibd == '', NA, 'No'))) %>%
+  # hepatitis
+  mutate(hep_factor = ifelse(apply(sapply(c('Hepatitis C', 'Hepatitis B'), grepl, hepatitis), 
+                                   MARGIN =  1, FUN = any), 
+                                   'Yes', 
+                                   ifelse(hepatitis == '', NA, 'No')))
+
+# relevel & label
+wave$cirrhosis_factor <- factor(wave$cirrhosis_factor,levels=c("No", "Yes"))
+label(wave$cirrhosis_factor) <- "Cirrhosis"
+wave$ibd_factor <- factor(wave$ibd_factor,levels=c("No", "Yes"))
+label(wave$ibd_factor) <- "Inflammatory bowel disease"
+wave$hep_factor <- factor(wave$hep_factor,levels=c("No", "Yes"))
+label(wave$hep_factor) <- "Hepatitis"
+```
+
+```{r}
+# COVID GI Symptoms and In-hospital life threatening complications
+wave <- wave %>%
+        # GI symptoms indicator
+  mutate(gi_symptoms = ifelse(grepl("Abdominal Pain|Nausea|Diarrhea", symptoms), 
+                              "Yes", 
+                              ifelse(symptoms == "", NA, "No")),
+         # In-hospital life threatening complications indicator
+         life_threat_comp = ifelse(grepl("Septic Shock|Myocardial Infarction|Heart Failure", 
+                                         complications),
+                                   "Yes", 
+                                   ifelse(complications == "", NA, "No")))
+```
+
+
+```{r}
+# Covariates
+# - Comorbidities:
+#   - active_cancer
+#   - BMI(obesity)
+#   - dm(diabetes)
+# - med_count
+# - sex
+# - race_eth
+# - age
+
+wave <- wave %>%
+  # cancer
+  mutate(cancer_factor = ifelse(apply(sapply(c('Liquid', 'Solid'), grepl, active_cancer), 
+                                        MARGIN =  1, FUN = any), 
+                                   'Yes', 
+                                   ifelse(active_cancer == '', NA, 'No'))) %>%
+  # obesity: BMI >= 30
+  mutate(obesity = ifelse(bmi >= 30, 'Yes', ifelse(bmi == '', NA, 'No'))) %>%
+  # diabetes
+  mutate(dm_factor = ifelse(dm %in% 'Yes', 
+                                   'Yes', 
+                                   ifelse(dm == '', NA, 'No'))) %>%
+  # medication count
+  mutate(med_count = ifelse(med_count == '6 | 6 | 6 | 6', 6, 
+                            ifelse(med_count == '', NA, med_count))) %>%
+  # sex
+  mutate(sex = ifelse(sex == 'Female | Female', 'Female', 
+                            ifelse(sex == '', NA, sex))) 
+
+# relevel & label
+
+wave$sex = factor(wave$sex,levels=c("Female","Male"))
+
+wave$race_eth = factor(wave$race_eth,levels=c("4","1","2","3","5"))
+levels(wave$race_eth)=c("White","Hispanic","Black","Asian","Other")
+
+wave$age_cat = factor(wave$age_cat,levels=c("1","2","3","4","5","6"))
+levels(wave$age_cat)=c("18 – 25","26 – 40","41- 55","56 – 70","70 -85","86+")
+
+```
+
 
 ```{r}
 # missing values?   find the exposures? exposure pivot_longer/  death: time to death  survival data 
