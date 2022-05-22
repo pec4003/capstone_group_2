@@ -1,0 +1,85 @@
+---
+title: "capstone"
+author: "JIN ZHU"
+date: "5/21/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(survival)
+library(survminer)
+```
+
+```{r}
+w1 <- read.csv("wave1.csv")
+w2 <- read.csv("wave2.csv")
+
+
+wave <- rbind(w1, w2)
+wave
+
+
+str(w2)
+wave %>% 
+  mutate(ed_dt = as.Date(ed_dt, format='%m/%d/%Y'),
+         intubation1_dt = as.Date(intubation1_dt, format='%m/%d/%Y'),
+         death_dt = as.Date( death_dt,format='%m/%d/%Y'),
+         discharge_dt = as.Date(discharge_dt,format='%m/%d/%Y'),
+         transfer_out_dt = as.Date(transfer_out_dt , format = '%m/%d/%Y'))
+  
+  
+
+
+## ards: Acute respiratory distress syndrome 
+## cad: coronary artery disease
+## cirrhosis 肝硬化
+## rheum. Rheumatoid arthritis is a chronic inflammatory disorder
+```
+
+```{r}
+# missing values?   find the exposures? exposure pivot_longer/  death: time to death  survival data 
+```
+
+# Objective 1
+1.	Determine if patients who were hospitalized with GI/Hepatic conditions during the first two waves of COVID 19 were more likely to report having GI symptoms.
+
+Primary exposure: Presence of chronic liver disease or chronic gastrointestinal conditions, including hepatitis B, hepatitis C, cirrhosis, liver transplants, or inflammatory bowel disease. 
+
+Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
+
+
+
+# Objective 2
+2.	Determine if patients hospitalized with GI symptoms during the first two waves of COVID 19 had similar in-hospital outcomes to those who did not report such symptoms.
+
+
+Primary exposure: COVID Symptoms, including abdominal pain, nausea or diarrhea.
+
+Primary outcome: in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death. 
+
+
+
+# Objective 3
+3.	Determine in-hospital complications, including mortality among those with GI/Hepatic comorbidities of Covid 19 hospitalizations in a large hospital in NYC 
+
+Primary exposure: Presence of chronic liver disease or chronic gastrointestinal conditions, including hepatitis B, hepatitis C, cirrhosis, liver transplants, or inflammatory bowel disease
+
+Primary outcome: in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death. 
+
+
+
+# Objective 4
+4.	Describe patient-reported outcomes (PROs) and clinical outcomes among patients with a subset of patients with GI/Hepatic conditions approximately one year after COVID admission (details are in the original proposal). 
+
+Objective 4: Original proposal.
+
+Primary exposure: Presence of chronic liver disease or chronic gastrointestinal conditions, including hepatitis B, hepatitis C, cirrhosis, liver transplants, or inflammatory bowel disease
+
+Primary outcome: Patient Reported Outcomes (PROs): Post Acute Covid Sequalae such as brain fog, cough, shortness of breath, neuropathy, headache, muscle aches, diarrhea, chest pain, abdominal pain, loss of smell taste, fatigue or other.
+Clinical outcomes: post hospitalization readmission or death.
+
+
+
+
