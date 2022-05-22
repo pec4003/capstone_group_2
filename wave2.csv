@@ -1,0 +1,483 @@
+active_cancer,admitfrom,ards,bmi,cad,cirrhosis,complications,cva,death,discharge,discharge_location,dm,hcw,hepatitis,hf,hiv,htn,hypoxia_ed,ibd,immunosuppressed,intubation1,med_count,pulm,renal,renal_replacement,rheum,sex,smoking,steroids_hospital,symptoms,transfer,vaping,vte,race_eth,ed_dt,intubation1_dt,death_dt,discharge_dt,transfer_out_dt,age_cat,id
+No,Home,No,,No,No,Myocardial Infarction | Acute Kidney Injury | Other,No,Yes,,,No,No,No,No,No,Yes,Yes,No,No,No,5,No,No,No,No,Female,Former Smoker,,"Cough | Other | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,No,4,01/07/2021,,01/07/2021,,,6,2002
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,6,Obstructive Sleep Apnea,No,No,No,Male,No,,"Sputum production | Myalgias | Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea | Dyspnea (shortness of breath)",No,No,No,4,10/27/2020,,,10/30/2020,,3,2003
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,No,No,No,No,No,8,No,No,No,No,Male,Former Smoker,,Nausea or vomiting | Other | Fever,No,No,No,2,12/30/2020,,,01/05/2021,,4,2007
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Female,No,,Headache | Cough | Fever | Dyspnea (shortness of breath),No,No,No,1,01/05/2021,,,01/09/2021,,4,2009
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,3,No,No,No,No,Female,Former Smoker,,Headache | Cough | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,No,4,12/28/2020,,,01/03/2021,,5,2010
+No,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Female,Former Smoker,,Fever | Dyspnea (shortness of breath),No,No,No,5,12/20/2020,,,01/21/2021,,5,2011
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,12/31/2020,,,01/24/2021,,4,2013
+No,Home,No,21.5,No,No,Acute Kidney Injury | Other,Yes,No,Yes,Acute Rehab,No,No,No,No,No,Yes,No,No,No,No,10,Obstructive Sleep Apnea,CKD (Creat &gt;2 at baseline),No,No,Male,No,,Fever | Diarrhea,No,No,No,4,12/02/2020,,,12/17/2020,,6,2014
+No,Home,No,,Yes,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Male,No,,Sputum production | Headache | Cough | Presyncope or Syncope,No,No,No,4,01/04/2021,,,01/11/2021,,5,2017
+No,Home,No,,Yes,No,New onset Arrythmia | Septic Shock,No,Yes,,,No,No,No,No,No,Yes,Yes,No,No,Yes,6,Asthma | COPD,No,No,No,Male,No,,Fever | Dyspnea (shortness of breath),No,No,No,4,12/11/2020,12/12/2020,12/14/2020,,,5,2018
+Solid,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,Yes,No,14,No,CKD (Creat &gt;2 at baseline),No,No,Male,No,,Diarrhea | Other | Presyncope or Syncope | Dyspnea (shortness of breath),No,No,No,5,11/26/2020,,,12/05/2020,,4,2021
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,4,12/28/2020,,,03/03/2021,,4,2022
+Liquid,Home,No,,No,No,Acute Kidney Injury | Septic Shock | Other,No,Yes,,,No,No,No,No,No,Yes,No,No,Yes,Yes,16,Asthma,ESRD,No,No,Female,Former Smoker,,Abdominal Pain | Diarrhea,No,No,No,2,10/31/2020,11/07/2020,11/07/2020,,,3,2023
+No,Home,No,,Yes,No,Myocardial Infarction,Yes,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,Yes,No,No,No,4,COPD,No,No,No,Male,Former Smoker,,Sputum production | Cough | Diarrhea | Dyspnea (shortness of breath),No,No,No,4,12/31/2020,,,01/25/2021,,5,2024
+No,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,4,Other,No,No,No,Male,Former Smoker,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,12/24/2020,,,01/04/2021,,5,2025
+No,Home,No,30.6,No,No,None,No,No,Transfer to outside hospital (without EMR access),,No,No,No,No,No,No,Yes,No,No,No,5,COPD,CKD (Creat &gt;2 at baseline),No,Rheumatoid Arthritis (RA),Female,Former Smoker,,Sputum production | Cough | Other | Dyspnea (shortness of breath),No,No,No,4,11/26/2020,,,,12/06/2020,5,2026
+Solid,Home,No,,Yes,No,None,Yes,No,Yes,Acute Rehab,No,No,No,No,No,Yes,No,No,Yes,No,4,No,No,No,No,Female,No,,Abdominal Pain | Nausea or vomiting | Fever | Diarrhea,No,No,No,4,12/06/2020,,,01/22/2021,,5,2027
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,18,Asthma | COPD,ESRD,No,No,Female,Former Smoker,,Cough | Dyspnea (shortness of breath),No,No,No,5,12/24/2020,,,01/07/2021,,5,2028
+No,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Female,No,,Sputum production | Diarrhea | Ageusia (loss of taste) | Cough | Anosmia (loss of smell) | Fever | Dyspnea (shortness of breath),No,No,No,4,01/03/2021,,,01/23/2021,,4,2029
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,No,No,No,No,Female,No,,Other | Fever,No,No,No,1,11/22/2020,,,11/29/2020,,1,2030
+No,Home,No,32.1,No,No,Other,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,2,No,No,No,No,Female,No,,Other | Fever | Diarrhea | Sore throat | Dyspnea (shortness of breath),No,No,No,4,11/29/2020,,,12/30/2020,,5,2031
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,7,Asthma | COPD,No,No,No,Female,Former Smoker,,Nausea or vomiting | Cough | Diarrhea | Dyspnea (shortness of breath),No,No,No,4,12/06/2020,,,12/08/2020,,6,2032
+Liquid,Home,No,,No,No,None,No,No,Yes,Acute Rehab,No,No,No,No,No,No,Yes,No,No,No,3,No,No,No,No,Male,No,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,5,12/16/2020,,,12/30/2020,,5,2033
+No,Home,No,18.7,Yes,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,2,No,No,No,Rheumatoid Arthritis (RA),Male,Active Smoker,,Cough | Dyspnea (shortness of breath),No,No,No,5,11/22/2020,,,11/23/2020,,4,2034
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,1,No,No,No,No,Male,No,,Headache | Cough | Other,No,No,No,4,12/02/2020,,,12/12/2020,,5,2035
+Liquid,Home,No,,No,No,None | Other,Yes,Yes,,,Yes,No,No,No,No,Yes,No,No,No,No,10,No,No,No,No,Female,Former Smoker,,Diarrhea | Presyncope or Syncope,No,No,No,4,12/14/2020,,12/31/2020,,,5,2036
+No,Home,No,,Yes,No,None,Yes,Yes,,,No,No,No,No,No,Yes,No,No,No,Yes,7,No,No,No,No,Female,No,,Presyncope or Syncope,No,No,No,5,01/03/2021,01/04/2021,01/14/2021,,,5,2037
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,8,No,No,No,No,Female,Active Smoker,,"Fever | Altered Mental Status (includes ""confusion"") | Presyncope or Syncope",No,No,No,4,01/04/2021,,,01/07/2021,,5,2038
+,,,,,,,,Yes,,,,,,,,,,,,,,,,,,Male,,,,,,,4,01/03/2021,,01/29/2021,,,6,2040
+No,Home,No,23.4,No,No,New onset Arrythmia,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,5,Asthma,No,No,No,Female,No,,"Cough | Other | Chest Pain (includes ""tightness"" and ""pressure"") | Presyncope or Syncope",No,No,No,1,11/22/2020,,,11/28/2020,,5,2041
+No,Home,Yes,29.0,Yes,No,Acute Kidney Injury | Heart failure exacerbation  or cardiogenic shock,No,Yes,,,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,Yes,No,No,Yes,14,No,No,Yes,No,Male,Former Smoker,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,5,12/07/2020,12/07/2020,12/24/2020,,,5,2043
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,10/27/2020,,,10/31/2020,,3,2044
+Liquid,Home,,22.4,No,No,,No,No,Yes,,No,No,No,No,No,Yes,,No,Yes,,,No,No,,No,Female,No,,Fever,,,,4,12/05/2020,,,01/29/2021,,5,2045
+Solid,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,Yes,No,5,No,No,No,No,Female,Former Smoker,,Headache | Myalgias | Cough | Other | Fever | Dyspnea (shortness of breath),No,No,No,2,12/29/2020,,,01/02/2021,,5,2046
+Liquid,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,Yes,No,8,COPD,No,No,No,Male,Former Smoker,,Fever,No,No,No,5,12/20/2020,,,12/28/2020,,4,2047
+No,Home,Yes,,No,No,Ventilator-associated Pneumonia,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,Yes,0,Asthma,No,No,No,Male,No,,Dyspnea (shortness of breath),No,No,No,4,01/01/2021,01/02/2021,,03/03/2021,,4,2050
+No,Home,No,,No,No,Other,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,9,No,No,No,No,Male,No,,Abdominal Pain | Cough | Fever | Diarrhea | Sore throat,No,No,No,4,11/01/2020,,,11/14/2020,,4,2051
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,01/01/2021,,,01/02/2021,,3,2053
+No,Home,No,,Yes,No,None,Yes,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,12,Asthma,No,No,No,Female,No,,Headache | Myalgias | Cough | Anosmia (loss of smell) | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,No,1,12/15/2020,,,12/22/2020,,5,2055
+No,Home,No,,Yes,No,New onset Arrythmia,No,No,Yes,Home,No,Yes,No,No,No,No,No,No,No,No,2,No,No,No,No,Female,No,,Headache | Ageusia (loss of taste) | Cough | Anosmia (loss of smell) | Rhinorrhea or nasal congestion,No,No,No,4,12/16/2020,,,12/27/2020,,4,2056
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,Hepatitis C,No,No,Yes,No,No,No,No,25,COPD,No,No,No,Male,Former Smoker,,Dyspnea (shortness of breath),No,No,No,4,12/18/2020,,,12/22/2020,,4,2064
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,0,No,No,No,No,Male,No,,Cough | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,No,4,11/14/2020,,,11/15/2020,,4,2068
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,5,No,No,No,No,Female,No,,Cough | Other | Fever | Dyspnea (shortness of breath),No,No,No,4,11/09/2020,,,11/12/2020,,1,2069
+No,Home,No,,No,No,Acute Kidney Injury | Other,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,4,No,No,No,No,Male,No,,"Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea | Dyspnea (shortness of breath)",No,No,No,5,12/02/2020,,,12/13/2020,,4,2070
+No,Home,No,,No,No,None,Yes,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,7,No,ESRD,No,Other,Female,No,,Sputum production | Abdominal Pain | Cough,No,No,No,4,12/30/2020,,,01/12/2021,,4,2071
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,12/28/2020,,,12/28/2020,,5,2072
+No,Home,Yes,,Yes,No,Acute Kidney Injury,No,Yes,,,Yes,No,No,No,No,Yes,Yes,No,No,Yes,11,No,No,Yes,No,Male,Former Smoker,,Cough | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,Arterial thrombosis (including stroke),4,01/05/2021,01/07/2021,02/12/2021,,,4,2074
+No,Home,No,,No,No,None,Yes,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,6,No,No,No,No,Male,Former Smoker,,Myalgias | Cough | Diarrhea,No,No,No,2,12/28/2020,,,01/05/2021,,4,2075
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,4,No,No,No,No,Male,Former Smoker,,Other | Sore throat,No,No,No,4,01/04/2021,,,01/14/2021,,2,2076
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,8,Obstructive Sleep Apnea,ESRD,No,No,Male,No,,Ageusia (loss of taste) | Cough | Dyspnea (shortness of breath),No,No,No,5,01/04/2021,,,01/08/2021,,4,2077
+Liquid,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,12,No,ESRD,No,No,Male,Former Smoker,,Presyncope or Syncope | Dyspnea (shortness of breath),No,No,No,4,12/03/2020,,,12/17/2020,,4,2079
+No,Home,No,,No,No,Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,Yes,No,No,No,9,Asthma,CKD (Creat &gt;2 at baseline),No,No,Male,No,,Sputum production | Cough | Dyspnea (shortness of breath),No,No,No,2,12/30/2020,,,01/05/2021,,4,2081
+Solid,Home,Yes,,No,No,Acute Kidney Injury | Septic Shock | Other,No,No,Yes,Acute Rehab,No,No,No,No,No,No,Yes,No,No,Yes,2,No,No,No,No,Male,No,,Cough | Fever | Dyspnea (shortness of breath),No,No,DVT,4,12/20/2020,12/30/2020,,02/09/2021,,5,2086
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,Headache | Other | Anosmia (loss of smell) | Rhinorrhea or nasal congestion,No,No,No,1,12/10/2020,,,12/12/2020,,3,2087
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,1,No,No,No,No,Female,No,,Diarrhea | Cough | Fever,No,No,No,5,01/03/2021,,,01/10/2021,,5,2088
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,5,Asthma,No,No,No,Female,No,,Dyspnea (shortness of breath),No,No,No,3,11/29/2020,,,12/02/2020,,5,2091
+No,Home,No,25.2,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,Asthma,No,No,No,Male,No,,Headache | Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,11/28/2020,,,12/01/2020,,3,2092
+Solid,Home,No,,No,No,Myocardial Infarction | New onset Arrythmia,No,Yes,,,No,No,No,No,No,Yes,Yes,No,No,No,14,Other,ESRD,Yes,No,Male,No,,Cough | Dyspnea (shortness of breath),No,No,No,4,12/30/2020,,01/15/2021,,,6,2093
+No,Home,No,,No,No,Acute Kidney Injury | Other,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,7,Asthma,No,No,No,Female,No,,Abdominal Pain | Cough | Dyspnea (shortness of breath),No,No,No,4,10/28/2020,,,11/03/2020,,5,2095
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,12/30/2020,,,01/23/2021,,4,2096
+No,Home,No,32.6,Yes,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,6,No,CKD (Creat &gt;2 at baseline),No,No,Male,No,,Cough | Presyncope or Syncope | Rhinorrhea or nasal congestion,No,No,No,4,11/24/2020,,,11/24/2020,,5,2098
+No,Home,No,36.3,No,No,None,No,No,Yes,Home,No,No,No,HFpEF,No,Yes,No,No,No,No,7,Other,No,No,No,Female,No,,Other,No,No,No,4,11/03/2020,,,11/10/2020,,6,2100
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,12/18/2020,,,02/05/2021,,5,2101
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,4,Asthma,No,No,No,Female,No,,"Diarrhea | Cough | Anosmia (loss of smell) | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,1,01/02/2021,,,01/14/2021,,4,2102
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,3,No,No,No,No,Male,Former Smoker,,"Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,4,12/19/2020,,,12/20/2020,,3,2103
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,01/03/2021,,,01/10/2021,,5,2105
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,HFpEF,No,Yes,,No,No,,,No,No,No,No,Female,No,,,No,No,No,4,12/03/2020,,,12/21/2020,,6,2107
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,"Cough | Fever | Altered Mental Status (includes ""confusion"")",No,No,No,5,11/15/2020,,,11/26/2020,,4,2109
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,Yes,No,No,10,Asthma,No,No,No,Female,No,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,5,11/09/2020,,,11/11/2020,,5,2110
+No,Home,No,,No,No,None,Yes,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,7,No,No,No,Lupus (SLE),Female,Active Smoker,,"Myalgias | Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Sore throat | Dyspnea (shortness of breath)",No,No,No,5,12/27/2020,,,12/28/2020,,2,2111
+No,Home,No,,Yes,No,Acute Kidney Injury | New onset Arrythmia,No,Yes,,,No,No,No,No,No,Yes,No,No,No,No,4,No,No,No,No,Male,Former Smoker,,Cough | Dyspnea (shortness of breath),No,No,No,4,12/25/2020,,01/13/2021,,,5,2113
+No,Home,No,,Yes,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,HFpEF,No,Yes,No,Yes,No,No,8,Obstructive Sleep Apnea,CKD (Creat &gt;2 at baseline),No,No,Female,No,,Diarrhea | Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,01/02/2021,,,01/05/2021,,5,2115
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,5,No,CKD (Creat &gt;2 at baseline),No,No,Male,Former Smoker,,Myalgias | Dyspnea (shortness of breath) | Other | Diarrhea,No,No,No,4,11/10/2020,,,11/12/2020,,6,2116
+No,Home,No,,No,No,None,No,No,Yes,Home,No,Yes,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,Myalgias | Cough | Sore throat,No,No,No,1,12/20/2020,,,12/21/2020,,3,2117
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,7,No,No,No,Rheumatoid Arthritis (RA),Male,Former Smoker,,Sputum production | Cough | Fever,No,No,No,5,01/04/2021,,,01/11/2021,,5,2118
+Solid,Home,No,,No,No,New onset Arrythmia | Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,Yes,No,No,No,No,No,Yes,No,Yes,No,8,No,No,No,No,Male,No,,Fever | Dyspnea (shortness of breath),No,No,Pulmonary Embolism,5,12/13/2020,,,12/20/2020,,6,2119
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,1,No,No,No,No,Female,No,,Headache | Myalgias | Nausea or vomiting | Cough | Anosmia (loss of smell) | Fever,No,No,No,4,01/01/2021,,,01/02/2021,,3,2120
+No,Home,No,,No,No,Other,No,No,Yes,Subacute Rehab,No,No,No,No,No,No,No,No,No,No,4,No,No,No,No,Female,No,,Other,No,No,No,3,12/25/2020,,,01/14/2021,,5,2121
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,10/31/2020,,,11/05/2020,,3,2123
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Female,No,,Nausea or vomiting | Other | Fever,No,No,No,4,01/03/2021,,,01/11/2021,,6,2126
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,Yes,Yes,No,No,No,No,7,Other,No,No,Other,Male,No,,"Headache | Myalgias | Fever | Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,5,11/15/2020,,,11/14/2020,,3,2127
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,2,No,No,No,No,Male,No,,Abdominal Pain | Nausea or vomiting | Presyncope or Syncope,No,No,No,4,12/30/2020,,,01/04/2021,,5,2128
+No,Home,Yes,,No,No,Ventilator-associated Pneumonia,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,Yes,15,No,No,No,No,Female,Former Smoker,,"Nausea or vomiting | Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea | Dyspnea (shortness of breath)",No,No,No,4,12/28/2020,01/18/2021,,03/08/2021,,5,2132
+,,,,,,,,Yes,,,,,,,,,,,,,,,,,,Male,,,,,,,,12/31/2020,,03/03/2021,,,2,2135
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,7,Asthma,No,No,No,Female,No,,Other | Fever,No,No,No,2,10/29/2020,,,10/31/2020,,3,2136
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,2,No,No,No,No,Male,No,,Diarrhea | Myalgias | Cough | Fever | Dyspnea (shortness of breath),No,No,No,3,01/04/2021,,,01/16/2021,,4,2137
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,4,No,No,No,No,Female,No,,Headache | Cough | Fever,No,No,No,2,12/29/2020,,,01/06/2021,,5,2139
+No,Home,No,,No,No,None,No,No,Yes,Home,No,Yes,No,No,No,No,Yes,No,No,No,5,No,No,No,Other,Female,Former Smoker,,Diarrhea | Nausea or vomiting | Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,01/04/2021,,,01/06/2021,,5,2141
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,4,No,No,No,No,Female,No,,Diarrhea | Nausea or vomiting | Cough,No,No,No,2,11/27/2020,,,12/07/2020,,5,2142
+Liquid,Home,No,,No,No,New onset Arrythmia | DIC | Other,No,Yes,,,No,No,No,No,No,Yes,No,No,Yes,No,8,No,No,No,No,Male,No,,Other | Fever,No,No,No,4,11/15/2020,,12/31/2020,,,4,2143
+No,Home,Yes,,Yes,No,Acute Kidney Injury | Ventilator-associated Pneumonia,No,Yes,,,No,No,No,No,No,No,Yes,No,No,Yes,6,No,CKD (Creat &gt;2 at baseline),No,No,Male,Former Smoker,,Headache | Myalgias | Cough | Fever | Diarrhea,No,No,No,3,11/12/2020,11/22/2020,11/27/2020,,,5,2144
+No,Home,No,34.72,Yes,No,None,Yes,No,Yes,Home,No,No,No,HFpEF,No,Yes,No,No,No,No,16,COPD,CKD (Creat &gt;2 at baseline),No,Rheumatoid Arthritis (RA),Male,Former Smoker,,Other,No,No,No,4,10/28/2020,,,11/12/2020,,5,2145
+No,Home,No,,Yes,No,Myocardial Infarction | Acute Kidney Injury,No,No,Yes,Skilled Nursing Facility,No,No,No,HFpEF,No,No,Yes,No,No,No,7,Other,CKD (Creat &gt;2 at baseline),No,No,Male,Former Smoker,,"Cough | Fever | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,No,4,12/31/2020,,,01/29/2021,,6,2146
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,Asthma,No,No,No,Female,No,,Myalgias | Cough | Fever | Dyspnea (shortness of breath),No,No,No,3,11/05/2020,,,11/03/2020,,3,2147
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,Yes,No,No,5,Asthma,CKD (Creat &gt;2 at baseline),No,No,Female,No,,Abdominal Pain | Cough | Diarrhea,No,No,No,1,12/19/2020,,,12/20/2020,,5,2156
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,Yes,No,No,No,No,Yes,No,No,No,3,No,No,No,No,Female,No,,"Headache | Myalgias | Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea | Dyspnea (shortness of breath)",No,No,No,4,12/30/2020,,,01/07/2021,,3,2158
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,Former Smoker,,"Other | Altered Mental Status (includes ""confusion"")",No,No,No,4,01/03/2021,,,01/06/2021,,5,2160
+No,Home,No,,No,No,Acute Kidney Injury | Heart failure exacerbation  or cardiogenic shock | Septic Shock,No,Yes,,,No,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,9,No,No,No,No,Female,No,,"Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,No,1,12/20/2020,,12/29/2020,,,6,2161
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,Asthma,No,No,No,Female,Former Smoker,,Headache | Myalgias | Cough | Fever | Dyspnea (shortness of breath),No,No,No,3,12/16/2020,,,12/21/2020,,3,2162
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,5,10/28/2020,,,10/30/2020,,4,2164
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,1,No,No,No,No,Female,No,,Nausea or vomiting,No,No,No,2,12/30/2020,,,01/01/2021,,2,2165
+No,Home,No,,No,No,None,No,No,Yes,Acute Rehab,Yes,No,No,No,No,No,No,No,No,No,5,No,CKD (Creat &gt;2 at baseline),No,No,Male,No,,Other,No,No,No,5,12/28/2020,,,01/04/2021,,5,2166
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,2,No,No,No,No,Female,No,,"Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,5,12/26/2020,,,01/07/2021,,5,2168
+No,Home,No,28.2,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,2,No,No,No,No,Female,No,,"Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea | Dyspnea (shortness of breath)",No,No,No,5,12/06/2020,,,12/14/2020,,5,2170
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,13,Asthma,No,No,No,Male,No,,Nausea or vomiting | Presyncope or Syncope,No,No,No,1,12/20/2020,,,12/21/2020,,5,2171
+No,Home,No,22.7,No,No,Other,No,No,Yes,Acute Rehab,Yes,No,No,No,No,Yes,Yes,No,No,No,10,Asthma | Other,No,No,No,Female,No,,Fever | Dyspnea (shortness of breath),No,No,No,3,11/10/2020,,,11/24/2020,,3,2173
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Male,No,,Cough | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,No,4,12/04/2020,,,12/06/2020,,4,2174
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,16,No,No,No,No,Female,No,,"Abdominal Pain | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,5,12/31/2020,,,01/02/2021,,2,2175
+No,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,Yes,No,10,COPD,ESRD,No,No,Male,Former Smoker,,Cough | Fever | Rhinorrhea or nasal congestion | Dyspnea (shortness of breath),No,No,No,4,12/18/2020,,,01/07/2021,,5,2179
+Liquid,Home,No,,No,No,None,No,No,Yes,Home,No,No,Hepatitis C | Hepatitis B,No,No,No,Yes,No,Yes,No,6,No,No,No,No,Male,No,,Myalgias | Cough | Fever | Diarrhea,No,No,No,4,11/11/2020,,,11/15/2020,,4,2181
+,,,,,,,,Yes,,,,,,,,,,,,,,,,,,Male,,,,,,,,01/04/2021,,02/11/2021,,,4,2183
+No,Home,No,,Yes,No,Other,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,12,No,ESRD,No,No,Male,Former Smoker,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,11/04/2020,,,11/18/2020,,3,2184
+No,Other Hospital,Yes,,No,No,None,No,No,Yes,Acute Rehab,Yes,No,No,No,No,Yes,Yes,No,No,No,6,No,No,No,No,Male,No,,Other,"Yes, to NYP Cornell",No,No,5,12/08/2020,,,02/03/2021,,5,2185
+No,Home,No,,No,No,Septic Shock,No,No,Yes,Subacute Rehab,No,No,No,No,No,No,No,No,No,No,6,No,No,No,No,Female,No,,"Cough | Fever | Altered Mental Status (includes ""confusion"")",No,No,No,4,07/02/2020,,,07/15/2020,,6,2186
+Liquid,Home,No,20.6,No,No,Acute Kidney Injury | Other,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,Yes,No,8,No,No,No,No,Female,No,,Other | Diarrhea,No,No,No,2,07/06/2020,,,09/10/2020,,5,2187
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,Headache | Nausea or vomiting,No,No,No,5,12/31/2020,,,01/07/2021,,2,2188
+No,Home,Yes,,No,No,Acute Kidney Injury | Other,No,Yes,,,Yes,No,No,No,No,Yes,No,No,No,Yes,8,No,No,No,No,Male,No,,Abdominal Pain | Cough | Fever,No,No,No,3,12/31/2020,01/28/2021,02/04/2021,,,6,2193
+No,Home,No,,No,No,Myocardial Infarction | Acute Kidney Injury,Yes,Yes,,,No,No,No,No,No,Yes,Yes,No,No,No,1,No,No,No,No,Male,No,,Cough | Dyspnea (shortness of breath),No,No,No,3,01/01/2021,,01/07/2021,,,5,2194
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,Cough | Diarrhea | Presyncope or Syncope,No,No,No,5,12/30/2020,,,01/26/2021,,5,2195
+No,Home,No,,No,No,New onset Arrythmia,No,Yes,,,Yes,No,No,No,No,Yes,Yes,No,No,No,0,No,CKD (Creat &gt;2 at baseline),No,No,Female,No,,"Nausea or vomiting | Altered Mental Status (includes ""confusion"")",No,No,No,3,01/04/2021,,01/08/2021,,,6,2196
+No,Home,No,28.6,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,6,No,No,No,No,Female,Former Smoker,,Headache | Presyncope or Syncope,No,No,No,3,11/08/2020,,,11/11/2020,,3,2197
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,6,No,No,No,No,Female,No,,Myalgias | Nausea or vomiting | Cough | Fever | Dyspnea (shortness of breath),No,No,No,3,12/05/2020,,,12/09/2020,,4,2198
+No,Home,Yes,,No,No,New onset Arrythmia,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,9,No,No,No,No,Female,No,,Headache | Myalgias | Fever | Dyspnea (shortness of breath),No,No,No,1,12/12/2020,,,12/30/2020,,5,2199
+No,Home,No,,Yes,No,Acute Kidney Injury,No,No,Yes,Skilled Nursing Facility,Yes,No,No,No,No,Yes,Yes,No,No,No,7,No,No,No,No,Female,Former Smoker,,"Diarrhea | Myalgias | Cough | Chest Pain (includes ""tightness"" and ""pressure"")",No,No,DVT,4,12/14/2020,,,01/12/2021,,5,2200
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,1,No,No,No,No,Female,No,,Myalgias | Cough | Other | Fever | Dyspnea (shortness of breath),No,No,No,4,10/29/2020,,,11/12/2020,,3,2201
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,8,No,No,No,No,Male,No,,Abdominal Pain | Nausea or vomiting,No,No,No,1,11/06/2020,,,11/11/2020,,5,2202
+No,Home,Yes,,No,No,Ventilator-associated Pneumonia,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,Yes,7,No,No,Yes,Rheumatoid Arthritis (RA),Female,No,,Headache | Diarrhea | Myalgias | Nausea or vomiting | Cough | Fever,"Yes, to NYP Cornell",No,No,3,01/05/2021,01/13/2021,,02/07/2021,,4,2204
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,Abdominal Pain | Nausea or vomiting,No,No,No,3,12/08/2020,,,12/10/2020,,2,2206
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,"Headache | Cough | Other | Anosmia (loss of smell) | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea | Dyspnea (shortness of breath)",No,No,No,1,12/28/2020,,,12/29/2020,,3,2207
+No,Home,No,,Yes,No,None,Yes,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,7,Other,No,No,No,Female,No,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,5,12/15/2020,,,12/21/2020,,4,2209
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,9,No,ESRD,Yes,No,Female,No,,"Nausea or vomiting | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,No,4,12/08/2020,,,12/15/2020,,4,2210
+No,Home,No,,No,No,Other,Yes,No,Yes,Other,Yes,No,No,No,No,Yes,No,No,No,No,11,No,No,No,No,Female,Active Smoker,,Abdominal Pain,No,No,No,2,01/02/2021,,,01/04/2021,,4,2212
+No,Home,No,,No,No,None,Yes,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,8,No,No,No,No,Male,No,,Cough | Dyspnea (shortness of breath) | Rhinorrhea or nasal congestion,No,No,No,5,12/14/2020,,,12/31/2020,,4,2216
+No,,,,No,No,,No,Yes,,,Yes,,No,No,No,No,,No,No,,,No,No,,No,Male,,,Other,,,,2,12/15/2020,,12/25/2020,,,3,2219
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,3,Other,No,No,No,Female,Former Smoker,,Abdominal Pain | Myalgias | Nausea or vomiting | Cough | Dyspnea (shortness of breath),No,No,No,5,01/04/2021,,,01/08/2021,,5,2220
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,12/23/2020,,,01/06/2021,,5,2222
+No,Home,No,31.2,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,3,No,No,No,No,Female,No,,Ageusia (loss of taste) | Myalgias | Cough | Anosmia (loss of smell) | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,No,5,12/05/2020,,,12/09/2020,,4,2224
+No,Home,No,,Yes,No,None,Yes,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Female,Former Smoker,,Headache | Cough | Diarrhea | Sore throat | Dyspnea (shortness of breath),No,No,No,4,01/02/2021,,,01/04/2021,,5,2226
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,12/30/2020,,,01/04/2021,,5,2227
+Solid,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,9,Other,No,No,No,Female,No,,"Diarrhea | Cough | Other | Fever | Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,3,01/05/2021,,,01/12/2021,,5,2231
+No,Home,No,29.7,No,No,Acute Kidney Injury,Yes,No,Yes,Home,Yes,No,No,HFpEF,No,Yes,No,No,No,No,18,Obstructive Sleep Apnea,No,No,No,Male,No,,"Other | Diarrhea | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,No,5,12/29/2020,,,01/03/2021,,4,2237
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,6,Asthma | Other,No,No,Other,Female,Former Smoker,,Sputum production | Abdominal Pain | Cough | Sore throat,No,No,No,4,12/30/2020,,,01/07/2021,,4,2238
+No,Home,No,21.6,No,No,Acute Kidney Injury | Heart failure exacerbation  or cardiogenic shock,No,Yes,,,No,No,No,No,No,No,Yes,No,No,Yes,4,Interstitial Lung Disease,No,No,Other | Lupus (SLE),Female,No,,Sputum production | Nausea or vomiting | Cough | Anosmia (loss of smell) | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,No,5,11/30/2020,12/14/2020,12/15/2020,,,4,2239
+No,Home,No,,Yes,No,Acute Kidney Injury | Other,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,16,No,CKD (Creat &gt;2 at baseline),No,No,Male,Former Smoker,,Headache | Cough | Fever,No,No,No,4,12/07/2020,,,12/11/2020,,5,2240
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Male,No,,Diarrhea | Ageusia (loss of taste) | Myalgias | Cough | Fever | Dyspnea (shortness of breath),No,No,No,1,01/02/2021,,,01/07/2021,,3,2241
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,12/11/2020,,,02/27/2021,,3,2244
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,1,12/26/2020,,,12/27/2020,,1,2247
+,,,,,,,,Yes,,,,,,,,,,,,,,,,,,Male,,,,,,,4,11/10/2020,,02/12/2021,,,5,2249
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,"Nausea or vomiting | Cough | Dyspnea (shortness of breath) | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea",No,No,Pulmonary Embolism,5,12/15/2020,,,12/17/2020,,3,2250
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,9,No,No,No,No,Female,No,,Abdominal Pain | Nausea or vomiting | Dyspnea (shortness of breath),No,No,No,4,12/26/2020,,,12/28/2020,,4,2253
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,3,No,No,No,No,Male,Active Smoker,,Nausea or vomiting | Other | Fever | Diarrhea,No,No,No,4,12/25/2020,,,12/26/2020,,3,2254
+Liquid,Home,No,,No,No,Myocardial Infarction | Acute Kidney Injury | New onset Arrythmia | Other,No,Yes,,,No,No,No,No,No,No,Yes,Yes,Yes,Yes,5,No,CKD (Creat &gt;2 at baseline),Yes,No,Female,Former Smoker,,Abdominal Pain | Nausea or vomiting | Cough | Dyspnea (shortness of breath) | Diarrhea | Sore throat,No,No,No,2,12/16/2020,12/28/2020,12/30/2020,,,5,2255
+No,Home,No,,Yes,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,3,No,No,No,No,Male,No,,Abdominal Pain,No,No,No,1,01/01/2021,,,01/19/2021,,5,2258
+No,Rehab/Nursing Home,No,23.1,Yes,No,None,No,Yes,,,No,No,No,HFpEF,No,No,No,No,No,No,9,No,CKD (Creat &gt;2 at baseline),No,No,Male,Former Smoker,,Other,No,No,No,5,07/27/2020,,08/02/2020,,,5,2260
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,Asthma,No,No,No,Female,No,,"Headache | Ageusia (loss of taste) | Myalgias | Cough | Dyspnea (shortness of breath) | Other | Anosmia (loss of smell) | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Sore throat",No,No,No,1,11/11/2020,,,11/18/2020,,4,2262
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,No,No,No,No,Female,No,,Headache | Nausea or vomiting | Other,No,No,No,5,12/24/2020,,,12/28/2020,,5,2263
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,Former Smoker,,Headache | Abdominal Pain | Nausea or vomiting | Fever | Diarrhea,No,No,No,3,12/22/2020,,,12/24/2020,,3,2265
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,Headache | Myalgias | Cough | Fever,No,No,No,3,12/31/2020,,,01/05/2021,,3,2275
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,12/28/2020,,,12/30/2020,,2,2276
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,7,No,No,No,No,Male,No,,Fever | Dyspnea (shortness of breath),No,No,No,2,11/05/2020,,,11/18/2020,,3,2277
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,13,Asthma,No,No,No,Male,No,,"Headache | Myalgias | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,5,12/17/2020,,,12/23/2020,,4,2278
+No,Home,No,,Yes,No,Other,No,No,Yes,Subacute Rehab,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,Yes,No,No,No,15,No,ESRD,Yes,No,Female,No,,Nausea or vomiting | Other | Dyspnea (shortness of breath),No,No,No,4,12/06/2020,,,12/29/2020,,4,2282
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,5,Asthma,No,No,No,Female,No,,Headache | Myalgias | Cough | Fever | Sore throat | Dyspnea (shortness of breath),No,No,No,3,01/02/2021,,,01/08/2021,,4,2283
+No,Home,No,,No,No,None,No,No,Yes,Skilled Nursing Facility,Yes,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Female,No,,Presyncope or Syncope,No,No,No,3,11/27/2020,,,12/10/2020,,5,2285
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,01/05/2021,,,01/08/2021,,2,2287
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,8,No,No,No,No,Female,No,,Other | Dyspnea (shortness of breath),No,No,No,5,12/27/2020,,,12/30/2020,,5,2288
+No,,,,No,No,,No,No,Yes,,No,,No,No,No,No,,No,No,,,Asthma,No,,No,Male,,,,,,,2,01/01/2021,,,01/07/2021,,2,2289
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,14,Asthma,No,No,No,Female,No,,Nausea or vomiting | Cough | Other,No,No,No,4,12/13/2020,,,12/21/2020,,2,2292
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,01/01/2021,,,01/02/2021,,1,2296
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,3,12/16/2020,,,12/18/2020,,3,2303
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,1,No,No,No,No,Female,No,,Diarrhea | Abdominal Pain | Nausea or vomiting | Cough | Fever | Sore throat | Dyspnea (shortness of breath),No,No,No,2,01/05/2021,,,01/11/2021,,1,2308
+No,Home,No,29.45,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,7,No,No,No,No,Female,No,,Headache | Myalgias | Cough | Fever | Dyspnea (shortness of breath),No,No,No,5,10/27/2020,,,11/07/2020,,4,2310
+Solid,Home,No,,No,No,None,No,No,Yes,Acute Rehab,No,No,No,No,No,Yes,Yes,Yes,No,No,11,No,No,No,No,Male,No,,Fever | Diarrhea,No,No,No,4,07/07/2020,,,08/26/2020,,6,2311
+No,Rehab/Nursing Home,No,16.1,Yes,No,Acute Kidney Injury | Septic Shock,No,No,Yes,Subacute Rehab,Yes,No,No,No,No,Yes,No,No,No,No,10,No,No,No,No,Female,No,,Fever,No,No,No,1,09/04/2020,,,09/17/2020,,6,2312
+No,Home,Yes,,No,No,Other,No,No,Yes,Acute Rehab,Yes,No,No,No,No,Yes,Yes,No,No,Yes,10,No,No,No,No,Male,No,,Cough | Sore throat,No,No,No,1,10/30/2020,10/30/2020,,11/28/2020,,4,2313
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,1,No,No,No,No,Female,No,,Headache | Myalgias | Cough | Dyspnea (shortness of breath) | Other | Fever,No,No,No,1,11/05/2020,,,11/18/2020,,1,2315
+No,Home,No,,Yes,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,Unspecified HF,No,Yes,Yes,No,No,No,8,No,No,No,No,Male,No,,Other | Diarrhea | Dyspnea (shortness of breath),No,No,No,5,11/01/2020,,,11/06/2020,,5,2316
+No,Home,No,31.9,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,"Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,1,11/02/2020,,,11/12/2020,,3,2318
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,4,12/02/2020,,,12/07/2020,,3,2319
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Male,No,,Dyspnea (shortness of breath) | Fever,No,No,No,1,11/05/2020,,,11/10/2020,,3,2320
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Female,No,,Myalgias | Other,No,No,No,4,11/07/2020,,,11/12/2020,,4,2321
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,1,No,No,No,No,Male,Former Smoker,,"Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,4,11/07/2020,,,11/10/2020,,3,2325
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,4,11/11/2020,,,11/13/2020,,3,2327
+No,Home,Yes,,No,No,Myocardial Infarction | Acute Kidney Injury | Heart failure exacerbation  or cardiogenic shock | Septic Shock | Ventilator-associated Pneumonia | Other,No,Yes,,,No,No,No,No,No,No,Yes,No,No,Yes,0,No,No,No,No,Male,No,,Abdominal Pain | Cough | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,No,5,11/13/2020,11/19/2020,01/01/2021,,,4,2330
+No,Home,No,,Yes,No,Other,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,12,Asthma,CKD (Creat &gt;2 at baseline),No,No,Male,No,,"Altered Mental Status (includes ""confusion"")",No,No,No,5,11/14/2020,,,11/16/2020,,5,2332
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Female,No,,Cough | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,No,4,11/21/2020,,,11/25/2020,,3,2335
+No,Other,No,,No,No,Other,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,1,No,No,No,No,Male,No,,Diarrhea | Nausea or vomiting | Cough,No,No,No,4,11/21/2020,,,12/03/2020,,3,2336
+No,Home,No,,No,No,Other,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,Abdominal Pain | Nausea or vomiting | Fever,No,No,No,3,12/02/2020,,,12/20/2020,,4,2338
+No,Home,No,33.7,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Female,No,,Sputum production | Cough | Anosmia (loss of smell) | Fever | Diarrhea | Dyspnea (shortness of breath),No,No,No,4,12/05/2020,,,12/31/2020,,3,2341
+No,Home,No,,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,No,No,No,No,0,No,No,No,No,Male,No,,Other,No,No,No,4,12/07/2020,,,01/11/2021,,5,2343
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Male,No,,Myalgias | Other | Fever | Dyspnea (shortness of breath),No,No,No,1,12/10/2020,,,12/19/2020,,3,2346
+No,Home,Yes,,No,No,Acute Kidney Injury | Septic Shock,No,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,Yes,No,No,Yes,11,Asthma,No,No,No,Female,Former Smoker,,"Myalgias | Fever | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,Arterial thrombosis (including stroke),3,12/13/2020,12/14/2020,,01/07/2021,,6,2351
+No,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,2,No,No,No,Other,Male,No,,Cough | Fever | Presyncope or Syncope,No,No,No,5,12/14/2020,,,12/24/2020,,5,2352
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,Yes,No,0,Other,No,No,No,Male,No,,Abdominal Pain | Nausea or vomiting | Diarrhea,No,No,No,4,12/17/2020,,,12/17/2020,,5,2354
+No,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,1,No,No,No,No,Male,No,,Cough | Dyspnea (shortness of breath),No,No,No,3,12/18/2020,,,12/21/2020,,5,2355
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,1,12/20/2020,,,12/21/2020,,2,2359
+Solid,Home,No,28.09,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,8,No,No,No,No,Male,Former Smoker,,Myalgias,No,No,DVT,4,12/29/2020,,,12/31/2020,,5,2360
+No,Home,No,,No,No,None,No,No,Transfer to outside hospital (without EMR access),,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,Ageusia (loss of taste) | Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,12/25/2020,,,,12/27/2020,3,2361
+No,Home,Yes,,No,No,Other,No,No,Yes,Acute Rehab,No,No,No,No,No,No,No,No,No,Yes,0,No,No,No,No,Male,No,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,3,12/25/2020,01/04/2021,,02/08/2021,,3,2362
+No,Home,Yes,,No,No,Septic Shock | Other,No,Yes,,,No,No,No,No,No,No,Yes,No,No,Yes,0,No,No,No,No,Male,No,,Dyspnea (shortness of breath),"Yes, to NYP Cornell",No,No,3,12/23/2020,12/24/2020,01/17/2021,,,3,2363
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,1,No,No,No,No,Female,No,,Abdominal Pain | Myalgias | Cough | Presyncope or Syncope | Dyspnea (shortness of breath),No,No,No,3,12/25/2020,,,01/04/2021,,5,2364
+No,Home,Yes,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Female,No,,Cough | Dyspnea (shortness of breath),No,No,DVT,3,12/25/2020,,,01/05/2021,,4,2365
+No,Home,No,,Yes,No,Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,10,No,ESRD,Yes,No,Male,No,,Abdominal Pain | Myalgias | Cough | Dyspnea (shortness of breath),No,No,No,5,12/24/2020,,,12/27/2020,,4,2366
+No,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,3,No,No,No,No,Female,No,,Abdominal Pain | Cough | Other | Diarrhea,No,No,No,2,12/27/2020,,,12/30/2020,,5,2368
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,Asthma,No,No,No,Female,No,,Ageusia (loss of taste) | Myalgias | Cough | Anosmia (loss of smell) | Dyspnea (shortness of breath),No,No,No,3,12/26/2020,,,12/28/2020,,4,2369
+No,Home,No,28.6,No,No,Other,No,Yes,,,Yes,No,No,No,No,Yes,Yes,No,No,No,3,No,No,No,No,Female,No,,Nausea or vomiting | Cough | Fever | Diarrhea,No,No,No,4,12/28/2020,,01/12/2021,,,6,2372
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,12/28/2020,,,02/24/2021,,4,2373
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,4,No,No,No,No,Male,No,,"Cough | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,3,12/29/2020,,,01/02/2021,,3,2374
+No,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Male,No,,Nausea or vomiting | Cough | Fever,No,No,No,4,12/29/2020,,,01/03/2021,,2,2375
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,2,12/30/2020,,,01/02/2021,,1,2376
+No,Home,Yes,,No,No,Other,No,No,Yes,Skilled Nursing Facility,No,No,No,No,No,No,Yes,No,No,Yes,0,No,No,No,No,Female,No,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,3,12/31/2020,01/02/2021,,02/08/2021,,4,2377
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,0,No,No,No,No,Female,Former Smoker,,Cough | Diarrhea | Dyspnea (shortness of breath),No,No,No,2,01/01/2021,,,01/04/2021,,5,2381
+No,Home,Yes,,No,No,Acute Kidney Injury | Other,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,Yes,4,No,No,No,No,Female,No,,Cough | Dyspnea (shortness of breath),No,No,No,1,01/02/2021,01/02/2021,,02/01/2021,,4,2384
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,Yes,No,No,0,No,No,No,Other,Male,No,,Headache | Myalgias | Nausea or vomiting | Cough | Diarrhea,No,No,No,2,01/01/2021,,,01/02/2021,,3,2385
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Male,No,,Diarrhea | Cough | Fever,No,No,No,3,01/04/2021,,,01/09/2021,,2,2386
+No,Home,No,,No,No,New onset Arrythmia,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,8,No,No,No,No,Male,Former Smoker,,Sputum production | Headache | Nausea or vomiting | Cough | Presyncope or Syncope | Dyspnea (shortness of breath),No,No,No,3,01/02/2021,,,01/05/2021,,4,2387
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,"Cough | Chest Pain (includes ""tightness"" and ""pressure"") | Presyncope or Syncope",No,No,No,4,01/03/2021,,,01/08/2021,,5,2392
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,4,No,No,No,No,Male,Former Smoker,,Myalgias | Fever | Dyspnea (shortness of breath),No,No,No,5,01/04/2021,,,01/10/2021,,4,2393
+No,Home,Yes,,No,No,Acute Kidney Injury,No,No,Yes,Acute Rehab,No,No,No,No,No,Yes,Yes,No,No,Yes,8,No,No,No,No,Male,No,,"Fever | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,No,3,01/04/2021,01/05/2021,,01/19/2021,,5,2394
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,1,No,No,No,No,Female,No,,Myalgias | Cough | Fever,No,No,No,3,01/04/2021,,,01/09/2021,,4,2395
+No,Home,No,,No,No,New onset Arrythmia,Yes,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,9,No,No,No,No,Male,No,,"Altered Mental Status (includes ""confusion"")",No,No,No,1,01/04/2021,,,01/13/2021,,6,2397
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,4,Asthma,No,No,No,Female,No,,Headache | Nausea or vomiting | Cough | Dyspnea (shortness of breath),No,No,No,3,01/04/2021,,,01/17/2021,,4,2398
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,Myalgias | Cough | Fever | Sore throat | Dyspnea (shortness of breath),No,No,No,3,01/05/2021,,,01/09/2021,,4,2400
+No,Home,Yes,,No,No,Septic Shock,No,Yes,,,No,No,No,HFrEF (EF&lt;50%),No,No,Yes,No,No,Yes,0,No,No,No,No,Female,No,,Dyspnea (shortness of breath),No,No,No,3,01/05/2021,01/06/2021,01/18/2021,,,5,2401
+No,Home,No,,No,No,None,No,No,Yes,Other,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Male,No,,Diarrhea | Abdominal Pain | Myalgias | Cough | Fever,No,No,No,3,01/06/2021,,,01/11/2021,,4,2402
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,11,No,No,No,No,Male,No,,"Abdominal Pain | Chest Pain (includes ""tightness"" and ""pressure"") | Presyncope or Syncope | Dyspnea (shortness of breath)",No,No,No,2,09/11/2020,,,09/10/2020,,5,2403
+No,Rehab/Nursing Home,No,20.4,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,No,No,No,No,9,No,No,No,No,Female,No,,Other,No,No,No,4,07/03/2020,,,07/07/2020,,6,2404
+No,Home,No,26,Yes,No,Myocardial Infarction,No,No,Yes,Subacute Rehab,Yes,No,No,No,No,Yes,Yes,No,No,No,10,No,ESRD,No,No,Male,Former Smoker,,Dyspnea (shortness of breath),No,No,No,4,08/31/2020,,,09/09/2020,,5,2405
+Liquid,Home,No,18.4,Yes,Yes,None,No,Yes,,,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Female,Former Smoker,,Other,No,No,No,5,06/28/2020,,07/14/2020,,,6,2406
+Solid,Home,No,29.2,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,Yes,No,12,No,No,No,No,Male,Former Smoker,,"Headache | Abdominal Pain | Myalgias | Nausea or vomiting | Cough | Dyspnea (shortness of breath) | Fever | Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,1,09/03/2020,,,09/03/2020,,5,2407
+No,Rehab/Nursing Home,No,25.6,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,No,No,No,No,7,No,No,No,No,Male,Former Smoker,,,No,No,No,5,07/15/2020,,,07/20/2020,,5,2408
+No,Rehab/Nursing Home,No,19.7,Yes,No,Septic Shock,No,Yes,,,Yes,No,No,No,No,Yes,Yes,No,No,No,8,No,No,No,No,Female,No,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,5,07/06/2020,,07/16/2020,,,5,2410
+No,Home,No,29.7,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,,No,No,No,4,07/13/2020,,,07/16/2020,,2,2411
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,7,No,No,No,No,Female,Former Smoker,,"Fever | Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,4,07/01/2020,,,07/01/2020,,5,2412
+No,Home,No,30.2,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,4,No,No,No,No,Female,No,,"Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,2,07/22/2020,,,07/24/2020,,4,2413
+,,,32.2,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,2,06/17/2020,,,06/20/2020,,2,2414
+No,Home,No,20.5,Yes,No,Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,No,No,No,HFrEF (EF&lt;50%),No,No,No,No,No,No,7,No,No,No,No,Female,No,,Dyspnea (shortness of breath),No,No,No,4,07/31/2020,,,08/25/2020,,4,2417
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,06/26/2020,,,07/07/2020,,4,2418
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,Yes,No,No,7,No,No,No,Rheumatoid Arthritis (RA),Female,No,,Other | Presyncope or Syncope,No,No,No,5,08/10/2020,,,08/12/2020,,2,2419
+No,Home,No,21.8,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,Yes,No,No,1,No,No,No,No,Male,No,,Abdominal Pain,No,No,No,5,06/24/2020,,,07/03/2020,,3,2420
+No,Home,No,25.5,Yes,No,Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,11,No,CKD (Creat &gt;2 at baseline),No,No,Female,Former Smoker,,Dyspnea (shortness of breath) | Other,No,No,No,5,08/27/2020,,,08/29/2020,,6,2422
+No,Home,No,27.4,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,6,No,No,No,No,Female,No,,Nausea or vomiting | Presyncope or Syncope,No,No,No,1,08/08/2020,,,08/12/2020,,4,2424
+No,Home,No,26.5,Yes,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,7,No,ESRD,No,No,Female,No,,Other,No,No,No,1,06/11/2020,,,06/16/2020,,4,2425
+No,Home,No,34.5,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,14,Other,No,No,No,Male,Former Smoker,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,06/17/2020,,,06/24/2020,,4,2426
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,HFpEF,No,Yes,No,No,No,No,9,No,No,No,No,Male,No,,Abdominal Pain,No,No,No,4,06/16/2020,,,06/18/2020,,4,2427
+No,Home,No,32.4,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,3,No,No,No,No,Male,No,,,No,No,No,5,08/07/2020,,,08/10/2020,,1,2428
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,5,07/29/2020,,,09/10/2020,,1,2429
+No,Home,No,,No,No,None,No,No,Transfer to outside hospital (without EMR access),,No,No,No,No,No,No,No,No,No,No,1,No,No,No,Rheumatoid Arthritis (RA),Female,No,,,No,No,No,4,06/22/2020,,,,,5,2430
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,0,No,No,No,No,Female,No,,Diarrhea | Sore throat | Dyspnea (shortness of breath),No,No,No,5,10/25/2020,,,10/26/2020,,3,2431
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,HFpEF,No,No,Yes,No,No,No,7,No,No,No,No,Female,No,,"Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,4,07/26/2020,,,07/30/2020,,4,2432
+No,Home,No,37.2,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,Yes,0,No,No,No,No,Female,No,,Nausea or vomiting,No,No,No,1,06/26/2020,06/28/2020,,07/01/2020,,1,2434
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,06/22/2020,,,06/25/2020,,3,2436
+No,Home,No,29.1,Yes,No,None,No,No,Yes,Home,No,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,8,No,No,No,No,Female,No,,Headache | Myalgias | Cough | Fever,No,No,No,5,08/14/2020,,,08/19/2020,,5,2440
+No,Home,No,31.1,No,No,None,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,Yes,No,No,No,8,No,No,No,No,Male,No,,Dyspnea (shortness of breath),No,No,No,2,06/28/2020,,,06/29/2020,,4,2441
+No,Home,No,22.5,No,No,Acute Kidney Injury | Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,7,No,CKD (Creat &gt;2 at baseline),No,No,Male,Former Smoker,,Dyspnea (shortness of breath),No,No,No,4,08/10/2020,,,08/19/2020,,6,2442
+No,Home,No,30.3,Yes,No,Other,Yes,No,Yes,Subacute Rehab,Yes,No,No,No,No,Yes,No,No,No,No,8,No,ESRD,Yes,No,Female,No,,Other,No,No,No,2,06/19/2020,,,06/28/2020,,5,2443
+Solid,Home,No,,Yes,No,Acute Kidney Injury | Heart failure exacerbation  or cardiogenic shock,Yes,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,12,No,CKD (Creat &gt;2 at baseline),No,No,Male,Former Smoker,,Sore throat,No,No,No,5,06/14/2020,,,06/18/2020,,6,2445
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,HFrEF (EF&lt;50%),No,No,Yes,No,No,No,7,No,No,No,No,Female,No,,Other | Presyncope or Syncope,No,No,No,4,07/22/2020,,,07/30/2020,,6,2446
+No,Other Hospital,No,24,Yes,No,None,Yes,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,9,No,No,No,No,Male,Former Smoker,,Cough | Dyspnea (shortness of breath),No,No,Pulmonary Embolism,5,10/05/2020,,,10/11/2020,,5,2447
+Solid,Home,No,18.2,No,No,None,No,Yes,,,Yes,No,No,No,No,Yes,No,No,Yes,No,14,No,No,No,No,Female,No,,Abdominal Pain | Nausea or vomiting | Other,No,No,No,5,06/15/2020,,06/19/2020,,,5,2448
+No,Home,No,37.9,No,No,None,No,No,Yes,Home,No,Yes,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,"Cough | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea | Dyspnea (shortness of breath)",No,No,No,5,09/12/2020,,,09/22/2020,,3,2453
+Liquid,Home,No,24.7,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,Yes,No,2,No,No,No,No,Female,No,,Presyncope or Syncope,No,No,No,5,07/12/2020,,,07/29/2020,,5,2454
+Liquid,Home,No,,No,No,None,No,No,Yes,Skilled Nursing Facility,Yes,No,No,No,No,Yes,No,No,No,No,7,No,No,No,No,Female,No,,Abdominal Pain | Nausea or vomiting | Cough | Diarrhea,No,No,No,1,06/15/2020,,,06/18/2020,,6,2455
+No,Home,No,38,Yes,No,None,No,No,Yes,Home,No,No,No,HFpEF,No,Yes,No,No,No,No,11,Asthma | Other | Obstructive Sleep Apnea,No,No,No,Male,No,,Headache | Myalgias | Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,10/15/2020,,,10/21/2020,,4,2457
+No,Home,No,27.5,No,No,Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,No,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,7,No,ESRD,Yes,No,Male,No,,Sputum production | Cough | Dyspnea (shortness of breath),No,No,No,1,07/16/2020,,,07/29/2020,,3,2459
+Liquid,Home,No,19.9,No,No,Acute Kidney Injury | New onset Arrythmia,No,Yes,,,No,No,No,No,No,No,Yes,No,No,No,9,COPD,No,No,No,Female,Active Smoker,,Sputum production | Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,06/16/2020,,06/21/2020,,,6,2460
+,,,,,,,,,,,,,,,,,,,,,,,,,,Male,,,,,,,,06/14/2020,,,,,4,2461
+No,Home,No,21.4,No,No,New onset Arrythmia | Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,6,No,No,No,No,Female,No,,Nausea or vomiting | Cough | Other,No,No,No,3,09/17/2020,,,10/02/2020,,1,2462
+No,Home,No,26.6,Yes,No,Acute Kidney Injury,No,No,Yes,Home,Yes,No,No,Unspecified HF,No,Yes,No,No,No,No,8,No,CKD (Creat &gt;2 at baseline),No,No,Male,No,,"Nausea or vomiting | Altered Mental Status (includes ""confusion"")",No,No,No,5,07/25/2020,,,07/28/2020,,5,2463
+No,Home,No,,No,No,Acute Kidney Injury,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,9,No,No,No,No,Male,No,,Other | Sore throat | Dyspnea (shortness of breath),No,No,No,5,06/18/2020,,,06/23/2020,,5,2464
+No,Home,No,34.6,Yes,No,Acute Kidney Injury | Septic Shock,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,12,Asthma | COPD,No,No,No,Male,No,,"Dyspnea (shortness of breath) | Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,1,08/23/2020,,,09/17/2020,,4,2465
+No,Home,No,20,Yes,No,None,Yes,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Female,No,,"Headache | Altered Mental Status (includes ""confusion"")",No,No,No,1,08/12/2020,,,08/16/2020,,5,2466
+No,Home,No,22.9,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,3,No,No,No,Lupus (SLE),Male,No,,Headache | Myalgias | Cough | Fever,No,No,No,2,09/27/2020,,,10/03/2020,,2,2467
+No,Home,No,24.3,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,No,No,No,No,Male,No,,"Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,5,07/06/2020,,,07/08/2020,,4,2470
+No,Home,No,23.4,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,No,No,No,No,Female,No,,Abdominal Pain,No,No,No,2,06/21/2020,,,06/27/2020,,4,2471
+No,Home,No,22.4,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,1,No,No,No,No,Female,Active Smoker,,"Nausea or vomiting | Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,5,09/28/2020,,,09/28/2020,,4,2476
+Solid,Rehab/Nursing Home,No,18.7,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,No,No,Yes,No,6,No,No,No,No,Female,No,,"Altered Mental Status (includes ""confusion"")",No,No,DVT | Pulmonary Embolism,2,07/29/2020,,,08/18/2020,,5,2478
+No,Home,No,22.7,Yes,No,None,No,No,Yes,Home,No,No,No,Unspecified HF,No,No,No,No,No,No,14,Asthma,No,No,No,Female,No,,Headache | Myalgias | Nausea or vomiting | Cough | Sore throat,No,No,No,1,10/14/2020,,,10/17/2020,,3,2479
+No,Rehab/Nursing Home,No,50,No,No,Other,Yes,No,Yes,Skilled Nursing Facility,Yes,No,No,No,No,Yes,Yes,No,No,No,11,No,CKD (Creat &gt;2 at baseline),No,No,Male,Former Smoker,,Abdominal Pain | Cough | Other,No,No,No,4,06/25/2020,,,07/21/2020,,4,2482
+,,,18.7,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,1,08/10/2020,,,08/17/2020,,5,2485
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,06/28/2020,,,07/08/2020,,6,2486
+No,Home,No,25.1,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,Yes,No,No,0,No,No,No,No,Female,No,,Other,No,No,No,2,06/13/2020,,,06/14/2020,,2,2487
+No,Home,No,31.3,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,,No,No,No,2,07/02/2020,,,07/04/2020,,2,2488
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,5,06/29/2020,,,07/03/2020,,2,2489
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,07/01/2020,,,07/02/2020,,2,2490
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,10/11/2020,,,10/15/2020,,2,2491
+No,Home,No,21.6,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,6,Asthma,No,No,No,Male,No,,"Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,4,08/14/2020,,,08/15/2020,,3,2492
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,4,07/04/2020,,,07/10/2020,,3,2493
+No,Home,No,21.9,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,2,No,No,No,No,Male,No,,Other | Fever,No,No,No,3,06/14/2020,,,06/15/2020,,5,2494
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,07/08/2020,,,07/12/2020,,2,2495
+Solid,Rehab/Nursing Home,No,25.6,No,No,Other,No,No,Yes,Skilled Nursing Facility,Yes,No,No,No,No,No,Yes,No,Yes,No,8,Asthma | Other,No,No,No,Female,No,,Other | Dyspnea (shortness of breath),No,No,No,3,08/07/2020,,,08/16/2020,,4,2496
+No,Home,No,27.1,No,No,None,Yes,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Male,Former Smoker,,Presyncope or Syncope,No,No,No,5,06/28/2020,,,06/30/2020,,5,2497
+No,Home,No,36.8,Yes,No,Acute Kidney Injury,Yes,No,Yes,Home,Yes,No,No,HFpEF,No,Yes,No,No,No,No,7,Asthma | COPD,CKD (Creat &gt;2 at baseline),No,No,Female,Former Smoker,,Other | Rhinorrhea or nasal congestion | Dyspnea (shortness of breath),No,No,No,1,07/14/2020,,,07/16/2020,,5,2498
+No,Rehab/Nursing Home,No,17.7,No,No,Acute Kidney Injury | Other,No,No,Yes,Hospice,Yes,No,No,No,No,Yes,Yes,No,No,No,5,No,No,No,No,Female,No,,"Other | Fever | Altered Mental Status (includes ""confusion"")",No,No,No,4,06/30/2020,,,07/14/2020,,5,2502
+No,Home,No,27.5,No,No,Acute Kidney Injury | Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,9,No,ESRD,Yes,No,Male,Former Smoker,,Dyspnea (shortness of breath),No,No,No,1,09/01/2020,,,09/04/2020,,5,2504
+No,Home,No,37.4,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Female,No,,"Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,Pulmonary Embolism,2,07/30/2020,,,09/05/2020,,3,2505
+No,Home,No,31,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,Yes,No,No,No,4,No,ESRD,No,No,Male,No,,Cough | Dyspnea (shortness of breath) | Fever,No,No,No,4,08/25/2020,,,09/03/2020,,4,2506
+No,Home,No,23.6,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,No,No,No,No,Male,No,,,No,No,No,5,06/22/2020,,,07/13/2020,,4,2508
+No,Home,No,25.6,No,No,None,No,No,Yes,Home,Yes,No,Hepatitis B,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,12,No,ESRD,Yes,No,Female,Former Smoker,,Dyspnea (shortness of breath),No,No,No,1,06/29/2020,,,07/14/2020,,3,2509
+,,,,,,,,,,,,,,,,,,,,,,,,,,Female,,,,,,,,07/06/2020,,,,,2,2510
+No,Home,No,22.3,No,No,None,No,No,Yes,Other,No,No,No,No,No,Yes,No,No,No,No,1,No,No,No,No,Male,No,,Abdominal Pain | Nausea or vomiting | Other | Dyspnea (shortness of breath),No,No,No,5,09/06/2020,,,09/06/2020,,4,2511
+No,Home,No,24.7,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,,No,No,No,4,08/13/2020,,,08/15/2020,,2,2512
+No,Rehab/Nursing Home,No,25.4,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,2,No,No,No,No,Female,No,,"Other | Diarrhea | Altered Mental Status (includes ""confusion"")",No,No,No,4,07/16/2020,,,07/18/2020,,6,2513
+Solid,Home,No,,No,No,None,Yes,Yes,,,No,No,No,No,No,Yes,Yes,No,No,No,11,No,No,No,No,Female,No,,"Headache | Other | Altered Mental Status (includes ""confusion"") | Presyncope or Syncope",No,No,No,5,06/14/2020,,06/16/2020,,,4,2514
+Solid,Home,No,,No,No,Septic Shock,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,8,No,No,No,No,Female,Former Smoker,,"Abdominal Pain | Altered Mental Status (includes ""confusion"")",No,No,No,4,07/23/2020,,,07/31/2020,,4,2517
+No,Home,No,27.4,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,5,COPD,No,No,No,Female,Former Smoker,,Cough | Fever,No,No,No,1,07/17/2020,,,07/29/2020,,4,2519
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,HFpEF,No,Yes,Yes,No,No,No,7,Asthma | Other,CKD (Creat &gt;2 at baseline),No,No,Female,Former Smoker,,Nausea or vomiting | Diarrhea,No,No,No,4,06/19/2020,,,06/21/2020,,5,2520
+Liquid,Rehab/Nursing Home,No,27.9,Yes,Yes,Acute Kidney Injury | Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Subacute Rehab,Yes,No,No,Unspecified HF,No,Yes,No,No,No,No,15,No,CKD (Creat &gt;2 at baseline),No,No,Male,No,,Dyspnea (shortness of breath),No,No,No,2,07/07/2020,,,07/15/2020,,5,2522
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,Hepatitis C,No,Yes,No,Yes,No,No,Yes,2,No,No,No,No,Male,Active Smoker,,"Other | Altered Mental Status (includes ""confusion"")",No,No,No,5,06/28/2020,06/28/2020,,07/01/2020,,3,2523
+No,Home,No,31.6,No,No,Other,No,No,Yes,Subacute Rehab,Yes,No,No,No,No,Yes,No,No,No,No,7,No,No,No,No,Female,No,,Abdominal Pain | Nausea or vomiting,No,No,No,1,08/01/2020,,,08/11/2020,,5,2524
+No,Home,No,,No,No,None,No,No,Yes,Acute Rehab,Yes,No,No,No,No,Yes,No,No,No,No,9,Asthma | COPD,No,No,No,Male,Active Smoker,,,No,No,No,1,06/23/2020,,,07/10/2020,,5,2526
+,,,,,,,,,,,,,,,,,,,,,,,,,,Male,,,,,,,,07/12/2020,,,,,4,2528
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,4,No,No,No,No,Male,No,,Presyncope or Syncope | Dyspnea (shortness of breath),No,No,No,4,07/24/2020,,,07/30/2020,,4,2529
+No,Home,No,28.9,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,Headache | Cough | Dyspnea (shortness of breath) | Fever | Diarrhea,No,No,No,3,08/17/2020,,,08/25/2020,,3,2530
+No,Home,No,72.1,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,No,No,No,No,No,3,Asthma,No,No,No,Female,No,,"Cough | Chest Pain (includes ""tightness"" and ""pressure"") | Presyncope or Syncope | Dyspnea (shortness of breath)",No,No,No,2,08/02/2020,,,08/12/2020,,3,2531
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,4,07/11/2020,,,07/15/2020,,2,2532
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,HFpEF,No,Yes,No,No,No,No,5,No,No,No,No,Female,No,,Other | Dyspnea (shortness of breath),No,No,No,4,06/18/2020,,,06/27/2020,,6,2534
+No,Home,No,21.9,No,No,None,Yes,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,11,Asthma | COPD,No,No,No,Male,No,,"Chest Pain (includes ""tightness"" and ""pressure"") | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,No,1,06/17/2020,,,06/19/2020,,5,2536
+No,,,,No,No,,No,No,Yes,,No,,No,No,No,Yes,,No,No,,,No,No,,No,Male,,,,,,,,08/19/2020,,,08/23/2020,,4,2537
+Liquid,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,Yes,Yes,No,3,COPD,No,No,No,Female,Former Smoker,,Fever | Dyspnea (shortness of breath),No,No,No,4,06/22/2020,,,07/07/2020,,5,2538
+Liquid,Home,No,19.6,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,Yes,No,4,No,No,No,No,Female,No,,Headache | Fever,No,No,No,4,08/05/2020,,,08/13/2020,,3,2540
+No,Home,No,28.7,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,1,No,No,No,No,Female,Former Smoker,,Abdominal Pain,No,No,No,1,08/02/2020,,,08/05/2020,,4,2541
+No,Home,No,,Yes,No,None,No,No,Yes,Acute Rehab,Yes,No,No,No,No,Yes,No,No,No,No,10,Other,CKD (Creat &gt;2 at baseline),No,No,Male,No,,"Diarrhea | Altered Mental Status (includes ""confusion"")",No,No,No,4,06/24/2020,,,07/01/2020,,5,2542
+No,Home,No,,Yes,No,None,No,No,Yes,Home,No,No,No,HFrEF (EF&lt;50%),No,No,No,No,No,No,7,No,No,No,No,Male,No,,Abdominal Pain,No,No,No,4,08/05/2020,,,08/06/2020,,4,2543
+No,Other,No,24.2,Yes,No,None,No,No,Yes,Home,Yes,No,Hepatitis C | Hepatitis B,HFpEF,No,Yes,Yes,No,No,No,10,No,ESRD,No,No,Male,No,,Myalgias | Cough | Dyspnea (shortness of breath) | Fever,No,No,No,2,07/02/2020,,,07/12/2020,,4,2544
+No,Home,No,28,Yes,No,None,No,No,Yes,Other,Yes,No,No,No,No,Yes,No,No,No,No,8,No,No,No,No,Male,Former Smoker,,"Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,1,07/16/2020,,,07/23/2020,,3,2545
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,3,07/19/2020,,,07/21/2020,,2,2547
+No,Home,No,17.2,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,7,No,ESRD,No,No,Female,No,,Nausea or vomiting | Diarrhea | Dyspnea (shortness of breath),No,No,No,1,07/01/2020,,,07/05/2020,,2,2548
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,8,Asthma,No,No,No,Male,No,,Other,No,No,No,5,07/23/2020,,,08/03/2020,,4,2549
+Liquid,Home,No,29.4,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,3,No,No,No,No,Male,No,,Sputum production | Headache | Myalgias | Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,06/20/2020,,,06/27/2020,,4,2550
+No,Home,No,25.3,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,6,No,No,No,No,Female,No,,"Altered Mental Status (includes ""confusion"")",No,No,No,5,06/17/2020,,,06/20/2020,,6,2554
+No,Home,No,30.9,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,Yes,No,No,No,1,Interstitial Lung Disease,No,No,No,Male,No,,"Headache | Cough | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,4,07/20/2020,,,07/26/2020,,3,2556
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Female,No,,"Nausea or vomiting | Cough | Dyspnea (shortness of breath) | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea",No,No,No,3,08/30/2020,,,09/08/2020,,3,2558
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,10/13/2020,,,10/14/2020,,2,2560
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,Yes,No,No,17,Asthma,No,No,No,Female,No,,Abdominal Pain | Cough | Other,No,No,No,4,07/03/2020,,,07/06/2020,,1,2561
+No,Rehab/Nursing Home,No,23.7,No,No,Acute Kidney Injury | New onset Arrythmia,No,No,Transfer to outside hospital (without EMR access),,No,No,No,Unspecified HF,No,Yes,Yes,No,No,No,4,No,No,No,No,Female,No,,Cough | Dyspnea (shortness of breath),No,No,No,4,06/30/2020,,,,07/06/2020,6,2562
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,06/30/2020,,,07/23/2020,,4,2563
+No,Home,No,,No,No,None,No,No,Yes,Other,No,No,No,No,Yes,No,No,No,No,No,3,No,No,No,No,Male,Active Smoker,,"Altered Mental Status (includes ""confusion"")",No,No,No,4,06/21/2020,,,06/28/2020,,2,2564
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,08/17/2020,,,08/19/2020,,2,2566
+No,Home,No,23.6,No,No,None,No,No,Yes,Subacute Rehab,Yes,No,No,HFrEF (EF&lt;50%),Yes,Yes,No,No,No,No,7,No,ESRD,No,No,Male,No,,,No,No,No,2,07/29/2020,,,08/23/2020,,5,2567
+No,Home,No,20.5,No,No,Acute Kidney Injury,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,10,No,ESRD,No,No,Male,No,,Other,No,No,No,2,06/24/2020,,,07/15/2020,,4,2569
+No,Home,No,56.0,Yes,No,None,No,No,Yes,Other,Yes,No,No,No,No,Yes,No,No,No,No,13,No,No,No,No,Female,No,,"Nausea or vomiting | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,2,08/14/2020,,,08/22/2020,,3,2570
+No,Undomiciled,No,22.4,No,No,None,No,No,Yes,Shelter,No,No,No,No,Yes,No,No,No,No,No,0,No,No,No,No,Male,No,,"Cough | Other | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Rhinorrhea or nasal congestion | Dyspnea (shortness of breath)",No,No,No,2,09/19/2020,,,09/27/2020,,2,2571
+No,Home,No,30.4,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,5,No,No,No,No,Male,No,,Nausea or vomiting,No,No,No,4,08/25/2020,,,08/25/2020,,2,2572
+No,Home,No,,No,No,None,No,No,Yes,Home,No,Yes,No,No,No,No,No,No,No,No,19,No,No,No,Lupus (SLE),Female,No,,Abdominal Pain | Ageusia (loss of taste) | Nausea or vomiting | Anosmia (loss of smell) | Diarrhea,No,No,No,1,07/13/2020,,,07/15/2020,,2,2573
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,5,07/11/2020,,,07/12/2020,,2,2574
+No,Home,No,22.8,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,6,No,No,No,No,Male,Active Smoker,,Myalgias | Fever,No,No,No,1,08/15/2020,,,08/23/2020,,1,2575
+Solid,,,,Yes,No,,No,No,Yes,,Yes,,No,No,No,Yes,,No,No,,,COPD,No,,No,Female,,,,,,,1,12/13/2020,,,01/11/2021,,5,2576
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,08/13/2020,,,08/15/2020,,2,2578
+No,Home,No,26.7,Yes,No,Acute Kidney Injury,No,No,Yes,Skilled Nursing Facility,Yes,No,No,HFpEF,No,Yes,No,No,No,No,8,No,CKD (Creat &gt;2 at baseline),No,No,Female,No,,Headache | Nausea or vomiting | Other,No,No,No,4,06/14/2020,,,06/29/2020,,5,2580
+Liquid,Home,No,27.9,No,No,Acute Kidney Injury,No,Yes,,,No,No,No,No,No,No,No,No,Yes,No,5,No,No,No,No,Female,No,,Other,No,No,No,4,07/09/2020,,07/29/2020,,,4,2584
+No,Home,No,24.2,No,No,Other,No,No,Yes,Skilled Nursing Facility,No,No,No,No,No,No,Yes,No,No,No,3,No,No,No,No,Female,No,,Abdominal Pain | Nausea or vomiting,No,No,No,4,08/01/2020,,,08/15/2020,,6,2585
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,8,No,ESRD,No,No,Female,No,,Abdominal Pain | Nausea or vomiting | Other | Fever | Diarrhea,No,No,No,1,07/15/2020,,,07/17/2020,,2,2586
+No,Home,No,28.5,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,4,No,No,No,No,Female,Former Smoker,,Other,No,No,No,4,06/12/2020,,,06/14/2020,,4,2587
+No,Home,No,33,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,4,Obstructive Sleep Apnea,No,No,Other | Rheumatoid Arthritis (RA),Female,Former Smoker,,Other | Fever,No,No,No,4,10/27/2020,,,10/28/2020,,5,2592
+No,Home,No,19.7,No,No,Acute Kidney Injury,No,No,Yes,Subacute Rehab,Yes,No,No,HFpEF,No,Yes,No,No,No,No,11,No,CKD (Creat &gt;2 at baseline),No,No,Female,No,,Presyncope or Syncope,No,No,No,1,07/31/2020,,,08/16/2020,,6,2593
+No,Rehab/Nursing Home,No,,No,No,None,Yes,No,Transfer to outside hospital (without EMR access),,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Female,No,,,No,No,No,3,06/17/2020,,,,06/25/2020,5,2594
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,7,Asthma,No,No,No,Female,No,,Fever,No,No,No,1,06/27/2020,,,07/01/2020,,5,2595
+No,Home,No,29.5,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,3,No,No,No,No,Female,No,,Presyncope or Syncope | Dyspnea (shortness of breath),No,No,No,5,10/22/2020,,,10/23/2020,,2,2597
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,Yes,No,No,No,No,No,7,No,No,No,No,Female,No,,Abdominal Pain | Diarrhea,No,No,No,2,08/08/2020,,,08/19/2020,,2,2598
+No,Home,No,29.2,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,,No,No,No,3,09/20/2020,,,09/22/2020,,2,2599
+No,Home,No,,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,No,No,Yes,No,No,0,No,No,No,No,Male,No,,Abdominal Pain,No,No,No,5,07/19/2020,,,07/26/2020,,2,2601
+No,Rehab/Nursing Home,No,18.4,No,No,Septic Shock | Other,No,No,Yes,Hospice,Yes,No,Hepatitis C,HFrEF (EF&lt;50%),No,No,Yes,No,No,No,3,No,No,No,No,Male,No,,Other | Presyncope or Syncope,"Yes, to NYP Cornell",No,No,4,09/03/2020,,,11/30/2020,,2,2602
+No,,,27.6,No,No,,No,No,Yes,,No,,No,No,No,No,,No,No,,,No,No,,No,Female,,,Other,,,,4,10/04/2020,,,10/07/2020,,2,2603
+Solid,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,Yes,No,6,No,No,No,No,Female,No,,Other,No,No,No,4,06/19/2020,,,06/23/2020,,5,2606
+No,Other Hospital,No,,Yes,No,Acute Kidney Injury | Septic Shock,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,23,No,ESRD,Yes,No,Male,No,,"Fever | Altered Mental Status (includes ""confusion"")","Yes, to NYP Cornell",No,DVT,2,09/09/2020,,,09/29/2020,,4,2607
+No,Rehab/Nursing Home,No,20.3,No,No,None,No,No,Yes,Subacute Rehab,Yes,No,No,No,No,Yes,Yes,No,No,No,14,No,ESRD,Yes,No,Male,Former Smoker,,"Headache | Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,1,06/11/2020,,,06/22/2020,,5,2608
+No,Home,No,21.6,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,5,No,No,No,No,Female,No,,Abdominal Pain | Nausea or vomiting,No,No,No,4,09/06/2020,,,09/07/2020,,2,2610
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,12,No,No,No,No,Male,No,,Abdominal Pain,No,No,No,3,06/24/2020,,,07/08/2020,,5,2611
+Solid,Rehab/Nursing Home,No,,No,No,None,No,No,Yes,Skilled Nursing Facility,Yes,No,No,No,No,Yes,Yes,No,Yes,No,23,COPD,No,No,No,Male,Former Smoker,,"Fever | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,No,2,07/27/2020,,,08/05/2020,,4,2613
+No,Home,No,23.4,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,Former Smoker,,Headache | Nausea or vomiting,No,No,No,5,07/20/2020,,,07/20/2020,,5,2614
+No,Home,No,24.8,Yes,No,Other,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,14,No,CKD (Creat &gt;2 at baseline),Yes,No,Female,No,,,No,No,No,2,06/23/2020,,,07/06/2020,,5,2615
+Liquid,Home,No,21.2,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,Yes,No,4,Asthma,No,No,No,Male,Former Smoker,,,No,No,No,3,08/30/2020,,,09/06/2020,,2,2616
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,06/17/2020,,,06/20/2020,,2,2617
+No,Rehab/Nursing Home,No,,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,No,No,No,No,No,5,No,No,No,Rheumatoid Arthritis (RA),Female,No,,"Altered Mental Status (includes ""confusion"")",No,No,No,1,06/19/2020,,,06/25/2020,,5,2618
+Solid,Home,No,22.4,Yes,No,Heart failure exacerbation  or cardiogenic shock | Other,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,5,No,No,No,No,Female,No,,Cough | Dyspnea (shortness of breath),No,No,No,1,08/04/2020,,,08/12/2020,,5,2622
+Liquid,Other Hospital,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,12,No,No,No,No,Female,Former Smoker,,,No,No,No,4,06/18/2020,,,06/29/2020,,4,2623
+No,Home,No,28.6,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,6,No,No,No,No,Male,No,,Other,No,No,No,1,07/02/2020,,,07/13/2020,,3,2624
+No,Home,No,28.5,Yes,No,None,No,No,Yes,Home,No,No,No,HFrEF (EF&lt;50%),No,No,No,No,No,No,4,No,No,No,No,Male,No,,"Chest Pain (includes ""tightness"" and ""pressure"") | Presyncope or Syncope",No,No,No,1,07/02/2020,,,07/03/2020,,5,2625
+No,Rehab/Nursing Home,No,26.4,Yes,No,None,Yes,No,Yes,Subacute Rehab,No,No,No,HFrEF (EF&lt;50%),No,Yes,No,No,No,No,15,No,No,No,No,Male,No,,Abdominal Pain,No,No,No,2,09/08/2020,,,09/21/2020,,5,2626
+No,Rehab/Nursing Home,No,24.5,No,Yes,None,No,No,Yes,Skilled Nursing Facility,No,No,No,No,No,No,Yes,No,No,No,8,No,No,No,No,Male,No,,Fever,No,No,No,4,06/13/2020,,,06/16/2020,,2,2629
+No,Undomiciled,No,26.5,No,No,None,No,No,Yes,Other,No,No,No,No,No,No,No,No,No,No,8,No,No,No,Lupus (SLE),Male,Active Smoker,,"Headache | Nausea or vomiting | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea | Dyspnea (shortness of breath)",No,No,No,4,06/15/2020,,,06/20/2020,,3,2630
+Liquid,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,Yes,No,9,No,No,No,No,Female,No,,Abdominal Pain | Nausea or vomiting | Cough | Fever,No,No,No,1,06/14/2020,,,06/28/2020,,2,2631
+No,Home,No,34.7,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,,No,No,No,5,08/05/2020,,,08/08/2020,,2,2633
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,4,07/04/2020,,,07/05/2020,,2,2634
+No,Home,No,28.5,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,Abdominal Pain | Nausea or vomiting,No,No,No,2,08/23/2020,,,08/23/2020,,2,2636
+No,Home,No,28.8,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,,No,No,No,4,09/15/2020,,,09/18/2020,,2,2637
+No,Undomiciled,No,19.1,No,No,None,No,No,Yes,Other,No,No,No,No,No,No,No,No,No,No,2,No,No,No,No,Male,Active Smoker,,,No,No,No,4,06/14/2020,,,06/16/2020,,4,2638
+,,,23.3,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,5,10/07/2020,,,10/19/2020,,3,2640
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,1,07/22/2020,,,07/25/2020,,2,2641
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,4,07/24/2020,,,07/28/2020,,2,2643
+No,,,41.6,No,No,,No,,,,No,,No,No,No,No,,No,No,,,Asthma,No,,No,Female,,,,,,,2,06/19/2020,,,,,1,2644
+No,Home,Yes,31.9,No,Yes,Acute Kidney Injury | DIC,No,Yes,,,Yes,No,No,No,No,Yes,No,No,No,Yes,5,No,No,No,No,Male,No,,Other | Diarrhea | Dyspnea (shortness of breath),No,No,No,1,06/24/2020,06/26/2020,07/21/2020,,,3,2646
+No,Rehab/Nursing Home,No,22.5,No,No,None,Yes,No,Yes,Skilled Nursing Facility,Yes,No,No,No,No,Yes,No,No,No,No,10,No,No,No,No,Male,No,,,No,No,No,5,07/13/2020,,,07/15/2020,,4,2649
+No,Home,No,,No,No,Other,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,3,No,No,No,No,Male,No,,"Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,3,06/13/2020,,,06/20/2020,,2,2650
+Liquid,Rehab/Nursing Home,Yes,28.4,No,No,Acute Kidney Injury | Septic Shock,No,,,,No,No,No,No,No,Yes,No,No,Yes,Yes,12,No,No,Yes,Rheumatoid Arthritis (RA),Female,No,,,No,No,,2,08/09/2020,,,,,4,2651
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,08/16/2020,,,08/18/2020,,2,2652
+No,Home,No,,No,No,Acute Kidney Injury | Heart failure exacerbation  or cardiogenic shock | Other,No,No,Yes,Subacute Rehab,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,Yes,No,No,No,9,No,No,No,No,Female,No,,Other | Dyspnea (shortness of breath),No,No,DVT,1,07/01/2020,,,08/07/2020,,4,2654
+No,Home,No,,No,Yes,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,No,Yes,No,No,No,9,No,No,No,Lupus (SLE),Female,Former Smoker,,Cough | Fever | Dyspnea (shortness of breath),No,,No,5,06/19/2020,,,07/07/2020,,3,2655
+Solid,Home,No,22.3,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,Yes,No,3,No,No,No,No,Female,No,,Other,No,No,No,5,06/20/2020,,,06/24/2020,,3,2656
+No,Home,No,28.4,No,No,None,No,No,Yes,Skilled Nursing Facility,No,No,No,No,No,No,No,No,No,No,6,No,No,No,No,Female,No,,Other,No,No,No,5,06/16/2020,,,06/29/2020,,4,2657
+No,Home,No,31.1,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,,No,No,No,4,09/02/2020,,,09/02/2020,,2,2658
+No,Home,No,32.4,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,10,No,ESRD,Yes,No,Female,No,,Abdominal Pain | Nausea or vomiting,No,No,No,2,08/30/2020,,,09/11/2020,,2,2659
+,,,22.1,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,4,07/26/2020,,,07/30/2020,,5,2661
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,08/03/2020,,,08/04/2020,,1,2662
+No,Home,No,,Yes,No,Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,Yes,No,No,HFpEF,No,Yes,Yes,No,No,No,8,No,CKD (Creat &gt;2 at baseline),No,No,Female,No,,Cough | Dyspnea (shortness of breath),No,No,No,1,07/06/2020,,,07/11/2020,,5,2663
+No,Rehab/Nursing Home,No,28.2,Yes,No,Other,No,No,Yes,Other,Yes,No,No,HFpEF,No,Yes,Yes,No,No,No,21,Other,No,No,Other,Male,Former Smoker,,"Altered Mental Status (includes ""confusion"")",No,No,No,4,08/31/2020,,,10/07/2020,,5,2664
+No,Undomiciled,No,27.2,No,No,None,No,No,Yes,Other,No,No,No,No,No,Yes,No,No,No,No,2,No,No,No,No,Male,No,,Abdominal Pain | Nausea or vomiting | Diarrhea,No,No,No,1,07/08/2020,,,07/14/2020,,3,2666
+No,Rehab/Nursing Home,No,38.4,No,No,Acute Kidney Injury | Other,No,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,No,No,No,No,4,Asthma,CKD (Creat &gt;2 at baseline),Yes,No,Female,No,,Presyncope or Syncope,No,No,No,5,07/16/2020,,,07/28/2020,,4,2668
+Liquid,Other,No,25.5,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,Yes,No,6,No,No,No,No,Female,No,,Other,No,No,No,5,06/29/2020,,,07/16/2020,,3,2669
+No,Home,No,,No,No,None,No,Yes,,,No,No,No,No,No,Yes,No,No,No,No,2,No,No,No,No,Female,No,,Abdominal Pain | Other | Dyspnea (shortness of breath),No,No,No,1,07/09/2020,,07/29/2020,,,5,2670
+No,Home,No,38.7,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,6,Asthma,No,No,No,Female,No,,"Headache | Other | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,1,06/12/2020,,,06/13/2020,,4,2673
+No,Home,No,26.9,Yes,No,Acute Kidney Injury,No,No,Yes,Home,Yes,No,No,HFrEF (EF&lt;50%),No,Yes,Yes,No,No,No,11,No,No,No,No,Female,Former Smoker,,"Nausea or vomiting | Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea | Dyspnea (shortness of breath)",No,No,No,1,06/21/2020,,,06/29/2020,,4,2674
+No,Undomiciled,No,33.4,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,No,No,No,No,8,Obstructive Sleep Apnea,ESRD,Yes,No,Male,Active Smoker,,Cough,No,No,No,2,10/16/2020,,,10/27/2020,,3,2675
+No,Home,No,31.3,No,No,Acute Kidney Injury,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,1,No,No,No,No,Male,No,,Other,No,No,No,1,06/19/2020,,,06/24/2020,,5,2677
+Liquid,Home,No,22.2,No,No,Other,No,No,Yes,Home,No,No,No,No,No,No,No,No,Yes,No,6,No,No,No,No,Male,Former Smoker,,"Diarrhea | Altered Mental Status (includes ""confusion"") | Dyspnea (shortness of breath)",No,No,No,4,07/17/2020,,,08/03/2020,,5,2678
+No,Undomiciled,No,30.7,No,No,None,No,No,Yes,Other,Yes,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Male,Active Smoker,,Cough,No,No,No,2,06/11/2020,,,06/16/2020,,3,2679
+No,Home,No,,Yes,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,6,No,No,No,No,Female,No,,Sputum production | Cough | Dyspnea (shortness of breath),No,No,No,3,06/13/2020,,,07/16/2020,,5,2683
+No,Undomiciled,No,33.7,No,No,None,No,No,Yes,Shelter,No,No,No,No,No,Yes,No,No,No,No,2,No,No,No,No,Female,No,,"Cough | Other | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,Pulmonary Embolism,4,06/15/2020,,,06/18/2020,,4,2685
+No,Rehab/Nursing Home,No,24.5,Yes,No,Acute Kidney Injury,No,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,Yes,No,No,No,11,Asthma | COPD,CKD (Creat &gt;2 at baseline),No,No,Male,No,,Presyncope or Syncope,No,No,No,4,06/16/2020,,,06/29/2020,,6,2686
+No,Home,No,31.1,Yes,No,Acute Kidney Injury,No,No,Yes,Home,Yes,No,No,No,No,Yes,Yes,No,No,No,6,No,No,No,No,Male,No,,Fever,No,No,No,5,06/17/2020,,,06/20/2020,,4,2687
+No,Rehab/Nursing Home,No,39.4,No,No,None,No,No,Yes,Skilled Nursing Facility,No,No,No,No,No,No,No,No,No,No,6,No,No,No,No,Male,No,,"Altered Mental Status (includes ""confusion"")",No,No,No,2,06/18/2020,,,06/24/2020,,2,2688
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Female,No,,,No,No,No,1,06/21/2020,,,06/23/2020,,3,2689
+No,Undomiciled,No,30.9,No,Yes,None,No,No,Yes,Shelter,No,No,No,No,No,No,No,No,No,No,4,No,No,No,No,Male,Former Smoker,,Headache | Presyncope or Syncope,No,No,No,1,06/22/2020,,,06/25/2020,,3,2691
+No,Home,Yes,26.9,No,No,Rhabdomyolysis | Acute Kidney Injury | Septic Shock,No,Yes,,,Yes,No,No,No,No,Yes,Yes,No,No,Yes,4,No,No,Yes,No,Male,No,,Cough | Fever | Dyspnea (shortness of breath),No,No,No,4,06/22/2020,07/02/2020,08/18/2020,,,6,2692
+Solid,Home,No,15.7,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,Yes,No,4,No,ESRD,No,No,Male,Former Smoker,,,No,No,No,5,06/22/2020,,,07/13/2020,,4,2694
+No,Rehab/Nursing Home,No,,Yes,No,None,Yes,No,Yes,Subacute Rehab,No,No,No,HFpEF,No,Yes,No,No,No,No,9,No,CKD (Creat &gt;2 at baseline),No,No,Male,No,,Other,No,No,No,4,06/23/2020,,,07/03/2020,,5,2695
+No,Other,No,20.3,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,0,No,No,No,No,Male,Active Smoker,,"Altered Mental Status (includes ""confusion"")","Yes, to NYP Cornell",No,No,5,06/24/2020,,,07/07/2020,,4,2696
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,,06/24/2020,,,07/08/2020,,3,2697
+Liquid,Other Hospital,No,,No,No,None,No,No,Yes,Acute Rehab,Yes,No,No,No,No,Yes,Yes,No,No,No,11,No,No,No,No,Female,No,,Other,No,No,No,1,06/25/2020,,,07/30/2020,,4,2698
+No,Home,No,21.3,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,5,No,No,No,No,Female,No,,"Cough | Altered Mental Status (includes ""confusion"")",No,No,No,3,07/12/2020,,,07/22/2020,,3,2699
+No,Rehab/Nursing Home,No,14.6,No,No,Acute Kidney Injury,No,Yes,,,No,No,No,No,No,No,No,No,No,No,1,No,No,No,No,Female,No,,Sputum production | Cough | Diarrhea,No,No,No,4,07/11/2020,,07/23/2020,,,4,2700
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,2,No,No,No,No,Male,No,,"Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,4,06/26/2020,,,06/28/2020,,4,2701
+No,Undomiciled,No,26.5,No,No,None,No,No,Yes,Other,No,No,No,No,No,Yes,No,No,No,No,1,Asthma,No,No,No,Male,Active Smoker,,"Cough | Anosmia (loss of smell) | Fever | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,No,5,06/29/2020,,,06/30/2020,,3,2702
+No,Home,No,33.9,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,2,No,No,No,No,Male,No,,Nausea or vomiting | Other,No,No,No,1,07/19/2020,,,07/21/2020,,4,2703
+No,Home,Yes,19.1,No,No,Acute Kidney Injury,No,Yes,,,Yes,No,No,No,No,Yes,No,No,No,No,7,No,No,No,No,Male,Former Smoker,,Abdominal Pain | Other,No,No,No,2,06/29/2020,,07/09/2020,,,5,2704
+No,Home,Yes,,No,No,Acute Kidney Injury | Septic Shock | Ventilator-associated Pneumonia | Other,No,Yes,,,No,No,No,No,No,No,Yes,No,No,Yes,1,No,No,Yes,No,Male,,,Myalgias | Nausea or vomiting | Cough | Dyspnea (shortness of breath),No,,No,1,07/01/2020,07/01/2020,07/28/2020,,,4,2706
+No,Home,No,22.8,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,1,No,No,No,No,Female,Former Smoker,,"Chest Pain (includes ""tightness"" and ""pressure"") | Diarrhea",No,No,No,5,07/02/2020,,,07/07/2020,,6,2707
+,,,22.1,,,,,No,Yes,,,,,,,,,,,,,,,,,Female,,,,,,,5,07/07/2020,,,07/10/2020,,3,2709
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,07/08/2020,,,07/13/2020,,5,2710
+,,,,,,,,,,,,,,,,,,,,,,,,,,Male,,,,,,,,07/09/2020,,,,,3,2711
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,"Chest Pain (includes ""tightness"" and ""pressure"")","Yes, to NYP Cornell",No,No,1,07/10/2020,,,07/13/2020,,2,2712
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,Abdominal Pain,No,No,No,5,07/10/2020,,,07/19/2020,,1,2713
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,07/11/2020,,,07/14/2020,,1,2714
+No,Other,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,Other,No,No,No,4,07/11/2020,,,07/26/2020,,2,2715
+Solid,Home,No,,No,Yes,None,No,No,Yes,Acute Rehab,No,No,No,No,No,No,No,No,No,No,1,No,No,No,No,Male,Former Smoker,,Abdominal Pain | Nausea or vomiting,No,No,No,4,07/12/2020,,,07/26/2020,,3,2716
+No,Other Hospital,No,23.1,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,5,No,No,No,No,Female,No,,,No,No,No,2,07/16/2020,,,07/26/2020,,1,2717
+No,Home,No,,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,Other,No,No,No,5,07/12/2020,,,07/17/2020,,3,2718
+No,Home,No,24.5,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,1,No,No,No,No,Female,No,,,No,No,No,3,07/12/2020,,,07/14/2020,,2,2719
+No,Home,No,,Yes,No,Myocardial Infarction | Heart failure exacerbation  or cardiogenic shock,No,No,Yes,Home,Yes,No,No,No,Yes,Yes,Yes,No,No,No,8,COPD,ESRD,No,No,Male,No,,Dyspnea (shortness of breath),No,No,No,1,07/13/2020,,,07/27/2020,,4,2721
+No,Undomiciled,No,20.1,No,No,Acute Kidney Injury,No,No,Yes,Subacute Rehab,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,Active Smoker,,"Altered Mental Status (includes ""confusion"")",No,No,DVT,2,07/15/2020,,,12/10/2020,,4,2722
+Solid,Home,No,,Yes,No,Myocardial Infarction,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,0,Other,No,No,No,Female,Former Smoker,,"Chest Pain (includes ""tightness"" and ""pressure"")",No,No,No,4,07/14/2020,,,07/29/2020,,5,2723
+No,Home,No,37,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,1,No,No,No,No,Female,No,,Other,No,No,No,2,08/07/2020,,,08/13/2020,,2,2724
+No,Home,No,28.4,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,9,Asthma,CKD (Creat &gt;2 at baseline),No,No,Male,No,,"Other | Chest Pain (includes ""tightness"" and ""pressure"") | Rhinorrhea or nasal congestion",No,No,No,2,09/14/2020,,,09/24/2020,,3,2725
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,0,No,No,No,No,Male,No,,Other,No,No,No,5,07/19/2020,,,07/23/2020,,3,2726
+No,Home,No,32.1,No,No,Other,Yes,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,6,No,No,No,No,Male,No,,Other | Presyncope or Syncope,No,No,No,2,07/18/2020,,,08/07/2020,,5,2727
+No,Home,No,15.9,No,No,Other,No,No,Yes,,No,No,No,No,No,No,No,Yes,No,No,0,No,No,No,No,Male,No,,Abdominal Pain | Other | Fever,No,No,DVT,3,07/30/2020,,,12/10/2020,,3,2728
+No,Home,No,,No,No,None,No,No,Yes,Other,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,Cough | Other | Fever,No,No,Pulmonary Embolism,3,07/20/2020,,,07/20/2020,,3,2730
+No,,,33.4,No,No,,No,No,Yes,,No,,No,No,,No,,No,No,,,No,No,,No,Male,,,,,,,5,07/21/2020,,,07/29/2020,,4,2732
+No,Home,No,38.4,No,No,Myocardial Infarction,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,Active Smoker,,"Chest Pain (includes ""tightness"" and ""pressure"") | Presyncope or Syncope","Yes, to NYP Cornell",No,No,1,07/26/2020,,,07/28/2020,,2,2738
+No,Home,No,50.6,Yes,No,Acute Kidney Injury | Other,No,No,Yes,Home,Yes,No,No,HFpEF,No,Yes,Yes,No,No,No,18,Asthma,No,No,No,Female,No,,Other | Dyspnea (shortness of breath),No,No,No,5,07/26/2020,,,07/31/2020,,4,2739
+No,Home,No,18.7,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,3,No,No,No,No,Female,No,,Headache | Nausea or vomiting | Fever,No,No,No,5,07/29/2020,,,08/04/2020,,6,2741
+No,Other,No,32.9,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,3,No,No,No,No,Male,No,,Other,"Yes, to NYP Cornell",No,No,4,07/30/2020,,,08/09/2020,,4,2743
+No,Other Hospital,No,26.9,No,No,None,No,No,Yes,Shelter,Yes,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Female,No,,,"Yes, to NYP Cornell",No,No,1,08/01/2020,,,07/30/2020,,3,2744
+No,Undomiciled,No,32.1,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,Abdominal Pain | Dyspnea (shortness of breath),No,No,No,2,08/04/2020,,,08/08/2020,,4,2745
+No,Home,No,24.8,No,No,Other,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,Nausea or vomiting | Cough | Other | Dyspnea (shortness of breath),No,No,No,3,08/04/2020,,,08/11/2020,,2,2747
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,1,08/12/2020,,,08/17/2020,,2,2750
+No,Rehab/Nursing Home,No,,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,No,No,Yes,No,No,No,No,1,No,No,No,No,Female,No,,,No,No,No,5,08/13/2020,,,08/18/2020,,6,2751
+No,Home,No,24.1,Yes,No,None,No,Yes,,,No,No,No,HFpEF,No,Yes,No,No,No,No,3,No,CKD (Creat &gt;2 at baseline),No,No,Male,No,,"Altered Mental Status (includes ""confusion"")",No,No,No,4,08/14/2020,,09/03/2020,,,6,2753
+No,Home,No,33,Yes,No,None,No,No,Yes,Home,No,No,No,HFrEF (EF&lt;50%),No,No,No,No,No,No,3,No,No,No,No,Male,Active Smoker,,Other | Dyspnea (shortness of breath),No,No,No,5,08/16/2020,,,08/20/2020,,2,2754
+No,Home,No,36.9,No,No,Acute Kidney Injury,No,Yes,,,No,No,No,No,No,No,No,No,No,Yes,0,No,No,No,No,Male,No,,Headache | Other,No,No,No,1,08/16/2020,08/16/2020,08/20/2020,,,3,2755
+Solid,Home,No,20.9,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,Yes,No,No,No,No,0,No,No,No,No,Male,No,,Abdominal Pain | Diarrhea,No,No,No,2,08/19/2020,,,08/26/2020,,4,2756
+Solid,Other Hospital,No,18.1,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,4,Asthma,No,No,No,Male,Former Smoker,,,No,No,No,5,08/22/2020,,,08/25/2020,,4,2757
+No,Other Hospital,No,23.6,No,No,New onset Arrythmia,No,No,Yes,Acute Rehab,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,,"Yes, to NYP Cornell",No,No,1,09/01/2020,,,10/29/2020,,3,2760
+No,Home,No,35.8,Yes,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,10,Asthma,No,No,No,Female,Former Smoker,,"Cough | Chest Pain (includes ""tightness"" and ""pressure"") | Dyspnea (shortness of breath)",No,No,Pulmonary Embolism,1,09/02/2020,,,09/06/2020,,5,2762
+,,,,,,,,Yes,,,,,,,,,,,,,,,,,,Male,,,,,,,,09/04/2020,,09/13/2020,,,3,2763
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,No,No,No,No,0,No,No,No,No,Male,No,,Sore throat | Dyspnea (shortness of breath),No,No,No,4,09/21/2020,,,09/22/2020,,3,2768
+,,,,,,,,No,Yes,,,,,,,,,,,,,,,,,Male,,,,,,,,09/27/2020,,,09/27/2020,,2,2769
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,Yes,No,No,No,No,5,No,No,No,No,Female,No,,"Nausea or vomiting | Other | Chest Pain (includes ""tightness"" and ""pressure"") | Presyncope or Syncope",No,No,No,4,09/12/2020,,,09/14/2020,,6,2776
+No,Rehab/Nursing Home,No,33.2,No,No,None,No,No,Yes,Subacute Rehab,No,No,No,HFpEF,No,Yes,Yes,No,No,No,17,COPD,No,No,No,Female,Former Smoker,,Presyncope or Syncope,No,No,No,4,06/14/2020,,,06/23/2020,,5,2778
+No,Home,No,,No,No,None,No,No,Yes,Home,Yes,No,No,No,No,No,No,No,No,No,4,No,No,No,No,Female,No,,Headache | Abdominal Pain | Myalgias | Nausea or vomiting | Other | Presyncope or Syncope,No,No,No,1,06/28/2020,,,07/14/2020,,5,2779
+No,Home,No,,No,No,None,No,No,Yes,Home,No,No,No,No,No,No,Yes,No,No,No,2,No,No,No,No,Male,No,,Headache | Nausea or vomiting | Diarrhea | Dyspnea (shortness of breath),No,No,No,5,07/24/2020,,,07/28/2020,,4,2780
