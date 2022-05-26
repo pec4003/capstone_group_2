@@ -20,7 +20,6 @@ w2 <- read.csv("wave2.csv")
 
 
 wave <- rbind(w1, w2)
-wave
 ```
 
 ```{r}
@@ -163,7 +162,6 @@ wave <- wave %>%
          death = case_when(death == 'Yes'~1,
                                  death == 'No'~0
                                  ))
- wave   
 
 # wave$death <- factor(wave$death, levels=c(0, 1), labels=c("No", "Yes"))
 # label(wave$death) <- "Death"
@@ -177,26 +175,26 @@ wave <- wave %>%
 
 
 ```{r}
-### dischatge & transfer out 
-wave %>%
-  select(intubation1,intubation1_dt,discharge_dt, transfer_out_dt) %>%
-  filter(discharge_dt !=''& transfer_out_dt == '')
-###
-
-## 932 patients with no discharge date and no transfer_out_dt; 90 patients tranfer out; no both records for the two variables 
-
-wave %>%
-  select(complications,  death, intubation1 ) ## not mutullay exclusive, seperate outcomes 
-
-wave %>%
-  select(intubation1, discharge_dt,intubation1_dt )%>% 
-  filter(intubation1 == 'Yes' & intubation1_dt == '')
-
-wave %>%
-  select( death,  death_dt,discharge_dt ) 
-
-wave %>% ## survival data used 
-  select(intubation1,  censer_intuba, death, censer_death)
+# ### dischatge & transfer out 
+# wave %>%
+#   select(intubation1,intubation1_dt,discharge_dt, transfer_out_dt) %>%
+#   filter(discharge_dt !=''& transfer_out_dt == '')
+# ###
+# 
+# ## 932 patients with no discharge date and no transfer_out_dt; 90 patients tranfer out; no both records for the two variables 
+# 
+# wave %>%
+#   select(complications,  death, intubation1 ) ## not mutullay exclusive, seperate outcomes 
+# 
+# wave %>%
+#   select(intubation1, discharge_dt,intubation1_dt )%>% 
+#   filter(intubation1 == 'Yes' & intubation1_dt == '')
+# 
+# wave %>%
+#   select( death,  death_dt,discharge_dt ) 
+# 
+# wave %>% ## survival data used 
+#   select(intubation1,  censer_intuba, death, censer_death)
 ```
 
 ```{r}
@@ -209,8 +207,8 @@ wave %>% ## survival data used
 ```{r}
 wave_clean <- wave
 
-wave_clean %>% 
-  filter(is.na(death))
+# wave_clean %>% 
+#   filter(is.na(death))
 ```
 
 # Objective 1
@@ -223,14 +221,14 @@ Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 ```{r}
 # descriptive stats
 obj1_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, dm_factor, cirrhosis_factor, ibd_factor, hep_factor, gi_condition, gi_symptoms) %>%
-  tbl_summary(by = gi_symptoms,  missing = 'no', 
+  select(sex, race_eth, age_cat, obesity, cancer_factor, dm_factor, gi_condition, gi_symptoms) %>%
+  tbl_summary(by = gi_condition,  missing = 'no', 
               label = list(age_cat ~ "Age", 
                          race_eth ~ "Race")) %>%
   add_p() %>%
   add_overall() %>%
   modify_caption("**Table 1. Objective 1**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**Covid GI symptoms**")
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**Chronic GI conditions**")
 obj1_tb1
 ```
 
@@ -247,14 +245,14 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 # descriptive stats
 obj2_tb1 <- wave_clean %>%
   select(sex, race_eth, age_cat, obesity, cancer_factor, dm_factor, gi_symptoms, life_threat_comp, intubation1, death) %>%
-  tbl_summary(by = death,  missing = 'no', 
+  tbl_summary(by = gi_symptoms,  missing = 'no', 
               label = list(age_cat ~ "Age", 
                          race_eth ~ "Race",
                          intubation1 ~ "Intubation")) %>%
   add_p() %>%
   add_overall() %>%
   modify_caption("**Table 2. Objective 2**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**Death**")
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**GI symptoms**")
 obj2_tb1
 ```
 
@@ -262,8 +260,8 @@ obj2_tb1
 
 
 ```{r}
-wave %>% ## survival data used 
-  select(gi_symptoms, intubation1,  censer_intuba, death, censer_death)
+# wave %>% ## survival data used 
+#   select(gi_symptoms, intubation1,  censer_intuba, death, censer_death)
 
 
 survdiff(Surv(censer_intuba, intubation1) ~ gi_symptoms, data = wave_clean)
@@ -299,15 +297,15 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 ```{r}
 # descriptive stats
 obj3_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, dm_factor, cirrhosis_factor, ibd_factor, hep_factor, gi_condition, life_threat_comp, intubation1, death) %>%
-  tbl_summary(by = death,  missing = 'no', 
+  select(sex, race_eth, age_cat, obesity, cancer_factor, dm_factor, gi_condition, life_threat_comp, intubation1, death) %>%
+  tbl_summary(by = gi_condition,  missing = 'no', 
               label = list(age_cat ~ "Age", 
                          race_eth ~ "Race",
                          intubation1 ~ "Intubation")) %>%
   add_p() %>%
   add_overall() %>%
   modify_caption("**Table 3. Objective 3**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**Death**")
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**GI condition**")
 obj3_tb1
 ```
 
