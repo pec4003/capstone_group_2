@@ -135,12 +135,12 @@ wave <- wave %>%
   mutate(cva_factor = ifelse(cva %in% "Yes",
                              1,
                              ifelse(cva == "", NA, 0))) %>%
-  mutate(comorbidity = ifelse(dm_factor == 1 | 
-                              htn_factor == 1 | 
-                              cad_factor == 1 | 
-                              hf_factor == 1 | 
-                              cva_factor == 1,
-                              1, 0)) %>%
+  mutate(cva_comorbidity = ifelse(dm_factor == 1 | 
+                                  htn_factor == 1 | 
+                                  cad_factor == 1 | 
+                                  hf_factor == 1 | 
+                                  cva_factor == 1,
+                                  1, 0)) %>%
   # sex
   mutate(sex = ifelse(sex == 'Female | Female', 
                       'Female',
@@ -151,8 +151,8 @@ wave <- wave %>%
 wave$sex <- factor(wave$sex, levels=c("Male","Female"))
 label(wave$sex) <- "Sex"
 
-wave$race_eth <- factor(wave$race_eth, levels=c("1", "2", "3", "4", "5"))
-levels(wave$race_eth) <- c("Hispanic", "Black", "Asian", "White", "Other")
+wave$race_eth <- factor(wave$race_eth, levels=c("4", "2", "3", "1", "5"))
+levels(wave$race_eth) <- c("White", "Black", "Asian", "Hispanic", "Other")
 label(wave$race_eth) <- "Race"
 
 wave$age_cat <- factor(wave$age_cat, levels=c("1", "2", "3", "4", "5", "6"))
@@ -162,8 +162,8 @@ label(wave$age_cat) <- "Age"
 wave$cancer_factor <- factor(wave$cancer_factor, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave$cancer_factor) <- "Active Cancer"
 
-wave$comorbidity <- factor(wave$comorbidity, levels=c(0, 1), labels=c("No", "Yes"))
-label(wave$comorbidity) <- "Comorbidity"
+wave$cva_comorbidity <- factor(wave$cva_comorbidity, levels=c(0, 1), labels=c("No", "Yes"))
+label(wave$cva_comorbidity) <- "Cardio Comorbidity"
 
 wave$obesity <- factor(wave$obesity, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave$obesity) <- "Obesity"
@@ -252,13 +252,13 @@ wave_clean <- wave
 1.	Determine if patients who were hospitalized with GI/Hepatic conditions during the first two waves of COVID 19 were more likely to report having GI symptoms.
 
 Primary exposure: Presence of chronic liver disease or chronic gastrointestinal conditions, including hepatitis B, hepatitis C, cirrhosis, liver transplants, or inflammatory bowel disease. 
-zz
+
 Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 
 ```{r}
 # descriptive stats
 obj1_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, comorbidity, gi_condition, gi_symptoms) %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms) %>%
   tbl_summary(by = gi_condition,  missing = 'no', 
               label = list(age_cat ~ "Age", 
                            race_eth ~ "Race")) %>%
@@ -280,7 +280,7 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 ```{r}
 # descriptive stats
 obj2_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, comorbidity, gi_symptoms, comp_factor, intubation1, death) %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_symptoms, comp_factor, intubation1, death) %>%
   tbl_summary(by = gi_symptoms, missing = 'no', 
               label = list(age_cat ~ "Age", 
                            race_eth ~ "Race",
@@ -298,16 +298,16 @@ obj2_tb1
 #   select(gi_symptoms, intubation1,  censer_intuba, death, censer_death)
 
 
-survdiff(Surv(censer_intuba, intubation1) ~ gi_symptoms, data = wave_clean)
-
-## intubation 
-ggsurvplot( 
-  fit = survfit(Surv(censer_intuba, intubation1) ~ gi_symptoms, data = wave_clean),
-  xlab = "Days", 
-  ylab = "No intubation probability",
-  pval = TRUE,
-  surv.median.line = "hv",
-  risk.table = TRUE)
+# survdiff(Surv(censer_intuba, intubation1) ~ gi_symptoms, data = wave_clean)
+# 
+# ## intubation 
+# ggsurvplot( 
+#   fit = survfit(Surv(censer_intuba, intubation1) ~ gi_symptoms, data = wave_clean),
+#   xlab = "Days", 
+#   ylab = "No intubation probability",
+#   pval = TRUE,
+#   surv.median.line = "hv",
+#   risk.table = TRUE)
 
 ## Survival 
 ggsurvplot( 
@@ -331,8 +331,8 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 ```{r}
 # descriptive stats
 obj3_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, comorbidity, gi_condition, comp_factor, intubation1, death) %>%
-  tbl_summary(by = gi_condition,  missing = 'no', 
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, comp_factor, intubation1, death) %>%
+  tbl_summary(by = gi_condition, missing = 'no', 
               label = list(age_cat ~ "Age", 
                            race_eth ~ "Race",
                            intubation1 ~ "Intubation")) %>%
@@ -354,16 +354,14 @@ ggsurvplot(
   surv.median.line = "hv",
   risk.table = TRUE)
 
-## intubation 
-ggsurvplot( 
-  fit = survfit(Surv(censer_intuba, intubation1) ~ gi_condition, data = wave_clean),
-  xlab = "Days", 
-  ylab = "No intubation probability",
-  pval = TRUE,
-  surv.median.line = "hv",
-  risk.table = TRUE)
-
-
+# ## intubation 
+# ggsurvplot( 
+#   fit = survfit(Surv(censer_intuba, intubation1) ~ gi_condition, data = wave_clean),
+#   xlab = "Days", 
+#   ylab = "No intubation probability",
+#   pval = TRUE,
+#   surv.median.line = "hv",
+#   risk.table = TRUE)
 ```
 
 # Objective 4
@@ -376,7 +374,3 @@ Primary exposure: Presence of chronic liver disease or chronic gastrointestinal 
 
 Primary outcome: Patient Reported Outcomes (PROs): Post Acute Covid Sequalae such as brain fog, cough, shortness of breath, neuropathy, headache, muscle aches, diarrhea, chest pain, abdominal pain, loss of smell taste, fatigue or other.
 Clinical outcomes: post hospitalization readmission or death.
-
-
-
-
