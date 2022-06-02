@@ -14,6 +14,8 @@ library(Hmisc)
 library(gtsummary)
 ```
 
+# Load data
+
 ```{r}
 w1 <- read.csv("wave1.csv")
 w2 <- read.csv("wave2.csv")
@@ -21,6 +23,8 @@ w2 <- read.csv("wave2.csv")
 
 wave <- rbind(w1, w2)
 ```
+
+# Data cleaning
 
 ```{r}
 # chronic liver disease or gastrointestinal conditions
@@ -35,20 +39,21 @@ wave <- wave %>%
                                    ifelse(cirrhosis == '', NA, 0))) %>%
   # inflammatory bowel disease
   mutate(ibd_factor = ifelse(ibd %in% 'Yes', 
-                                   1, 
-                                   ifelse(ibd == '', NA, 0))) %>%
+                             1, 
+                             ifelse(ibd == '', NA, 0))) %>%
   # hepatitis
-  mutate(hep_factor = ifelse(apply(sapply(c('Hepatitis C', 'Hepatitis B'), grepl, hepatitis), 
-                                   MARGIN =  1, FUN = any), 
-                                   1, 
-                                   ifelse(hepatitis == '', NA, 0))) %>%
+  mutate(hep_factor = ifelse(apply(sapply(c('Hepatitis C', 'Hepatitis B'), 
+                                          grepl, 
+                                          hepatitis), 
+                                   MARGIN =  1, 
+                                   FUN = any), 
+                             1, 
+                             ifelse(hepatitis == '', NA, 0))) %>%
   mutate(gi_condition = ifelse(cirrhosis_factor == 1 | 
-                                 ibd_factor == 1 | 
-                                 hep_factor == 1, 1, 0))
+                               ibd_factor == 1 | 
+                               hep_factor == 1, 1, 0))
 
 # relevel & label
-
-
 
 wave$cirrhosis_factor <- factor(wave$cirrhosis_factor, levels=c(0, 1), labels=c("No", "Yes"))
 wave$ibd_factor <- factor(wave$ibd_factor, levels=c(0, 1), labels=c("No", "Yes"))
@@ -58,124 +63,151 @@ label(wave$cirrhosis_factor) <- "Cirrhosis"
 label(wave$ibd_factor) <- "Inflammatory bowel disease"
 label(wave$hep_factor) <- "Hepatitis"
 label(wave$gi_condition) <- "Chronic GI Condition"
-
 ```
 
 ```{r}
 # COVID GI Symptoms and In-hospital life threatening complications
+# - symptoms
+# - complications
+
 wave <- wave %>%
-        # GI symptoms indicator
-  mutate(gi_symptoms = ifelse(grepl("Abdominal Pain|Nausea|Diarrhea", symptoms), 
+         # GI symptoms
+  mutate(gi_symptoms = ifelse(grepl("Abdominal Pain|Nausea|Diarrhea", 
+                                    symptoms), 
                               1, 
                               ifelse(symptoms == "", NA, 0)),
-         # In-hospital life threatening complications indicator
-         life_threat_comp = ifelse(grepl("Septic Shock|Myocardial Infarction|Heart Failure", 
-                                         complications),
+         # In-hospital life threatening complications
+         life_threat_comp = ifelse(complications != "None" & 
+                                   complications != "",
                                    1, 
-                                   ifelse(complications == "", NA, 0)))
+                                   ifelse(complications == "", NA, 0))) %>%
+  mutate(comp_factor = ifelse(life_threat_comp == 1 | 
+                              vte == 1 | 
+                              renal_replacement == 1, 1, 0))
 
 
 wave$gi_symptoms <- factor(wave$gi_symptoms, levels=c(0, 1), labels=c("No", "Yes"))
-wave$life_threat_comp <- factor(wave$life_threat_comp, levels=c(0, 1), labels=c("No", "Yes"))
+wave$comp_factor <- factor(wave$comp_factor, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave$gi_symptoms) <- "Covid GI symptoms"
-label(wave$life_threat_comp) <- "Life threatening complications"
+label(wave$comp_factor) <- "Life threatening complications"
 ```
-
 
 ```{r}
 # Covariates
 # - Comorbidities:
-#   - active_cancer
-#   - BMI(obesity)
-#   - dm(diabetes)
-# - med_count
+#   - htn
+#   - cad
+#   - hf
+#   - cva
+#   - dm
+# - active_cancer
+# - BMI (obesity)
 # - sex
 # - race_eth
 # - age
 
 wave <- wave %>%
   # cancer
-  mutate(cancer_factor = ifelse(apply(sapply(c('Liquid', 'Solid'), grepl, active_cancer), 
-                                        MARGIN =  1, FUN = any), 
-                                   1, 
-                                   ifelse(active_cancer == '', NA, 0))) %>%
+  mutate(cancer_factor = ifelse(apply(sapply(c('Liquid', 'Solid'), 
+                                             grepl, 
+                                             active_cancer), 
+                                      MARGIN =  1, 
+                                      FUN = any), 
+                                1, 
+                                ifelse(active_cancer == '', NA, 0))) %>%
   # obesity: BMI >= 30
   mutate(bmi = ifelse(bmi == '33.8 | 33.8', 33.8, bmi), 
          bmi = ifelse(bmi == '24.4 | 24.4', 24.4, bmi)) %>%
   mutate(obesity = ifelse(bmi >= 30, 1, ifelse(bmi == '', NA, 0))) %>%
-  # diabetes
+  # comorbidities
   mutate(dm_factor = ifelse(dm %in% 'Yes', 
-                                   1, 
-                                   ifelse(dm == '', NA, 0))) %>%
-  # medication count
-  mutate(med_count = ifelse(med_count == '6 | 6 | 6 | 6', 6, 
-                            ifelse(med_count == '', NA, med_count))) %>%
+                            1, 
+                            ifelse(dm == '', NA, 0))) %>%
+  mutate(htn_factor = ifelse(htn %in% "Yes",
+                             1,
+                             ifelse(htn == "", NA, 0))) %>%
+  mutate(cad_factor = ifelse(cad %in% "Yes",
+                             1,
+                             ifelse(cad == "", NA, 0))) %>%
+  mutate(hf_factor = ifelse(hf %in% "No",
+                            0,
+                            ifelse(hf == "", NA, 1))) %>%
+  mutate(cva_factor = ifelse(cva %in% "Yes",
+                             1,
+                             ifelse(cva == "", NA, 0))) %>%
+  mutate(comorbidity = ifelse(dm_factor == 1 | 
+                              htn_factor == 1 | 
+                              cad_factor == 1 | 
+                              hf_factor == 1 | 
+                              cva_factor == 1,
+                              1, 0)) %>%
   # sex
-  mutate(sex = ifelse(sex == 'Female | Female', 'Female', 
-                            ifelse(sex == '', NA, sex))) 
+  mutate(sex = ifelse(sex == 'Female | Female', 
+                      'Female',
+                      ifelse(sex == '', NA, sex)))
 
 # relevel & label
 
-#wave$sex <- factor(wave$sex,levels=c("Female","Male"))
+wave$sex <- factor(wave$sex, levels=c("Male","Female"))
 label(wave$sex) <- "Sex"
 
-wave$race_eth <- factor(wave$race_eth,levels=c("1","2","3", "4", "5"))
-levels(wave$race_eth) <- c("Hispanic","Black","Asian","White", "Other")
-#label(wave$race_eth) <- "Race"
+wave$race_eth <- factor(wave$race_eth, levels=c("1", "2", "3", "4", "5"))
+levels(wave$race_eth) <- c("Hispanic", "Black", "Asian", "White", "Other")
+label(wave$race_eth) <- "Race"
 
-wave$age_cat <-  factor(wave$age_cat,levels=c("1","2","3","4","5","6"))
-levels(wave$age_cat) <- c("18 – 25","26 – 40","41- 55","56 – 70","70 -85","86+")
-#label(wave$age_cat) <- "Age"
+wave$age_cat <-  factor(wave$age_cat, levels=c("1", "2", "3", "4", "5", "6"))
+levels(wave$age_cat) <- c("18 – 25", "26 – 40", "41 - 55", "56 – 70", "70 - 85", "86+")
+label(wave$age_cat) <- "Age"
 
 wave$cancer_factor <- factor(wave$cancer_factor, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave$cancer_factor) <- "Active Cancer"
 
-wave$dm_factor <- factor(wave$dm_factor, levels=c(0, 1), labels=c("No", "Yes"))
-label(wave$dm_factor) <- "Diabetes"
+wave$comorbidity <- factor(wave$comorbidity, levels=c(0, 1), labels=c("No", "Yes"))
+label(wave$comorbidity) <- "Comorbidity"
 
 wave$obesity <- factor(wave$obesity, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave$obesity) <- "Obesity"
 ```
 
-
-## Survival data 
 ```{r}
-## survival data 
+# survival
 wave <- wave %>% 
-  mutate(ed_dt = as.Date(ed_dt, format='%m/%d/%Y'),
-         intubation1_dt = as.Date(intubation1_dt, format='%m/%d/%Y'),
-         death_dt = as.Date( death_dt,format='%m/%d/%Y'),
-         discharge_dt = as.Date(discharge_dt,format='%m/%d/%Y'),
-         transfer_out_dt = as.Date(transfer_out_dt , format = '%m/%d/%Y'),
-         discharge_transfer_dt= if_else(is.na(discharge_dt),transfer_out_dt,discharge_dt),
-         censor_death_dt = if_else(death=='Yes',	death_dt, discharge_transfer_dt),
+  mutate(ed_dt = as.Date(ed_dt, format = '%m/%d/%Y'),
+         intubation1_dt = as.Date(intubation1_dt, format = '%m/%d/%Y'),
+         death_dt = as.Date(death_dt, format = '%m/%d/%Y'),
+         discharge_dt = as.Date(discharge_dt, format = '%m/%d/%Y'),
+         transfer_out_dt = as.Date(transfer_out_dt, format = '%m/%d/%Y'),
+         discharge_transfer_dt = if_else(is.na(discharge_dt), 
+                                         transfer_out_dt, 
+                                         discharge_dt),
+         censor_death_dt = if_else(death == 'Yes', 
+                                   death_dt, 
+                                   discharge_transfer_dt),
          ## time to death 
-         censer_death = as.numeric(difftime( censor_death_dt, ed_dt, unit = 'days')),
+         censer_death = as.numeric(difftime(censor_death_dt, ed_dt, 
+                                            unit = 'days')),
          censor_intuba_dt = if_else(intubation1 =='Yes',
-                                    intubation1_dt, discharge_transfer_dt),
+                                    intubation1_dt, 
+                                    discharge_transfer_dt),
          ## time to intubation 
-         censer_intuba = as.numeric(difftime(  censor_intuba_dt, ed_dt, unit = 'days'))
-         ) %>% 
-  mutate(intubation1 = case_when(intubation1 == 'Yes'~1,
-                                 intubation1 == 'No'~0
-                                 ),
-         death = case_when(death == 'Yes'~1,
-                                 death == 'No'~0
-                                 ))
+         censer_intuba = as.numeric(difftime(censor_intuba_dt, ed_dt, 
+                                             unit = 'days'))) %>% 
+  mutate(intubation1 = ifelse(intubation1 %in% "Yes",
+                              1,
+                              ifelse(intubation1 == "", NA, 0)),
+         death = ifelse(death %in% "Yes",
+                        1,
+                        ifelse(death == "", NA, 0)))
 
-# wave$death <- factor(wave$death, levels=c(0, 1), labels=c("No", "Yes"))
-# label(wave$death) <- "Death"
-# wave$intubation1 <- factor(wave$intubation1, levels=c(0, 1), labels=c("No", "Yes"))
-# label(wave$intubation1) <- "Intubation"
-## ards: Acute respiratory distress syndrome 
-## cad: coronary artery disease
-## cirrhosis 肝硬化
-## rheum. Rheumatoid arthritis is a chronic inflammatory disorder
+wave$death <- factor(wave$death, levels=c(0, 1), labels=c("No", "Yes"))
+label(wave$death) <- "Death"
+wave$intubation1 <- factor(wave$intubation1, levels=c(0, 1), labels=c("No", "Yes"))
+label(wave$intubation1) <- "Intubation"
 ```
 
 
 ```{r}
-# ### dischatge & transfer out 
+# ### discharge & transfer out 
 # wave %>%
 #   select(intubation1,intubation1_dt,discharge_dt, transfer_out_dt) %>%
 #   filter(discharge_dt !=''& transfer_out_dt == '')
@@ -201,17 +233,22 @@ wave <- wave %>%
 # missing values?   find the exposures? exposure pivot_longer/  death: time to death  survival data 
 ```
 
-
 # Cleaned dataset 
 
 ```{r}
 wave_clean <- wave
 
+# Death
 # wave_clean %>% 
-#   filter(is.na(death))
+#   filter(!is.na(death))
+#
+# Intubation
+# wave_clean %>%
+#   filter(!is.na(intubation1))
 ```
 
 # Objective 1
+
 1.	Determine if patients who were hospitalized with GI/Hepatic conditions during the first two waves of COVID 19 were more likely to report having GI symptoms.
 
 Primary exposure: Presence of chronic liver disease or chronic gastrointestinal conditions, including hepatitis B, hepatitis C, cirrhosis, liver transplants, or inflammatory bowel disease. 
@@ -221,10 +258,10 @@ Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 ```{r}
 # descriptive stats
 obj1_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, dm_factor, gi_condition, gi_symptoms) %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, comorbidity, gi_condition, gi_symptoms) %>%
   tbl_summary(by = gi_condition,  missing = 'no', 
               label = list(age_cat ~ "Age", 
-                         race_eth ~ "Race")) %>%
+                           race_eth ~ "Race")) %>%
   add_p() %>%
   add_overall() %>%
   modify_caption("**Table 1. Objective 1**") %>%
@@ -232,10 +269,9 @@ obj1_tb1 <- wave_clean %>%
 obj1_tb1
 ```
 
-
 # Objective 2
-2.	Determine if patients hospitalized with GI symptoms during the first two waves of COVID 19 had similar in-hospital outcomes to those who did not report such symptoms.
 
+2.	Determine if patients hospitalized with GI symptoms during the first two waves of COVID 19 had similar in-hospital outcomes to those who did not report such symptoms.
 
 Primary exposure: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 
@@ -244,19 +280,17 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 ```{r}
 # descriptive stats
 obj2_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, dm_factor, gi_symptoms, life_threat_comp, intubation1, death) %>%
-  tbl_summary(by = gi_symptoms,  missing = 'no', 
+  select(sex, race_eth, age_cat, obesity, cancer_factor, comorbidity, gi_symptoms, comp_factor, intubation1, death) %>%
+  tbl_summary(by = gi_symptoms, missing = 'no', 
               label = list(age_cat ~ "Age", 
-                         race_eth ~ "Race",
-                         intubation1 ~ "Intubation")) %>%
+                           race_eth ~ "Race",
+                           intubation1 ~ "Intubation")) %>%
   add_p() %>%
   add_overall() %>%
   modify_caption("**Table 2. Objective 2**") %>%
   modify_spanning_header(c("stat_1", "stat_2") ~ "**GI symptoms**")
 obj2_tb1
 ```
-
-
 
 
 ```{r}
@@ -286,8 +320,8 @@ ggsurvplot(
 
 ```
 
-
 # Objective 3
+
 3.	Determine in-hospital complications, including mortality among those with GI/Hepatic comorbidities of Covid 19 hospitalizations in a large hospital in NYC 
 
 Primary exposure: Presence of chronic liver disease or chronic gastrointestinal conditions, including hepatitis B, hepatitis C, cirrhosis, liver transplants, or inflammatory bowel disease
@@ -297,11 +331,11 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 ```{r}
 # descriptive stats
 obj3_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, dm_factor, gi_condition, life_threat_comp, intubation1, death) %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, comorbidity, gi_condition, comp_factor, intubation1, death) %>%
   tbl_summary(by = gi_condition,  missing = 'no', 
               label = list(age_cat ~ "Age", 
-                         race_eth ~ "Race",
-                         intubation1 ~ "Intubation")) %>%
+                           race_eth ~ "Race",
+                           intubation1 ~ "Intubation")) %>%
   add_p() %>%
   add_overall() %>%
   modify_caption("**Table 3. Objective 3**") %>%
@@ -333,6 +367,7 @@ ggsurvplot(
 ```
 
 # Objective 4
+
 4.	Describe patient-reported outcomes (PROs) and clinical outcomes among patients with a subset of patients with GI/Hepatic conditions approximately one year after COVID admission (details are in the original proposal). 
 
 Objective 4: Original proposal.
