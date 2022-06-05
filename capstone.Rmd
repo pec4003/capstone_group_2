@@ -82,9 +82,8 @@ wave <- wave %>%
                                    1, 
                                    ifelse(complications == "", NA, 0))) %>%
   mutate(comp_factor = ifelse(life_threat_comp == 1 | 
-                              vte == 1 | 
-                              renal_replacement == 1, 1, 0))
-
+                              vte %in% c("No", "No | No") | 
+                              renal_replacement == "Yes", 1, 0))
 
 wave$gi_symptoms <- factor(wave$gi_symptoms, levels=c(0, 1), labels=c("No", "Yes"))
 wave$comp_factor <- factor(wave$comp_factor, levels=c(0, 1), labels=c("No", "Yes"))
@@ -269,6 +268,14 @@ obj1_tb1 <- wave_clean %>%
 obj1_tb1
 ```
 
+
+```{r}
+fit_obj1 <- glm(gi_symptoms ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+summary(fit_obj1)
+
+```
+
+
 # Objective 2
 
 2.	Determine if patients hospitalized with GI symptoms during the first two waves of COVID 19 had similar in-hospital outcomes to those who did not report such symptoms.
@@ -292,6 +299,17 @@ obj2_tb1 <- wave_clean %>%
 obj2_tb1
 ```
 
+```{r}
+wave_clean <- wave_clean %>%
+  mutate(outcome = ifelse(comp_factor == "Yes" | death == "Yes" | intubation1 == "Yes", 1, 0))
+
+wave_clean$outcome <- factor(wave_clean$outcome, levels=c(0, 1), labels=c("No", "Yes"))
+
+
+fit_obj2 <- glm(outcome ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+summary(fit_obj2)
+```
+
 
 ```{r}
 # wave %>% ## survival data used 
@@ -310,13 +328,13 @@ obj2_tb1
 #   risk.table = TRUE)
 
 ## Survival 
-ggsurvplot( 
-  fit = survfit(Surv(censer_death, death) ~ gi_symptoms, data = wave_clean),
-  xlab = "Days", 
-  ylab = "Survival probability",
-  pval = TRUE,
-  surv.median.line = "hv",
-  risk.table = TRUE)
+# ggsurvplot( 
+#   fit = survfit(Surv(censer_death, death) ~ gi_symptoms, data = wave_clean),
+#   xlab = "Days", 
+#   ylab = "Survival probability",
+#   pval = TRUE,
+#   surv.median.line = "hv",
+#   risk.table = TRUE)
 
 ```
 
@@ -346,13 +364,13 @@ obj3_tb1
 
 ```{r}
 ## death
-ggsurvplot( 
-  fit = survfit(Surv(censer_death, death) ~ gi_condition, data = wave_clean),
-  xlab = "Days", 
-  ylab = "Survival probability",
-  pval = TRUE,
-  surv.median.line = "hv",
-  risk.table = TRUE)
+# ggsurvplot( 
+#   fit = survfit(Surv(censer_death, death) ~ gi_condition, data = wave_clean),
+#   xlab = "Days", 
+#   ylab = "Survival probability",
+#   pval = TRUE,
+#   surv.median.line = "hv",
+#   risk.table = TRUE)
 
 # ## intubation 
 # ggsurvplot( 
