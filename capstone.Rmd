@@ -2,7 +2,11 @@
 title: "capstone"
 author: "JIN ZHU"
 date: "5/21/2022"
-output: html_document
+output: 
+  html_document:
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -226,7 +230,7 @@ label(wave_clean$intubation1) <- "Intubation"
 #   select(intubation1,  censer_intuba, death, censer_death)
 ```
 
-# Table 1
+# Overall Table 1
 
 ```{r}
 # descriptive stats
@@ -244,7 +248,7 @@ overall_tb1
 
 # Objective 1
 
-1.	Determine if patients who were hospitalized with GI/Hepatic conditions during the first two waves of COVID 19 were more likely to report having GI symptoms.
+**Determine if patients who were hospitalized with GI/Hepatic conditions during the first two waves of COVID 19 were more likely to report having GI symptoms.**
 
 Primary exposure: Presence of chronic liver disease or chronic gastrointestinal conditions, including hepatitis B, hepatitis C, cirrhosis, liver transplants, or inflammatory bowel disease. 
 
@@ -264,6 +268,7 @@ Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 # obj1_tb1
 ```
 
+## Logistic model
 ```{r}
 fit_obj1 <- glm(gi_symptoms ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, data = wave_clean, family = "binomial")
 summary(fit_obj1)
@@ -271,7 +276,7 @@ summary(fit_obj1)
 
 # Objective 2
 
-2.	Determine if patients hospitalized with GI symptoms during the first two waves of COVID 19 had similar in-hospital outcomes to those who did not report such symptoms.
+**Determine if patients hospitalized with GI symptoms during the first two waves of COVID 19 had similar in-hospital outcomes to those who did not report such symptoms.**
 
 Primary exposure: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 
@@ -292,14 +297,16 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 # obj2_tb1
 ```
 
+## Logistic model
 ```{r}
 wave_clean <- wave_clean %>%
-  mutate(status = ifelse(comp_factor == "Yes" | death == "Yes" | intubation1 == "Yes", 1, 0))
+  mutate(outcome = ifelse(comp_factor == "Yes" | death == "Yes" | intubation1 == "Yes", 1, 0))
 
 fit_obj2 <- glm(outcome ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, data = wave_clean, family = "binomial")
 summary(fit_obj2)
 ```
 
+## Death Survival
 ```{r}
 survdiff(Surv(censer_death, as.numeric(death)) ~ gi_symptoms, data = wave_clean)
 
@@ -317,7 +324,7 @@ survfit(Surv(censer_death, as.numeric(death)) ~ gi_symptoms, data = wave_clean)
 
 # Objective 3
 
-3.	Determine in-hospital complications, including mortality among those with GI/Hepatic comorbidities of Covid 19 hospitalizations in a large hospital in NYC 
+**Determine in-hospital complications, including mortality among those with GI/Hepatic comorbidities of Covid 19 hospitalizations in a large hospital in NYC **
 
 Primary exposure: Presence of chronic liver disease or chronic gastrointestinal conditions, including hepatitis B, hepatitis C, cirrhosis, liver transplants, or inflammatory bowel disease
 
@@ -336,6 +343,36 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 #   modify_caption("**Table 3. Objective 3**") %>%
 #   modify_spanning_header(c("stat_1", "stat_2") ~ "**GI condition**")
 # obj3_tb1
+```
+
+## Logistic model
+```{r}
+## outcome
+fit_obj3_outcome <- glm(outcome ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+summary(fit_obj3_outcome)
+
+## death
+fit_obj3_death <- glm(death ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+summary(fit_obj3_death)
+
+## complication
+fit_obj3_comp <- glm(comp_factor ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+summary(fit_obj3_comp)
+```
+
+## Death Survival
+```{r}
+## death-survial
+wave_clean$death_code = as.numeric(wave_clean$death)
+ggsurvplot( 
+  fit = survfit(Surv(censer_death,death_code) ~ gi_condition, data = wave_clean),
+  xlab = "Days", 
+  ylab = "Survival probability",
+  pval = TRUE,
+  surv.median.line = "hv",
+  risk.table = TRUE)
+
+survfit(Surv(censer_death, death_code) ~ gi_condition, data = wave_clean)
 ```
 
 
@@ -361,7 +398,7 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 
 # Objective 4
 
-4.	Describe patient-reported outcomes (PROs) and clinical outcomes among patients with a subset of patients with GI/Hepatic conditions approximately one year after COVID admission (details are in the original proposal). 
+**Describe patient-reported outcomes (PROs) and clinical outcomes among patients with a subset of patients with GI/Hepatic conditions approximately one year after COVID admission (details are in the original proposal). **
 
 Objective 4: Original proposal.
 
