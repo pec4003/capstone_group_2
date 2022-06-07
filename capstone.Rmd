@@ -207,29 +207,6 @@ wave_clean$intubation1 <- factor(wave_clean$intubation1, levels=c(0, 1), labels=
 label(wave_clean$intubation1) <- "Intubation"
 ```
 
-```{r}
-# ### discharge & transfer out 
-# wave %>%
-#   select(intubation1,intubation1_dt,discharge_dt, transfer_out_dt) %>%
-#   filter(discharge_dt !=''& transfer_out_dt == '')
-# ###
-# 
-# ## 932 patients with no discharge date and no transfer_out_dt; 90 patients tranfer out; no both records for the two variables 
-# 
-# wave %>%
-#   select(complications,  death, intubation1 ) ## not mutullay exclusive, seperate outcomes 
-# 
-# wave %>%
-#   select(intubation1, discharge_dt,intubation1_dt )%>% 
-#   filter(intubation1 == 'Yes' & intubation1_dt == '')
-# 
-# wave %>%
-#   select( death,  death_dt,discharge_dt ) 
-# 
-# wave %>% ## survival data used 
-#   select(intubation1,  censer_intuba, death, censer_death)
-```
-
 # Overall Table 1
 
 ```{r}
@@ -375,26 +352,6 @@ ggsurvplot(
 survfit(Surv(censer_death, death_code) ~ gi_condition, data = wave_clean)
 ```
 
-
-```{r}
-## death
-# ggsurvplot( 
-#   fit = survfit(Surv(censer_death, death) ~ gi_condition, data = wave_clean),
-#   xlab = "Days", 
-#   ylab = "Survival probability",
-#   pval = TRUE,
-#   surv.median.line = "hv",
-#   risk.table = TRUE)
-
-# ## intubation 
-# ggsurvplot( 
-#   fit = survfit(Surv(censer_intuba, intubation1) ~ gi_condition, data = wave_clean),
-#   xlab = "Days", 
-#   ylab = "No intubation probability",
-#   pval = TRUE,
-#   surv.median.line = "hv",
-#   risk.table = TRUE)
-```
 
 # Objective 4
 
