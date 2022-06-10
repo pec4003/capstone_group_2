@@ -85,13 +85,16 @@ wave_clean <- wave_clean %>%
                                    1, 
                                    ifelse(complications == "", NA, 0))) %>%
   mutate(comp_factor = ifelse(life_threat_comp == 1 | 
-                              vte %in% c("No", "No | No") | 
+                              !(vte %in% c("No", "No | No")) | 
                               renal_replacement == "Yes", 1, 0))
 
 wave_clean$gi_symptoms <- factor(wave_clean$gi_symptoms, levels=c(0, 1), labels=c("No", "Yes"))
 wave_clean$comp_factor <- factor(wave_clean$comp_factor, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave_clean$gi_symptoms) <- "Covid GI symptoms"
 label(wave_clean$comp_factor) <- "Life threatening complications"
+
+
+table(wave_clean$comp_factor)
 ```
 
 ```{r}
@@ -158,7 +161,7 @@ levels(wave_clean$race_eth) <- c("White", "Black", "Asian", "Hispanic", "Other")
 label(wave_clean$race_eth) <- "Race"
 
 wave_clean$age_cat <- factor(wave_clean$age_cat, levels=c("1", "2", "3", "4", "5", "6"))
-levels(wave_clean$age_cat) <- c("18 - 25", "26 - 40", "41 - 55", "56 - 70", "70 - 85", "86+")
+levels(wave_clean$age_cat) <- c("18 - 25", "26 - 40", "41 - 55", "56 - 70", "71 - 85", "86+")
 label(wave_clean$age_cat) <- "Age"
 
 wave_clean$cancer_factor <- factor(wave_clean$cancer_factor, levels=c(0, 1), labels=c("No", "Yes"))
@@ -232,17 +235,17 @@ Primary exposure: Presence of chronic liver disease or chronic gastrointestinal 
 Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 
 ```{r}
-# # descriptive stats
-# obj1_tb1 <- wave_clean %>%
-#   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms) %>%
-#   tbl_summary(by = gi_condition,  missing = 'no', 
-#               label = list(age_cat ~ "Age", 
-#                            race_eth ~ "Race")) %>%
-#   add_p() %>%
-#   add_overall() %>%
-#   modify_caption("**Table 1. Objective 1**") %>%
-#   modify_spanning_header(c("stat_1", "stat_2") ~ "**Chronic GI conditions**")
-# obj1_tb1
+# descriptive stats
+obj1_tb1 <- wave_clean %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms) %>%
+  tbl_summary(by = gi_condition,  missing = 'no',
+              label = list(age_cat ~ "Age",
+                           race_eth ~ "Race")) %>%
+  add_p() %>%
+  add_overall() %>%
+  modify_caption("**Table 1. Objective 1**") %>%
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**Chronic GI conditions**")
+obj1_tb1
 ```
 
 ## Logistic model
@@ -260,18 +263,18 @@ Primary exposure: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 Primary outcome: in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death. 
 
 ```{r}
-# # descriptive stats
-# obj2_tb1 <- wave_clean %>%
-#   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_symptoms, comp_factor, intubation1, death) %>%
-#   tbl_summary(by = gi_symptoms, missing = 'no', 
-#               label = list(age_cat ~ "Age", 
-#                            race_eth ~ "Race",
-#                            intubation1 ~ "Intubation")) %>%
-#   add_p() %>%
-#   add_overall() %>%
-#   modify_caption("**Table 2. Objective 2**") %>%
-#   modify_spanning_header(c("stat_1", "stat_2") ~ "**GI symptoms**")
-# obj2_tb1
+# descriptive stats
+obj2_tb1 <- wave_clean %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_symptoms, comp_factor, intubation1, death) %>%
+  tbl_summary(by = gi_symptoms, missing = 'no',
+              label = list(age_cat ~ "Age",
+                           race_eth ~ "Race",
+                           intubation1 ~ "Intubation")) %>%
+  add_p() %>%
+  add_overall() %>%
+  modify_caption("**Table 2. Objective 2**") %>%
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**GI symptoms**")
+obj2_tb1
 ```
 
 ## Logistic model
@@ -308,18 +311,18 @@ Primary exposure: Presence of chronic liver disease or chronic gastrointestinal 
 Primary outcome: in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death. 
 
 ```{r}
-# # descriptive stats
-# obj3_tb1 <- wave_clean %>%
-#   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, comp_factor, intubation1, death) %>%
-#   tbl_summary(by = gi_condition, missing = 'no', 
-#               label = list(age_cat ~ "Age", 
-#                            race_eth ~ "Race",
-#                            intubation1 ~ "Intubation")) %>%
-#   add_p() %>%
-#   add_overall() %>%
-#   modify_caption("**Table 3. Objective 3**") %>%
-#   modify_spanning_header(c("stat_1", "stat_2") ~ "**GI condition**")
-# obj3_tb1
+# descriptive stats
+obj3_tb1 <- wave_clean %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, comp_factor, intubation1, death) %>%
+  tbl_summary(by = gi_condition, missing = 'no',
+              label = list(age_cat ~ "Age",
+                           race_eth ~ "Race",
+                           intubation1 ~ "Intubation")) %>%
+  add_p() %>%
+  add_overall() %>%
+  modify_caption("**Table 3. Objective 3**") %>%
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**GI condition**")
+obj3_tb1
 ```
 
 ## Logistic model
