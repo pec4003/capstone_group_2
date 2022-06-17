@@ -264,7 +264,7 @@ Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 
 ## Logistic model
 ```{r}
-fit_obj1 <- glm(gi_symptoms ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + sex*gi_condition, data = wave_clean, family = "binomial")
+fit_obj1 <- glm(gi_symptoms ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + sex*gi_condition + wave, data = wave_clean, family = "binomial")
 summary(fit_obj1)
 ```
 
@@ -286,7 +286,7 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 wave_clean <- wave_clean %>%
   mutate(outcome = ifelse(comp_factor == "Yes" | death == "Yes" | intubation1 == "Yes", 1, 0))
 
-fit_obj2 <- glm(outcome ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, data = wave_clean, family = "binomial")
+fit_obj2 <- glm(outcome ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, data = wave_clean, family = "binomial")
 summary(fit_obj2)
 ```
 
@@ -337,19 +337,19 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 ## Logistic model
 ```{r}
 ## outcome
-fit_obj3_outcome <- glm(outcome ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + sex*gi_condition, wave_clean, family = binomial)
+fit_obj3_outcome <- glm(outcome ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + sex*gi_condition + wave, wave_clean, family = binomial)
 summary(fit_obj3_outcome)
 
 ## death
-fit_obj3_death <- glm(death ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+fit_obj3_death <- glm(death ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
 summary(fit_obj3_death)
 
 ## intubation
-fit_obj3_intuba <- glm(intubation1 ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+fit_obj3_intuba <- glm(intubation1 ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
 summary(fit_obj3_intuba)
 
 ## complication
-fit_obj3_comp <- glm(comp_factor ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+fit_obj3_comp <- glm(comp_factor ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
 summary(fit_obj3_comp)
 ```
 
