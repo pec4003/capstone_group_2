@@ -1,7 +1,7 @@
 ---
 title: "Capstone Group 2"
 author: ""
-date: "6/16/2022"
+date: "6/17/2022"
 output: 
   html_document:
     toc: yes
@@ -64,7 +64,7 @@ wave_clean$ibd_factor <- factor(wave_clean$ibd_factor, levels=c(0, 1), labels=c(
 wave_clean$hep_factor <- factor(wave_clean$hep_factor, levels=c(0, 1), labels=c("No", "Yes"))
 wave_clean$gi_condition <- factor(wave_clean$gi_condition, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave_clean$cirrhosis_factor) <- "Cirrhosis"
-label(wave_clean$ibd_factor) <- "Inflammatory bowel disease"
+label(wave_clean$ibd_factor) <- "Inflammatory Bowel Disease"
 label(wave_clean$hep_factor) <- "Hepatitis"
 label(wave_clean$gi_condition) <- "Chronic GI Condition"
 ```
@@ -86,15 +86,13 @@ wave_clean <- wave_clean %>%
                                    1, 
                                    ifelse(complications == "", NA, 0))) %>%
   mutate(comp_factor = ifelse(life_threat_comp == 1 | 
-                              !(vte %in% c("No", "No | No")) | 
+                              !(vte %in% c("No", "No | No", "")) | 
                               renal_replacement == "Yes", 1, 0))
 
 wave_clean$gi_symptoms <- factor(wave_clean$gi_symptoms, levels=c(0, 1), labels=c("No", "Yes"))
 wave_clean$comp_factor <- factor(wave_clean$comp_factor, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave_clean$gi_symptoms) <- "Covid GI symptoms"
-label(wave_clean$comp_factor) <- "Life threatening complications"
-
-
+label(wave_clean$comp_factor) <- "Life Threatening Complications"
 ```
 
 ```{r}
@@ -206,11 +204,27 @@ wave_clean <- wave_clean %>%
 
 wave_clean$death <- factor(wave_clean$death, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave_clean$death) <- "Death"
+label(wave_clean$censer_death) <- "Time to Death"
 wave_clean$intubation1 <- factor(wave_clean$intubation1, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave_clean$intubation1) <- "Intubation"
+label(wave_clean$censer_intuba) <- "Time to intubation"
 ```
 
 # Table 1
+
+```{r}
+# descriptive stats by gi_condition
+obj1_tb1 <- wave_clean %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms, wave) %>%
+  tbl_summary(by = gi_condition,  missing = 'ifany',
+              label = list(age_cat ~ "Age",
+                           race_eth ~ "Race")) %>%
+  add_p(all_categorical() ~ "chisq.test") %>%
+  add_overall() %>%
+  modify_caption("**Table 1. By GI Condition**") %>%
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**Chronic GI conditions**")
+obj1_tb1
+```
 
 ```{r}
 # descriptive stats by gi_symptoms
@@ -228,21 +242,6 @@ obj2_tb1
 ```
 
 ```{r}
-# descriptive stats by gi_condition
-obj1_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms, wave) %>%
-  tbl_summary(by = gi_condition,  missing = 'ifany',
-              label = list(age_cat ~ "Age",
-                           race_eth ~ "Race")) %>%
-  add_p(all_categorical() ~ "chisq.test") %>%
-  add_overall() %>%
-  modify_caption("**Table 1. By GI Condition**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**Chronic GI conditions**")
-obj1_tb1
-```
-
-
-```{r}
 # descriptive stats by wave
 overall_tb1 <- wave_clean %>%
   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms, comp_factor, intubation1, death, wave) %>%
@@ -254,8 +253,6 @@ overall_tb1 <- wave_clean %>%
   modify_caption("**Table 1. Overall**") 
 overall_tb1
 ```
-
-
 
 # Objective 1
 
@@ -269,6 +266,11 @@ Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 ```{r}
 fit_obj1 <- glm(gi_symptoms ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + sex*gi_condition, data = wave_clean, family = "binomial")
 summary(fit_obj1)
+```
+
+```{r}
+# Odds Ratio
+round(exp(cbind(OR = coef(fit_obj1), confint(fit_obj1))), 3)
 ```
 
 # Objective 2
@@ -286,6 +288,11 @@ wave_clean <- wave_clean %>%
 
 fit_obj2 <- glm(outcome ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, data = wave_clean, family = "binomial")
 summary(fit_obj2)
+```
+
+```{r}
+# Odds Ratio
+round(exp(cbind(OR = coef(fit_obj2), confint(fit_obj2))), 3)
 ```
 
 ## Death Survival
@@ -337,9 +344,18 @@ summary(fit_obj3_outcome)
 fit_obj3_death <- glm(death ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
 summary(fit_obj3_death)
 
+## intubation
+fit_obj3_intuba <- glm(intubation1 ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+summary(fit_obj3_intuba)
+
 ## complication
 fit_obj3_comp <- glm(comp_factor ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
 summary(fit_obj3_comp)
+```
+
+```{r}
+# Odds Ratio
+round(exp(cbind(OR = coef(fit_obj3_outcome), confint(fit_obj3_outcome))), 3)
 ```
 
 ## Death Survival
