@@ -1,7 +1,7 @@
 ---
-title: "capstone"
-author: "JIN ZHU"
-date: "5/21/2022"
+title: "Capstone Group 2"
+author: ""
+date: "6/16/2022"
 output: 
   html_document:
     toc: yes
@@ -10,7 +10,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, fig.align = "center")
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align = "center")
 
 library(tidyverse)
 library(survival)
@@ -24,7 +24,8 @@ library(gtsummary)
 ```{r}
 w1 <- read.csv("wave1.csv")
 w2 <- read.csv("wave2.csv")
-
+w1$wave <- "wave1"
+w2$wave <- "wave2"
 wave <- rbind(w1, w2)
 ```
 
@@ -94,7 +95,6 @@ label(wave_clean$gi_symptoms) <- "Covid GI symptoms"
 label(wave_clean$comp_factor) <- "Life threatening complications"
 
 
-table(wave_clean$comp_factor)
 ```
 
 ```{r}
@@ -210,21 +210,52 @@ wave_clean$intubation1 <- factor(wave_clean$intubation1, levels=c(0, 1), labels=
 label(wave_clean$intubation1) <- "Intubation"
 ```
 
-# Overall Table 1
+# Table 1
 
 ```{r}
-# descriptive stats
+# descriptive stats by gi_symptoms
+obj2_tb1 <- wave_clean %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_symptoms, comp_factor, intubation1, death, wave) %>%
+  tbl_summary(by = gi_symptoms, missing = 'ifany',
+              label = list(age_cat ~ "Age",
+                           race_eth ~ "Race",
+                           intubation1 ~ "Intubation")) %>%
+  add_p() %>%
+  add_overall() %>%
+  modify_caption("**Table 2. By GI Symptoms**") %>%
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**GI symptoms**")
+obj2_tb1
+```
+
+```{r}
+# descriptive stats by gi_condition
+obj1_tb1 <- wave_clean %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms, wave) %>%
+  tbl_summary(by = gi_condition,  missing = 'ifany',
+              label = list(age_cat ~ "Age",
+                           race_eth ~ "Race")) %>%
+  add_p(all_categorical() ~ "chisq.test") %>%
+  add_overall() %>%
+  modify_caption("**Table 1. By GI Condition**") %>%
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**Chronic GI conditions**")
+obj1_tb1
+```
+
+
+```{r}
+# descriptive stats by wave
 overall_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms, comp_factor, intubation1, death) %>%
-  tbl_summary(by = gi_condition,  missing = 'no', 
-              label = list(age_cat ~ "Age", 
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms, comp_factor, intubation1, death, wave) %>%
+  tbl_summary(by = wave,  missing = 'ifany',
+              label = list(age_cat ~ "Age",
                            race_eth ~ "Race")) %>%
   add_p() %>%
   add_overall() %>%
-  modify_caption("**Table 1. Overall**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**Chronic GI conditions**")
+  modify_caption("**Table 1. Overall**") 
 overall_tb1
 ```
+
+
 
 # Objective 1
 
@@ -234,23 +265,9 @@ Primary exposure: Presence of chronic liver disease or chronic gastrointestinal 
 
 Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 
-```{r}
-# descriptive stats
-obj1_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms) %>%
-  tbl_summary(by = gi_condition,  missing = 'no',
-              label = list(age_cat ~ "Age",
-                           race_eth ~ "Race")) %>%
-  add_p() %>%
-  add_overall() %>%
-  modify_caption("**Table 1. Objective 1**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**Chronic GI conditions**")
-obj1_tb1
-```
-
 ## Logistic model
 ```{r}
-fit_obj1 <- glm(gi_symptoms ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, data = wave_clean, family = "binomial")
+fit_obj1 <- glm(gi_symptoms ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + sex*gi_condition, data = wave_clean, family = "binomial")
 summary(fit_obj1)
 ```
 
@@ -261,21 +278,6 @@ summary(fit_obj1)
 Primary exposure: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 
 Primary outcome: in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death. 
-
-```{r}
-# descriptive stats
-obj2_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_symptoms, comp_factor, intubation1, death) %>%
-  tbl_summary(by = gi_symptoms, missing = 'no',
-              label = list(age_cat ~ "Age",
-                           race_eth ~ "Race",
-                           intubation1 ~ "Intubation")) %>%
-  add_p() %>%
-  add_overall() %>%
-  modify_caption("**Table 2. Objective 2**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**GI symptoms**")
-obj2_tb1
-```
 
 ## Logistic model
 ```{r}
@@ -312,23 +314,23 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 
 ```{r}
 # descriptive stats
-obj3_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, comp_factor, intubation1, death) %>%
-  tbl_summary(by = gi_condition, missing = 'no',
-              label = list(age_cat ~ "Age",
-                           race_eth ~ "Race",
-                           intubation1 ~ "Intubation")) %>%
-  add_p() %>%
-  add_overall() %>%
-  modify_caption("**Table 3. Objective 3**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**GI condition**")
-obj3_tb1
+# obj3_tb1 <- wave_clean %>%
+#   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, comp_factor, intubation1, death) %>%
+#   tbl_summary(by = gi_condition, missing = 'no',
+#               label = list(age_cat ~ "Age",
+#                            race_eth ~ "Race",
+#                            intubation1 ~ "Intubation")) %>%
+#   add_p() %>%
+#   add_overall() %>%
+#   modify_caption("**Table 3. Objective 3**") %>%
+#   modify_spanning_header(c("stat_1", "stat_2") ~ "**GI condition**")
+# obj3_tb1
 ```
 
 ## Logistic model
 ```{r}
 ## outcome
-fit_obj3_outcome <- glm(outcome ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity, wave_clean, family = binomial)
+fit_obj3_outcome <- glm(outcome ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + sex*gi_condition, wave_clean, family = binomial)
 summary(fit_obj3_outcome)
 
 ## death
