@@ -342,6 +342,15 @@ summary(fit_obj2)
 round(exp(cbind(OR = coef(fit_obj2), confint(fit_obj2))), 3)
 ```
 
+A multinational logistic regression model was fitted to investigate the relationship between development of GI symptoms and in-hospital outcomes during the first two waves of COVID 19. In-hospital outcomes are defined as in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death.
+
+According to the model, the log of the odds of in-hospital outcomes was negatively related to GI symptoms (p < .05) and gender (p < .05). 
+
+Patients with GI symptoms were more likely to have in-hospital life threatening complications, intubation, or death after controlling for other factors. Patients with GI symptoms were 0.861 times more likely to have in-hospital life-threatening complications, intubation, or death than patients without GI symptoms.
+
+Adjusting for other variables, elder patient, patients with obesity, cancer and cardiovascular comorbidities were likely to experience the above in-hospital outcomes (p < .05).
+
+
 ## Death Survival
 ```{r}
 survdiff(Surv(censer_death, as.numeric(death)) ~ gi_symptoms, data = wave_clean)
