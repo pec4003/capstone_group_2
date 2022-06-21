@@ -16,6 +16,7 @@ library(tidyverse)
 library(survival)
 library(survminer)
 library(Hmisc)
+library(forcats)
 library(gtsummary)
 ```
 
@@ -102,7 +103,7 @@ wave_clean <- wave_clean %>%
          mi = ifelse(grepl('Myocardial Infarction', complications), 
                                 1, 
                                 ifelse(complications == '', NA, 0)), 
-         hf = ifelse(grepl("Heart failure", complications), 
+         hf1 = ifelse(grepl("Heart failure", complications), 
                                 1, 
                                 ifelse(complications == '', NA, 0)), 
          vte1 = ifelse(vte %in% c("No", "No | No"), 0,
@@ -238,7 +239,9 @@ label(wave_clean$censer_intuba) <- "Time to intubation"
 ```{r}
 # descriptive stats by gi_condition
 obj1_tb1 <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity,  gi_condition, gi_symptoms, comp_factor, intubation1, death, wave, septic_shock, arrhythmias, mi, hf, renal_replacement1, vte1) %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity,  gi_condition, gi_symptoms, comp_factor, intubation1, death, wave, septic_shock, arrhythmias, mi, hf1, renal_replacement1, vte1) %>%
+  mutate(gi_condition = factor(gi_condition) %>%
+           fct_explicit_na(na_level = "Missing")) %>%
   tbl_summary(by = gi_condition,  missing = 'ifany',
               label = list(age_cat ~ "Age",
                            race_eth ~ "Race")) %>%
@@ -253,11 +256,13 @@ obj1_tb1
 # descriptive stats by gi_symptoms
 obj2_tb1 <- wave_clean %>%
   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_symptoms, comp_factor, intubation1, death, wave) %>%
+  mutate(gi_symptoms = factor(gi_symptoms) %>%
+           fct_explicit_na(na_level = "Missing")) %>%
   tbl_summary(by = gi_symptoms, missing = 'ifany',
               label = list(age_cat ~ "Age",
                            race_eth ~ "Race",
                            intubation1 ~ "Intubation")) %>%
-  add_p() %>%
+  add_p(age_cat ~ "chisq.test") %>%
   add_overall() %>%
   modify_caption("**Table 2. By GI Symptoms**") %>%
   modify_spanning_header(c("stat_1", "stat_2") ~ "**GI symptoms**")
