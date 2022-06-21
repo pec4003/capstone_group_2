@@ -442,13 +442,3 @@ survfit(Surv(censer_death, death_code) ~ gi_condition, data = wave_clean)
 
 **Interpret**: The effect of chronic GI condition on survival time was investigated using survival analysis. Patients with chronic GI condition had a median survival time of 31 days, whereas those without chronic GI condition had a median survival time of 40 days. However, the difference was not significant between the two survival plots (p=0.72). 
 
-# Objective 4
-
-**Describe patient-reported outcomes (PROs) and clinical outcomes among patients with a subset of patients with GI/Hepatic conditions approximately one year after COVID admission (details are in the original proposal). **
-
-Objective 4: Original proposal.
-
-Primary exposure: Presence of chronic liver disease or chronic gastrointestinal conditions, including hepatitis B, hepatitis C, cirrhosis, liver transplants, or inflammatory bowel disease
-
-Primary outcome: Patient Reported Outcomes (PROs): Post Acute Covid Sequalae such as brain fog, cough, shortness of breath, neuropathy, headache, muscle aches, diarrhea, chest pain, abdominal pain, loss of smell taste, fatigue or other.
-Clinical outcomes: post hospitalization readmission or death.
