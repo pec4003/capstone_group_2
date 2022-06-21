@@ -313,7 +313,7 @@ summary(fit_obj1)
 round(exp(cbind(OR = coef(fit_obj1), confint(fit_obj1))), 3)
 ```
 
-The result shows that there is no significant association between GI condition and COVID GI symptoms at 5% level of significance. The odds ratio for GI condition is positive (1.178), but the confidence interval include 1. We also include the interaction term for sex because female are more likely to have GI symptoms compared to male, but the coefficient of the interaction term is not significant either.
+**Interpret**: The result shows that there is no significant association between GI condition and COVID GI symptoms at 5% level of significance. The odds ratio for GI condition is positive (1.178), but the confidence interval include 1. We also include the interaction term for sex because female are more likely to have GI symptoms compared to male, but the coefficient of the interaction term is not significant either.
 
 Moreover, we found that patients who have obesity are more likely to have GI symptoms compared to patients who do not have obesity. Studies have shown that obesity is a risk factor of GI disease.
 
@@ -342,11 +342,9 @@ summary(fit_obj2)
 round(exp(cbind(OR = coef(fit_obj2), confint(fit_obj2))), 3)
 ```
 
-A multinational logistic regression model was fitted to investigate the relationship between development of GI symptoms and in-hospital outcomes during the first two waves of COVID 19. In-hospital outcomes are defined as in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death.
+**Interpret**: A multinational logistic regression model was fitted to investigate the relationship between development of GI symptoms and in-hospital outcomes during the first two waves of COVID 19. In-hospital outcomes are defined as in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death.
 
-According to the model, the log of the odds of in-hospital outcomes was negatively related to GI symptoms (p < .05) and gender (p < .05). 
-
-Patients with GI symptoms were more likely to have in-hospital life threatening complications, intubation, or death after controlling for other factors. Patients with GI symptoms were 0.861 times more likely to have in-hospital life-threatening complications, intubation, or death than patients without GI symptoms.
+According to the model, the log of the odds of in-hospital outcomes was negatively related to GI symptoms (p < .05) and gender (p < .05). Patients with GI symptoms were more likely to have in-hospital life threatening complications, intubation, or death after controlling for other factors. Patients with GI symptoms were 0.861 times more likely to have in-hospital life-threatening complications, intubation, or death than patients without GI symptoms.
 
 Adjusting for other variables, elder patient, patients with obesity, cancer and cardiovascular comorbidities were likely to experience the above in-hospital outcomes (p < .05).
 
@@ -366,6 +364,8 @@ ggsurvplot(
 
 survfit(Surv(censer_death, as.numeric(death)) ~ gi_symptoms, data = wave_clean)
 ```
+
+**Interpret**: The effect of GI symptoms on survival time was investigated using survival analysis. Patients with GI symptoms had a median survival time of 51 days, whereas those without GI symptoms had a median survival time of 35 days. There was a significant difference between the two survival plots (p.001). One possible explanation for this outcome is that GI symptoms may be minor in COVID-19 patients. Some of the more significant symptoms, such as lung symptoms, may be linked to death.
 
 # Objective 3
 
