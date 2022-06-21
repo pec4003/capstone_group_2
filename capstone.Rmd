@@ -313,6 +313,12 @@ summary(fit_obj1)
 round(exp(cbind(OR = coef(fit_obj1), confint(fit_obj1))), 3)
 ```
 
+The result shows that there is no significant association between GI condition and COVID GI symptoms at 5% level of significance. The odds ratio for GI condition is positive (1.178), but the confidence interval include 1. We also include the interaction term for sex because female are more likely to have GI symptoms compared to male, but the coefficient of the interaction term is not significant either.
+
+Moreover, we found that patients who have obesity are more likely to have GI symptoms compared to patients who do not have obesity. Studies have shown that obesity is a risk factor of GI disease.
+
+We also surprisingly found that elder people have a less possibility to have GI symptoms compared to youngsters. This could make sense because GI symptoms are milder than lung or other symptoms. Elder people might tend to have more severe symptoms instead of GI symptoms.
+
 # Objective 2
 
 **Determine if patients hospitalized with GI symptoms during the first two waves of COVID 19 had similar in-hospital outcomes to those who did not report such symptoms.**
