@@ -440,6 +440,7 @@ ggsurvplot(
 survfit(Surv(censer_death, death_code) ~ gi_condition, data = wave_clean)
 ```
 
+**Interpret**: The effect of chronic GI condition on survival time was investigated using survival analysis. Patients with chronic GI condition had a median survival time of 31 days, whereas those without chronic GI condition had a median survival time of 40 days. However, the difference was not significant between the two survival plots (p=0.72). 
 
 # Objective 4
 
