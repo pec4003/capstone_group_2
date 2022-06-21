@@ -115,8 +115,20 @@ wave_clean <- wave_clean %>%
 
 wave_clean$gi_symptoms <- factor(wave_clean$gi_symptoms, levels=c(0, 1), labels=c("No", "Yes"))
 wave_clean$comp_factor <- factor(wave_clean$comp_factor, levels=c(0, 1), labels=c("No", "Yes"))
+wave_clean$septic_shock <- factor(wave_clean$septic_shock, levels=c(0, 1), labels=c("No", "Yes"))
+wave_clean$arrhythmias <- factor(wave_clean$arrhythmias, levels=c(0, 1), labels=c("No", "Yes"))
+wave_clean$mi <- factor(wave_clean$mi, levels=c(0, 1), labels=c("No", "Yes"))
+wave_clean$hf1 <- factor(wave_clean$hf1, levels=c(0, 1), labels=c("No", "Yes"))
+wave_clean$vte1 <- factor(wave_clean$vte1, levels=c(0, 1), labels=c("No", "Yes"))
+wave_clean$renal_replacement1 <- factor(wave_clean$renal_replacement1, levels=c(0, 1), labels=c("No", "Yes"))
 label(wave_clean$gi_symptoms) <- "Covid GI symptoms"
 label(wave_clean$comp_factor) <- "Life Threatening Complications"
+label(wave_clean$septic_shock) <- "Septic Shock"
+label(wave_clean$arrhythmias) <- "Arrhythmias"
+label(wave_clean$mi) <- "Myocardial Infarction"
+label(wave_clean$hf1) <- "Heart Failure"
+label(wave_clean$vte1) <- "Venous Thrombus Embolism"
+label(wave_clean$renal_replacement1) <- "Renal Replacement"
 ```
 
 ```{r}
