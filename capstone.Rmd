@@ -367,6 +367,8 @@ ggsurvplot(
 survfit(Surv(censer_death, as.numeric(death)) ~ gi_symptoms, data = wave_clean)
 ```
 
+The effect of GI symptoms on survival time was investigated using survival analysis. Patients with GI symptoms had a median survival time of 51 days, whereas those without GI symptoms had a median survival time of 35 days. There was a significant difference between the two survival plots (p.001). One possible explanation for this outcome is that GI symptoms may be minor in COVID-19 patients. Some of the more significant symptoms, such as lung symptoms, may be linked to death.
+
 # Objective 3
 
 **Determine in-hospital complications, including mortality among those with GI/Hepatic comorbidities of Covid 19 hospitalizations in a large hospital in NYC **
