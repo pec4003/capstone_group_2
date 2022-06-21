@@ -260,7 +260,7 @@ obj1_tb1 <- wave_clean %>%
   add_p(age_cat ~ "chisq.test") %>%
   add_overall() %>%
   modify_caption("**Table 1. By GI Condition**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**Chronic GI conditions**")
+  modify_spanning_header(c("stat_1", "stat_2", "stat_3") ~ "**Chronic GI conditions**")
 obj1_tb1
 ```
 
@@ -277,7 +277,7 @@ obj2_tb1 <- wave_clean %>%
   add_p(age_cat ~ "chisq.test") %>%
   add_overall() %>%
   modify_caption("**Table 2. By GI Symptoms**") %>%
-  modify_spanning_header(c("stat_1", "stat_2") ~ "**GI symptoms**")
+  modify_spanning_header(c("stat_1", "stat_2", "stat_3") ~ "**GI symptoms**")
 obj2_tb1
 ```
 
