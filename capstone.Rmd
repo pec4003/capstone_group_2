@@ -418,6 +418,8 @@ fit_obj3_comp <- glm(comp_factor ~ gi_condition + sex + race_eth + age_cat + obe
 summary(fit_obj3_comp)
 ```
 
+**Interpret**: GI condition is not associated with in hospital outcomes, including life threatening complications, death and intubation. Looking at the hospital outcomes separately, the predictor GI condition is still not significant. However, we found that the results were similar in outcome death and life threatening complications for their close p values and both positive estimated coefficients. The results of intubation show a much larger p-value and a negative estimated coefficients which indicates an opposite direction. 
+
 ```{r}
 # Odds Ratio
 round(exp(cbind(OR = coef(fit_obj3_outcome), confint(fit_obj3_outcome))), 3)
