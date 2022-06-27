@@ -1,7 +1,7 @@
 ---
 title: "Capstone Group 2"
 author: ""
-date: "6/20/2022"
+date: "6/27/2022"
 output: 
   html_document:
     toc: yes
@@ -249,24 +249,36 @@ label(wave_clean$censer_intuba) <- "Time to intubation"
 # Table 1
 
 ```{r}
-# descriptive stats by gi_condition
-obj1_tb1 <- wave_clean %>%
+# Descriptive stats by gi_condition
+obj1_stats <- wave_clean %>%
   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity,  gi_condition, gi_symptoms, comp_factor, intubation1, death, wave, septic_shock, arrhythmias, mi, hf1, renal_replacement1, vte1) %>%
   mutate(gi_condition = factor(gi_condition) %>%
            fct_explicit_na(na_level = "Missing")) %>%
   tbl_summary(by = gi_condition,  missing = 'ifany',
               label = list(age_cat ~ "Age",
                            race_eth ~ "Race")) %>%
-  add_p(age_cat ~ "chisq.test") %>%
   add_overall() %>%
   modify_caption("**Table 1. By GI Condition**") %>%
   modify_spanning_header(c("stat_1", "stat_2", "stat_3") ~ "**Chronic GI conditions**")
+
+# Compute p-value
+obj1_p <- wave_clean %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity,  gi_condition, gi_symptoms, comp_factor, intubation1, death, wave, septic_shock, arrhythmias, mi, hf1, renal_replacement1, vte1) %>%
+  tbl_summary(by = gi_condition,  missing = 'ifany',
+              label = list(age_cat ~ "Age",
+                           race_eth ~ "Race")) %>%
+  add_p(age_cat ~ "chisq.test") %>%
+  modify_column_hide(all_stat_cols())
+
+# Create table 1
+obj1_tb1 <- tbl_merge(list(obj1_stats, obj1_p)) %>%
+  modify_spanning_header(everything() ~ NA)
 obj1_tb1
 ```
 
 ```{r}
 # descriptive stats by gi_symptoms
-obj2_tb1 <- wave_clean %>%
+obj2_stats <- wave_clean %>%
   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_symptoms, comp_factor, intubation1, death, wave) %>%
   mutate(gi_symptoms = factor(gi_symptoms) %>%
            fct_explicit_na(na_level = "Missing")) %>%
@@ -274,10 +286,23 @@ obj2_tb1 <- wave_clean %>%
               label = list(age_cat ~ "Age",
                            race_eth ~ "Race",
                            intubation1 ~ "Intubation")) %>%
-  add_p(age_cat ~ "chisq.test") %>%
   add_overall() %>%
   modify_caption("**Table 2. By GI Symptoms**") %>%
   modify_spanning_header(c("stat_1", "stat_2", "stat_3") ~ "**GI symptoms**")
+
+# Compute p-value
+obj2_p <- wave_clean %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_symptoms, comp_factor, intubation1, death, wave) %>%
+  tbl_summary(by = gi_symptoms, missing = 'ifany',
+              label = list(age_cat ~ "Age",
+                           race_eth ~ "Race",
+                           intubation1 ~ "Intubation")) %>%
+  add_p(age_cat ~ "chisq.test") %>%
+  modify_column_hide(all_stat_cols())
+
+# Create table 1
+obj2_tb1 <- tbl_merge(list(obj2_stats, obj2_p)) %>%
+  modify_spanning_header(everything() ~ NA)
 obj2_tb1
 ```
 
@@ -365,7 +390,7 @@ ggsurvplot(
 survfit(Surv(censer_death, as.numeric(death)) ~ gi_symptoms, data = wave_clean)
 ```
 
-**Interpret**: The effect of GI symptoms on survival time was investigated using survival analysis. Patients with GI symptoms had a median survival time of 51 days, whereas those without GI symptoms had a median survival time of 35 days. There was a significant difference between the two survival plots (p.001). One possible explanation for this outcome is that GI symptoms may be minor in COVID-19 patients. Some of the more significant symptoms, such as lung symptoms, may be linked to death.
+**Interpret**: The effect of GI symptoms on survival time was investigated using survival analysis. Patients with GI symptoms had a median survival time of 51 days, whereas those without GI symptoms had a median survival time of 35 days. There was a significant difference between the two survival plots (p < 0.001). One possible explanation for this outcome is that GI symptoms may be minor in COVID-19 patients. Some of the more significant symptoms, such as lung symptoms, may be linked to death.
 
 # Objective 3
 
@@ -423,9 +448,13 @@ summary(fit_obj3_comp)
 round(exp(cbind(OR = coef(fit_obj3_outcome), confint(fit_obj3_outcome))), 3)
 ```
 
+**Interpret**: GI condition is not significantly associated with in hospital outcomes, including life threatening complications, death and intubation. Looking at the hospital outcomes separately, the predictor GI condition is still not significant. 
+
+However, we found that the results were similar in outcome death and life threatening complications for their close p values and both positive estimated coefficients. The results of intubation show a much larger p-value and a negative estimated coefficients which indicates an opposite direction. 
+
 ## Death Survival
 ```{r}
-## death-survial
+## death-survival
 wave_clean$death_code = as.numeric(wave_clean$death)
 ggsurvplot( 
   fit = survfit(Surv(censer_death,death_code) ~ gi_condition, data = wave_clean),
@@ -438,6 +467,7 @@ ggsurvplot(
 survfit(Surv(censer_death, death_code) ~ gi_condition, data = wave_clean)
 ```
 
+**Interpret**: The effect of chronic GI condition on survival time was investigated using survival analysis. Patients with chronic GI condition had a median survival time of 31 days, whereas those without chronic GI condition had a median survival time of 40 days. However, the difference was not significant between the two survival plots (p=0.72). 
 
 # Objective 4
 
