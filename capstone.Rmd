@@ -420,9 +420,7 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 ```{r}
 wave_clean <- wave_clean %>%
   mutate(outcome1 = ifelse(comp_factor == "Yes" | death == "Yes", 1, 0))
-
 ```
-
 
 ## Logistic model
 ```{r}
@@ -471,3 +469,24 @@ survfit(Surv(censer_death, death_code) ~ gi_condition, data = wave_clean)
 
 **Interpret**: The effect of chronic GI condition on survival time was investigated using survival analysis. Patients with chronic GI condition had a median survival time of 31 days, whereas those without chronic GI condition had a median survival time of 40 days. However, the difference was not significant between the two survival plots (p=0.72). 
 
+## Other complications
+
+```{r}
+fit_obj3_septic <- glm(septic_shock ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj3_septic)
+
+fit_obj3_arrhythmias <- glm(arrhythmias ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj3_arrhythmias)
+
+fit_obj3_mi <- glm(mi ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj3_mi)
+
+fit_obj3_hf1 <- glm(hf1 ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj3_hf1)
+
+fit_obj3_vte1 <- glm(vte1 ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj3_vte1)
+
+fit_obj3_renal <- glm(renal_replacement1 ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj3_renal)
+```
