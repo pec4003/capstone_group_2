@@ -254,7 +254,7 @@ obj1_stats <- wave_clean %>%
   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity,  gi_condition, gi_symptoms, comp_factor, intubation1, death, wave, septic_shock, arrhythmias, mi, hf1, renal_replacement1, vte1) %>%
   mutate(gi_condition = factor(gi_condition) %>%
            fct_explicit_na(na_level = "Missing")) %>%
-  tbl_summary(by = gi_condition,  missing = 'ifany',
+  tbl_summary(by = gi_condition,  missing = 'no',
               label = list(age_cat ~ "Age",
                            race_eth ~ "Race")) %>%
   add_overall() %>%
@@ -329,7 +329,7 @@ Primary outcome: COVID Symptoms, including abdominal pain, nausea or diarrhea.
 
 ## Logistic model
 ```{r}
-fit_obj1 <- glm(gi_symptoms ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + sex*gi_condition + wave, data = wave_clean, family = "binomial")
+fit_obj1 <- glm(gi_symptoms ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, data = wave_clean, family = "binomial")
 summary(fit_obj1)
 ```
 
@@ -357,8 +357,7 @@ Primary outcome: in-hospital life threatening complications (Septic shock, posit
 wave_clean <- wave_clean %>%
   mutate(outcome = ifelse(comp_factor == "Yes" | death == "Yes" | intubation1 == "Yes", 1, 0))
 
-
-fit_obj2 <- glm(outcome ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave + sex * wave, data = wave_clean, family = "binomial")
+fit_obj2 <- glm(outcome ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, data = wave_clean, family = "binomial")
 summary(fit_obj2)
 ```
 
@@ -372,7 +371,6 @@ round(exp(cbind(OR = coef(fit_obj2), confint(fit_obj2))), 3)
 According to the model, the log of the odds of in-hospital outcomes was negatively related to GI symptoms (p < .05) and gender (p < .05). Patients with GI symptoms were more likely to have in-hospital life threatening complications, intubation, or death after controlling for other factors. Patients with GI symptoms were 0.861 times more likely to have in-hospital life-threatening complications, intubation, or death than patients without GI symptoms.
 
 Adjusting for other variables, elder patient, patients with obesity, cancer and cardiovascular comorbidities were likely to experience the above in-hospital outcomes (p < .05).
-
 
 ## Death Survival
 ```{r}
@@ -400,21 +398,6 @@ Primary exposure: Presence of chronic liver disease or chronic gastrointestinal 
 
 Primary outcome: in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death. 
 
-```{r}
-# descriptive stats
-# obj3_tb1 <- wave_clean %>%
-#   select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, comp_factor, intubation1, death) %>%
-#   tbl_summary(by = gi_condition, missing = 'no',
-#               label = list(age_cat ~ "Age",
-#                            race_eth ~ "Race",
-#                            intubation1 ~ "Intubation")) %>%
-#   add_p() %>%
-#   add_overall() %>%
-#   modify_caption("**Table 3. Objective 3**") %>%
-#   modify_spanning_header(c("stat_1", "stat_2") ~ "**GI condition**")
-# obj3_tb1
-```
-
 ## Life threatening complications
 
 ```{r}
@@ -425,7 +408,7 @@ wave_clean <- wave_clean %>%
 ## Logistic model
 ```{r}
 ## outcome
-fit_obj3_outcome <- glm(outcome1 ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + sex*gi_condition + wave, wave_clean, family = binomial)
+fit_obj3_outcome <- glm(outcome ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
 summary(fit_obj3_outcome)
 
 ## death
@@ -489,4 +472,8 @@ summary(fit_obj3_vte1)
 
 fit_obj3_renal <- glm(renal_replacement1 ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
 summary(fit_obj3_renal)
+```
+
+```{r}
+round(exp(cbind(OR = coef(fit_obj3_mi), confint(fit_obj3_mi))), 3)
 ```
