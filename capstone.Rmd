@@ -290,7 +290,8 @@ sex_plot <- ggplot(gi_data, aes(x = sex, fill = gi_condition)) +
   theme_minimal() +
   scale_fill_manual(values=cbPalette) +
   geom_text(stat = "count", aes(label = after_stat(count)), 
-            vjust = 0.5, position = position_dodge(0.5), size = 2)
+            vjust = 0.5, position = position_dodge(0.5), size = 2) +
+  guides(fill = guide_legend(title="GI Condition"))
 
 race_plot <- gi_data %>%
   filter(!is.na(race_eth)) %>%
