@@ -280,79 +280,110 @@ obj1_tb1
 
 ```{r}
 gi_data <- wave_clean %>%
-  filter(gi_condition == "Yes")
+  filter(!is.na(gi_condition))
 
-cbPalette <- c("#FFC72C", "#CF4520", "#cf6920", "#cf8320", "#cfa620")
+cbPalette <- c("#FFC72C", "#CF4520")
 
-sex_plot <- ggplot(gi_data, aes(x = sex)) +
-  geom_bar(width = 0.5, aes(fill = sex)) + 
+sex_plot <- ggplot(gi_data, aes(x = sex, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge") + 
   labs(x = "Sex", y = "") + 
   theme_minimal() +
   scale_fill_manual(values=cbPalette) +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-race_plot <- ggplot(gi_data, aes(x = race_eth)) +
-  geom_bar(width = 0.5, aes(fill = race_eth)) + 
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+race_plot <- gi_data %>%
+  filter(!is.na(race_eth)) %>%
+  ggplot(aes(x = race_eth, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge") + 
   labs(x = "Race", y = "") + 
   theme_minimal() +
   scale_fill_manual(values=c("#FFC72C", "#cfa620", "#cf6920", "#cf8320", "#CF4520"))+ 
-  scale_x_discrete(guide = guide_axis(angle = 45)) +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-age_plot <- ggplot(gi_data, aes(x = age_cat)) +
-  geom_bar(width = 0.5, aes(fill = age_cat)) + 
+  scale_x_discrete(guide = guide_axis(angle = 30)) +
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+age_plot <- ggplot(gi_data, aes(x = age_cat, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge") + 
   labs(x = "Age", y = "") + 
   theme_minimal() +
   scale_fill_manual(values=cbPalette) +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-obesity_plot <- ggplot(gi_data, aes(x = obesity)) +
-  geom_bar(width = 0.5, aes(fill = obesity)) + 
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+obesity_plot <- ggplot(gi_data, aes(x = obesity, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge") + 
   labs(x = "Obesity", y = "") + 
   theme_minimal() +
   scale_fill_manual(values=cbPalette) +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-cancer_plot <- ggplot(gi_data, aes(x = cancer_factor)) +
-  geom_bar(width = 0.5, aes(fill = cancer_factor)) + 
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+cancer_plot <- ggplot(gi_data, aes(x = cancer_factor, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge") + 
   labs(x = "Active Cancer", y = "") + 
   theme_minimal() +
   scale_fill_manual(values=cbPalette) +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-cva_plot <- ggplot(gi_data, aes(x = cva_comorbidity)) +
-  geom_bar(width = 0.5, aes(fill = cva_comorbidity))+ 
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+cva_plot <- ggplot(gi_data, aes(x = cva_comorbidity, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge")+ 
   labs(x = "CVA", y = "")+ 
   scale_fill_manual(values=cbPalette)+ 
   theme_minimal() +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-gisymp_plot <- ggplot(gi_data, aes(x = gi_symptoms)) +
-  geom_bar(width = 0.5, aes(fill = gi_symptoms))+ 
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+gisymp_plot <- gi_data %>%
+  filter(!is.na(gi_symptoms)) %>%
+  ggplot(aes(x = gi_symptoms, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge")+ 
   labs(x = "GI Symptoms", y = "")+ 
   scale_fill_manual(values=cbPalette)+ 
   theme_minimal() +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-comp_plot <- ggplot(gi_data, aes(x = comp_factor)) +
-  geom_bar(width = 0.5, aes(fill = comp_factor))+ 
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+comp_plot <- gi_data %>%
+  filter(!is.na(comp_factor)) %>%
+  ggplot(aes(x = comp_factor, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge")+ 
   labs(x = "Life-threatening Complications", y = "")+ 
   scale_fill_manual(values=cbPalette)+ 
   theme_minimal() +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-intubation_plot <- ggplot(gi_data, aes(x = intubation1)) +
-  geom_bar(width = 0.5, aes(fill = intubation1))+ 
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+intubation_plot <- gi_data %>%
+  filter(!is.na(intubation1)) %>%
+  ggplot(aes(x = intubation1, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge")+ 
   labs(x = "Intubation", y = "")+ 
   scale_fill_manual(values=cbPalette)+ 
   theme_minimal() +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-death_plot <- ggplot(gi_data, aes(x = death)) +
-  geom_bar(width = 0.5, aes(fill = death))+ 
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+death_plot <- gi_data %>%
+  filter(!is.na(death)) %>%
+  ggplot(aes(x = death, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge")+ 
   labs(x = "Death", y = "")+ 
   scale_fill_manual(values=cbPalette)+ 
   theme_minimal() +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
-wave_plot <- ggplot(gi_data, aes(x = wave)) +
-  geom_bar(width = 0.5, aes(fill = wave))+ 
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
+
+wave_plot <- ggplot(gi_data, aes(x = wave, fill = gi_condition)) +
+  geom_bar(width = 0.5, position = "dodge")+ 
   labs(x = "Wave", y = "")+ 
   scale_fill_manual(values=cbPalette)+ 
   theme_minimal() +
-  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+  geom_text(stat = "count", aes(label = after_stat(count)), 
+            vjust = 0.5, position = position_dodge(0.5), size = 2)
 
-ggarrange(sex_plot, race_plot, cancer_plot, cva_plot, gisymp_plot,comp_plot, intubation_plot, death_plot, wave_plot, ncol = 3, nrow = 3, legend = "none")
+ggarrange(sex_plot, race_plot, cancer_plot, cva_plot, gisymp_plot,comp_plot, intubation_plot, death_plot, wave_plot, ncol = 3, nrow = 3, common.legend = TRUE)
 ```
 
 ```{r}
