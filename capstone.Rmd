@@ -1,7 +1,7 @@
 ---
 title: "Capstone Group 2"
 author: ""
-date: "6/27/2022"
+date: "07/01/2022"
 output: 
   html_document:
     toc: yes
@@ -18,6 +18,7 @@ library(survminer)
 library(Hmisc)
 library(forcats)
 library(gtsummary)
+library(ggpubr)
 ```
 
 # Load data
@@ -251,7 +252,7 @@ label(wave_clean$censer_intuba) <- "Time to intubation"
 ```{r}
 # Descriptive stats by gi_condition
 obj1_stats <- wave_clean %>%
-  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity,  gi_condition, gi_symptoms, comp_factor, intubation1, death, wave, septic_shock, arrhythmias, mi, hf1, renal_replacement1, vte1) %>%
+  select(sex, race_eth, age_cat, obesity, cancer_factor, cva_comorbidity, gi_condition, gi_symptoms, comp_factor, intubation1, death, wave, septic_shock, arrhythmias, mi, hf1, renal_replacement1, vte1) %>%
   mutate(gi_condition = factor(gi_condition) %>%
            fct_explicit_na(na_level = "Missing")) %>%
   tbl_summary(by = gi_condition,  missing = 'no',
@@ -272,8 +273,86 @@ obj1_p <- wave_clean %>%
 
 # Create table 1
 obj1_tb1 <- tbl_merge(list(obj1_stats, obj1_p)) %>%
-  modify_spanning_header(everything() ~ NA)
+  modify_spanning_header(c("stat_1_1", "stat_2_1", "stat_3_1") ~ "**Chronic GI conditions**",
+                         c("stat_0_1", "p.value_2") ~ NA)
 obj1_tb1
+```
+
+```{r}
+gi_data <- wave_clean %>%
+  filter(gi_condition == "Yes")
+
+cbPalette <- c("#FFC72C", "#CF4520", "#cf6920", "#cf8320", "#cfa620")
+
+sex_plot <- ggplot(gi_data, aes(x = sex)) +
+  geom_bar(width = 0.5, aes(fill = sex)) + 
+  labs(x = "Sex", y = "") + 
+  theme_minimal() +
+  scale_fill_manual(values=cbPalette) +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+race_plot <- ggplot(gi_data, aes(x = race_eth)) +
+  geom_bar(width = 0.5, aes(fill = race_eth)) + 
+  labs(x = "Race", y = "") + 
+  theme_minimal() +
+  scale_fill_manual(values=c("#FFC72C", "#cfa620", "#cf6920", "#cf8320", "#CF4520"))+ 
+  scale_x_discrete(guide = guide_axis(angle = 45)) +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+age_plot <- ggplot(gi_data, aes(x = age_cat)) +
+  geom_bar(width = 0.5, aes(fill = age_cat)) + 
+  labs(x = "Age", y = "") + 
+  theme_minimal() +
+  scale_fill_manual(values=cbPalette) +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+obesity_plot <- ggplot(gi_data, aes(x = obesity)) +
+  geom_bar(width = 0.5, aes(fill = obesity)) + 
+  labs(x = "Obesity", y = "") + 
+  theme_minimal() +
+  scale_fill_manual(values=cbPalette) +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+cancer_plot <- ggplot(gi_data, aes(x = cancer_factor)) +
+  geom_bar(width = 0.5, aes(fill = cancer_factor)) + 
+  labs(x = "Active Cancer", y = "") + 
+  theme_minimal() +
+  scale_fill_manual(values=cbPalette) +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+cva_plot <- ggplot(gi_data, aes(x = cva_comorbidity)) +
+  geom_bar(width = 0.5, aes(fill = cva_comorbidity))+ 
+  labs(x = "CVA", y = "")+ 
+  scale_fill_manual(values=cbPalette)+ 
+  theme_minimal() +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+gisymp_plot <- ggplot(gi_data, aes(x = gi_symptoms)) +
+  geom_bar(width = 0.5, aes(fill = gi_symptoms))+ 
+  labs(x = "GI Symptoms", y = "")+ 
+  scale_fill_manual(values=cbPalette)+ 
+  theme_minimal() +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+comp_plot <- ggplot(gi_data, aes(x = comp_factor)) +
+  geom_bar(width = 0.5, aes(fill = comp_factor))+ 
+  labs(x = "Life-threatening Complications", y = "")+ 
+  scale_fill_manual(values=cbPalette)+ 
+  theme_minimal() +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+intubation_plot <- ggplot(gi_data, aes(x = intubation1)) +
+  geom_bar(width = 0.5, aes(fill = intubation1))+ 
+  labs(x = "Intubation", y = "")+ 
+  scale_fill_manual(values=cbPalette)+ 
+  theme_minimal() +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+death_plot <- ggplot(gi_data, aes(x = death)) +
+  geom_bar(width = 0.5, aes(fill = death))+ 
+  labs(x = "Death", y = "")+ 
+  scale_fill_manual(values=cbPalette)+ 
+  theme_minimal() +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+wave_plot <- ggplot(gi_data, aes(x = wave)) +
+  geom_bar(width = 0.5, aes(fill = wave))+ 
+  labs(x = "Wave", y = "")+ 
+  scale_fill_manual(values=cbPalette)+ 
+  theme_minimal() +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = 1)
+
+ggarrange(sex_plot, race_plot, cancer_plot, cva_plot, gisymp_plot,comp_plot, intubation_plot, death_plot, wave_plot, ncol = 3, nrow = 3, legend = "none")
 ```
 
 ```{r}
@@ -302,7 +381,8 @@ obj2_p <- wave_clean %>%
 
 # Create table 1
 obj2_tb1 <- tbl_merge(list(obj2_stats, obj2_p)) %>%
-  modify_spanning_header(everything() ~ NA)
+  modify_spanning_header(c("stat_1_1", "stat_2_1", "stat_3_1") ~ "**GI symptoms**",
+                         c("stat_0_1", "p.value_2") ~ NA)
 obj2_tb1
 ```
 
@@ -359,11 +439,22 @@ wave_clean <- wave_clean %>%
 
 fit_obj2 <- glm(outcome ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, data = wave_clean, family = "binomial")
 summary(fit_obj2)
+
+fit_obj2_death <- glm(death ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, data = wave_clean, family = "binomial")
+summary(fit_obj2_death)
+
+fit_obj2_intub <- glm(intubation1 ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, data = wave_clean, family = "binomial")
+summary(fit_obj2_intub)
+
+fit_obj2_comp <- glm(comp_factor ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, data = wave_clean, family = "binomial")
+summary(fit_obj2_comp)
 ```
 
 ```{r}
 # Odds Ratio
 round(exp(cbind(OR = coef(fit_obj2), confint(fit_obj2))), 3)
+round(exp(cbind(OR = coef(fit_obj2_death), confint(fit_obj2_death))), 3)
+round(exp(cbind(OR = coef(fit_obj2_intub), confint(fit_obj2_intub))), 3)
 ```
 
 **Interpret**: A multinational logistic regression model was fitted to investigate the relationship between development of GI symptoms and in-hospital outcomes during the first two waves of COVID 19. In-hospital outcomes are defined as in-hospital life threatening complications (Septic shock, positive blood culture, renal replacement therapy, arrhythmias, myocardial infarction, heart failure, venous thrombus embolism, coagulation), intubation, or death.
@@ -472,8 +563,6 @@ summary(fit_obj3_vte1)
 
 fit_obj3_renal <- glm(renal_replacement1 ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
 summary(fit_obj3_renal)
-```
 
-```{r}
 round(exp(cbind(OR = coef(fit_obj3_mi), confint(fit_obj3_mi))), 3)
 ```
