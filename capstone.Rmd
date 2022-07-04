@@ -1,7 +1,7 @@
 ---
 title: "Capstone Group 2"
 author: ""
-date: "07/01/2022"
+date: "07/04/2022"
 output: 
   html_document:
     toc: yes
@@ -513,6 +513,27 @@ survfit(Surv(censer_death, as.numeric(death)) ~ gi_symptoms, data = wave_clean)
 
 **Interpret**: The effect of GI symptoms on survival time was investigated using survival analysis. Patients with GI symptoms had a median survival time of 51 days, whereas those without GI symptoms had a median survival time of 35 days. There was a significant difference between the two survival plots (p < 0.001). One possible explanation for this outcome is that GI symptoms may be minor in COVID-19 patients. Some of the more significant symptoms, such as lung symptoms, may be linked to death.
 
+## specific complications 
+```{r}
+fit_obj2_septic <- glm(septic_shock ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj2_septic)
+
+fit_obj2_arrhythmias <- glm(arrhythmias ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj2_arrhythmias)
+
+fit_obj2_mi <- glm(mi ~gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj2_mi)
+
+fit_obj2_hf1 <- glm(hf1 ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj2_hf1)
+
+fit_obj2_vte1 <- glm(vte1 ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj2_vte1)
+
+fit_obj2_renal <- glm(renal_replacement1 ~ gi_symptoms + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
+summary(fit_obj2_renal)
+```
+
 # Objective 3
 
 **Determine in-hospital complications, including mortality among those with GI/Hepatic comorbidities of Covid 19 hospitalizations in a large hospital in NYC **
@@ -529,6 +550,7 @@ wave_clean <- wave_clean %>%
 ```
 
 ## Logistic model
+
 ```{r}
 ## outcome
 fit_obj3_outcome <- glm(outcome ~ gi_condition + sex + race_eth + age_cat + obesity + cancer_factor + cva_comorbidity + wave, wave_clean, family = binomial)
@@ -559,6 +581,7 @@ round(exp(cbind(OR = coef(fit_obj3_outcome), confint(fit_obj3_outcome))), 3)
 However, we found that the results were similar in outcome death and life threatening complications for their close p values and both positive estimated coefficients. The results of intubation show a much larger p-value and a negative estimated coefficients which indicates an opposite direction. 
 
 ## Death Survival
+
 ```{r}
 ## death-survival
 wave_clean$death_code = as.numeric(wave_clean$death)
